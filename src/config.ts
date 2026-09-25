@@ -51,7 +51,7 @@ export const CONFIG: RobopulseConfig = {
   whatsapp: "918707414150",
   whatsappMessage:
     "Hello Robopulse Intelligence, I would like to know more about your Robotics, AI and STEM programs for our school/students.",
-  email: "connect@robopulseintelligence.com",
+  email: "prathamkhanna321@gmail.com",
   address: "Sigra, Varanasi, Uttar Pradesh, India",
   city: "Varanasi, India",
   website: "https://robopulseintelligence.com",

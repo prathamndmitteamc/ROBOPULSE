@@ -121,7 +121,7 @@ export const ContactPage: React.FC = () => {
                     <Mail className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="text-xs font-mono text-neutral-500 uppercase block">Electronic Mail</span>
+                    <span className="text-xs font-mono text-neutral-500 uppercase block">Enquiries & Purchases</span>
                     <a href={`mailto:${CONFIG.email}`} className="text-white text-xs sm:text-sm hover:text-[#00C9FF] transition-colors">
                       {CONFIG.email}
                     </a>
