@@ -1,0 +1,7 @@
+{
+  "name": "Robopulse Intelligence",
+  "description": "Futuristic Robotics, Artificial Intelligence and STEM Education for schools and institutions. Building the Intelligence Behind Tomorrow.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
