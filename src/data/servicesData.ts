@@ -37,7 +37,7 @@ export const FEATURED_SERVICE: FeaturedService = {
     { label: "Kit Durability", value: "Industrial" },
     { label: "Faculty Support", value: "Full Year" },
   ],
-  image: "/src/assets/images/ai_stem_lab_setup_1790153258870.jpg",
+  image: "/assets/images/ai_stem_lab_setup_1790153258870.jpg",
   ctaText: "Explore Lab Architecture",
   ctaPath: "/solutions",
 };

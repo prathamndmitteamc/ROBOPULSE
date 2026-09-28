@@ -28,7 +28,7 @@ export const SOLUTIONS_LIST: SolutionTrack[] = [
       "Autonomous navigation and obstacle avoidance",
       "Embedded code logic and debugging",
     ],
-    image: "/src/assets/images/student_robotics_project_1790153242579.jpg",
+    image: "/assets/images/student_robotics_project_1790153242579.jpg",
   },
   {
     id: "ai-emerging-tech",
@@ -44,7 +44,7 @@ export const SOLUTIONS_LIST: SolutionTrack[] = [
       "Smart sensor data collection & analysis",
       "Ethical understanding of modern AI systems",
     ],
-    image: "/src/assets/images/hero_robotics_lab_1790153224618.jpg",
+    image: "/assets/images/hero_robotics_lab_1790153224618.jpg",
   },
   {
     id: "stem-lab-setup",
@@ -60,7 +60,7 @@ export const SOLUTIONS_LIST: SolutionTrack[] = [
       "Comprehensive storage & component management",
       "Structured grade-wise activity manuals",
     ],
-    image: "/src/assets/images/ai_stem_lab_setup_1790153258870.jpg",
+    image: "/assets/images/ai_stem_lab_setup_1790153258870.jpg",
   },
   {
     id: "introductory-training",
@@ -76,7 +76,7 @@ export const SOLUTIONS_LIST: SolutionTrack[] = [
       "First successful automated run",
       "Elimination of technophobia",
     ],
-    image: "/src/assets/images/student_robotics_project_1790153242579.jpg",
+    image: "/assets/images/student_robotics_project_1790153242579.jpg",
   },
   {
     id: "teacher-orientation",
@@ -92,7 +92,7 @@ export const SOLUTIONS_LIST: SolutionTrack[] = [
       "Aligning robotics projects with school syllabus",
       "Long-term classroom mentorship support",
     ],
-    image: "/src/assets/images/hero_robotics_lab_1790153224618.jpg",
+    image: "/assets/images/hero_robotics_lab_1790153224618.jpg",
   },
   {
     id: "robotics-exhibitions",
@@ -108,7 +108,7 @@ export const SOLUTIONS_LIST: SolutionTrack[] = [
       "School-wide technology celebration",
       "Parent & community engagement",
     ],
-    image: "/src/assets/images/robotics_exhibition_showcase_1790153274415.jpg",
+    image: "/assets/images/robotics_exhibition_showcase_1790153274415.jpg",
   },
 ];
 
@@ -261,7 +261,7 @@ export const HANDS_ON_PROJECTS: HandsOnProject[] = [
     category: "ROBOTICS",
     description: "Wheeled rover utilizing dual ultrasonic sensors and motor drivers to autonomously map room boundaries and navigate without human intervention.",
     techTags: ["Ultrasonic Sensors", "Motor H-Bridge", "Microcontroller", "Autonomous Navigation"],
-    image: "/src/assets/images/student_robotics_project_1790153242579.jpg",
+    image: "/assets/images/student_robotics_project_1790153242579.jpg",
   },
   {
     id: "proj-2",
@@ -270,7 +270,7 @@ export const HANDS_ON_PROJECTS: HandsOnProject[] = [
     category: "AI & VISION",
     description: "Camera-assisted robotic arm with color detection models that sorts objects based on hue and dimensions into designated receptacles.",
     techTags: ["Computer Vision", "Servo Actuators", "Object Classification", "Python/C++"],
-    image: "/src/assets/images/hero_robotics_lab_1790153224618.jpg",
+    image: "/assets/images/hero_robotics_lab_1790153224618.jpg",
   },
   {
     id: "proj-3",
@@ -279,7 +279,7 @@ export const HANDS_ON_PROJECTS: HandsOnProject[] = [
     category: "STEM & IOT",
     description: "Sensory ecosystem monitoring soil moisture, ambient humidity, and temperature to automate micro-irrigation valves.",
     techTags: ["Capacitive Soil Probe", "Solenoid Valve", "Telemetry", "Environmental STEM"],
-    image: "/src/assets/images/ai_stem_lab_setup_1790153258870.jpg",
+    image: "/assets/images/ai_stem_lab_setup_1790153258870.jpg",
   },
   {
     id: "proj-4",
@@ -288,6 +288,6 @@ export const HANDS_ON_PROJECTS: HandsOnProject[] = [
     category: "MECHATRONICS",
     description: "Precision 4-DOF mechanical arm engineered with high-torque servos to explore kinematics and coordinate positioning.",
     techTags: ["Inverse Kinematics", "PWM Drivers", "3D Structures", "Automation"],
-    image: "/src/assets/images/robotics_exhibition_showcase_1790153274415.jpg",
+    image: "/assets/images/robotics_exhibition_showcase_1790153274415.jpg",
   },
 ];

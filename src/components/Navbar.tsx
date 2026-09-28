@@ -7,7 +7,6 @@ import { ServiceItem, SERVICES_LIST, FEATURED_SERVICE } from "../data/servicesDa
 import { CourseItem, COURSES_LIST, FEATURED_COURSE } from "../data/coursesData";
 import { AnimatedBackground } from "@/components/core/animated-background";
 import { AnimatedTabsHover } from "./AnimatedTabsHover";
-import { ThemeToggle } from "./ThemeToggle";
 import {
   Menu,
   X,
@@ -254,9 +253,8 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, navigate }) => {
               </AnimatedBackground>
             </div>
 
-            {/* 3. Theme Toggle & Contact Us Primary Button */}
+            {/* 3. Contact Us Primary Button */}
             <div className="flex items-center gap-3">
-              <ThemeToggle size="md" />
               <ShinyButton
                 size="sm"
                 label="Contact Us"
@@ -304,7 +302,6 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, navigate }) => {
         <RobopulseLogo size="sm" onClick={() => handleLinkClick("/")} />
 
         <div className="flex items-center gap-2">
-          <ThemeToggle size="sm" />
           <button
             onClick={() => handleLinkClick("/contact")}
             className="text-[11px] font-semibold tracking-wider px-3 py-1.5 rounded-full bg-[#00C9FF]/10 border border-[#00C9FF]/30 text-[#00C9FF] active:bg-[#00C9FF]/20 cursor-pointer"
@@ -517,12 +514,6 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, navigate }) => {
           </div>
 
           <div className="pt-6 border-t border-white/10 space-y-3">
-            <div className="flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/10">
-              <span className="text-xs font-mono text-neutral-300 uppercase tracking-wider">
-                Display Theme
-              </span>
-              <ThemeToggle showLabel size="sm" />
-            </div>
             <ShinyButton
               label="Contact Us"
               size="md"

@@ -37,7 +37,7 @@ export const GALLERY: Record<string, GalleryItem[]> = {
   exhibitions: [
     {
       id: "ex-01",
-      image: "/src/assets/images/robotics_exhibition_showcase_1790153274415.jpg",
+      image: "/assets/images/robotics_exhibition_showcase_1790153274415.jpg",
       title: "Annual Robotics Innovation Arena Showcase",
       description: "Students demonstrating autonomous wheeled rovers and sensor mechanisms to peer groups and visiting educators.",
       school: "Partner Institution Showcase",
@@ -47,7 +47,7 @@ export const GALLERY: Record<string, GalleryItem[]> = {
     },
     {
       id: "ex-02",
-      image: "/src/assets/images/hero_robotics_lab_1790153224618.jpg",
+      image: "/assets/images/hero_robotics_lab_1790153224618.jpg",
       title: "Interactive Mechatronics Demonstration",
       description: "Live functional demonstration of robotic manipulation arms, sensor diagnostics, and micro-controller circuitry.",
       school: "Inter-School Technology Exposition",
@@ -60,7 +60,7 @@ export const GALLERY: Record<string, GalleryItem[]> = {
   students: [
     {
       id: "stu-01",
-      image: "/src/assets/images/student_robotics_project_1790153242579.jpg",
+      image: "/assets/images/student_robotics_project_1790153242579.jpg",
       title: "Modular Rover Assembly & Circuit Testing",
       description: "Middle school students collaboratively assembling modular rover chassis and testing optical proximity sensors.",
       school: "Vidyashram STEM Academy",
@@ -70,7 +70,7 @@ export const GALLERY: Record<string, GalleryItem[]> = {
     },
     {
       id: "stu-02",
-      image: "/src/assets/images/hero_robotics_lab_1790153224618.jpg",
+      image: "/assets/images/hero_robotics_lab_1790153224618.jpg",
       title: "Sensor Calibration and Logic Debugging",
       description: "Secondary students refining motor control parameters and calibration routines for ultrasonic distance tracking.",
       school: "Tech Innovators Batch",
@@ -83,7 +83,7 @@ export const GALLERY: Record<string, GalleryItem[]> = {
   labSetup: [
     {
       id: "lab-01",
-      image: "/src/assets/images/ai_stem_lab_setup_1790153258870.jpg",
+      image: "/assets/images/ai_stem_lab_setup_1790153258870.jpg",
       title: "Modern Turnkey Robotics & STEM Lab Setup",
       description: "High-spec modular laboratory environment equipped with precision robotics toolsets, soldering benches, and microcontroller modules.",
       school: "Institution Turnkey Implementation",
@@ -93,7 +93,7 @@ export const GALLERY: Record<string, GalleryItem[]> = {
     },
     {
       id: "lab-02",
-      image: "/src/assets/images/hero_robotics_lab_1790153224618.jpg",
+      image: "/assets/images/hero_robotics_lab_1790153224618.jpg",
       title: "Collaborative Prototyping Bay",
       description: "Integrated workspace arrangement encouraging rapid hardware iteration, breadboarding, and team-based mechanics testing.",
       school: "Innovation Campus Lab",
@@ -106,7 +106,7 @@ export const GALLERY: Record<string, GalleryItem[]> = {
   training: [
     {
       id: "trn-01",
-      image: "/src/assets/images/student_robotics_project_1790153242579.jpg",
+      image: "/assets/images/student_robotics_project_1790153242579.jpg",
       title: "Foundational Robotics & Electronics Program",
       description: "Structured beginner module walking students through Ohm's law, digital vs analog signals, and primary motor driver principles.",
       school: "Introductory Cohort",
@@ -119,7 +119,7 @@ export const GALLERY: Record<string, GalleryItem[]> = {
   teacherOrientation: [
     {
       id: "tch-01",
-      image: "/src/assets/images/hero_robotics_lab_1790153224618.jpg",
+      image: "/assets/images/hero_robotics_lab_1790153224618.jpg",
       title: "STEM Educator Upskilling & Lab Facilitation",
       description: "Faculty enablement workshop on guiding project-based robotics investigations and classroom troubleshooting techniques.",
       school: "Educators Workshop Series",
@@ -132,7 +132,7 @@ export const GALLERY: Record<string, GalleryItem[]> = {
   schools: [
     {
       id: "sch-01",
-      image: "/src/assets/images/ai_stem_lab_setup_1790153258870.jpg",
+      image: "/assets/images/ai_stem_lab_setup_1790153258870.jpg",
       title: "Institutional Innovation Lab Deployment",
       description: "Comprehensive end-to-end robotics ecosystem deployed in partnership with school leadership for progressive technology education.",
       school: "Campus Technology Initiative",
@@ -145,7 +145,7 @@ export const GALLERY: Record<string, GalleryItem[]> = {
   parentReviews: [
     {
       id: "rev-01",
-      image: "/src/assets/images/robotics_exhibition_showcase_1790153274415.jpg",
+      image: "/assets/images/robotics_exhibition_showcase_1790153274415.jpg",
       title: "Parent Community Open House",
       description: "Parents witnessing real autonomous robotics prototypes designed and programmed independently by their children.",
       school: "Open House Session",

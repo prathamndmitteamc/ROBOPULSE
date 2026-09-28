@@ -8,6 +8,7 @@
 import React, { useEffect, useRef, useState, useCallback } from "react";
 import { openWhatsApp } from "../config";
 import { MessageCircle, ArrowRight, ShieldCheck, Cpu, Bot, Zap, Eye, Crosshair } from "lucide-react";
+import { motion, useReducedMotion, type Variants } from "framer-motion";
 
 interface RobopulseHeroProps {
   navigate: (path: string) => void;
@@ -299,6 +300,54 @@ export const RobopulseHero: React.FC<RobopulseHeroProps> = ({ navigate }) => {
   const boundedPupilX = Math.max(-7, Math.min(7, pupilOffsetX));
   const boundedPupilY = Math.max(-5, Math.min(5, pupilOffsetY));
 
+  const prefersReduced = useReducedMotion();
+  const shouldReduce = Boolean(prefersReduced || reducedMotion);
+
+  // Framer Motion entrance animation variants
+  const heroContainerVariants: Variants = {
+    hidden: { opacity: shouldReduce ? 1 : 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: shouldReduce ? 0 : 0.12,
+        delayChildren: shouldReduce ? 0 : 0.08,
+      },
+    },
+  };
+
+  const heroItemFadeUpVariants: Variants = {
+    hidden: {
+      opacity: shouldReduce ? 1 : 0,
+      y: shouldReduce ? 0 : 22,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: shouldReduce ? 0 : 0.75,
+        ease: [0.16, 1, 0.3, 1],
+      },
+    },
+  };
+
+  const heroVisualVariants: Variants = {
+    hidden: {
+      opacity: shouldReduce ? 1 : 0,
+      y: shouldReduce ? 0 : 26,
+      scale: shouldReduce ? 1 : 0.98,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: shouldReduce ? 0 : 0.85,
+        ease: [0.16, 1, 0.3, 1],
+        delay: shouldReduce ? 0 : 0.22,
+      },
+    },
+  };
+
   return (
     <section
       ref={heroSectionRef}
@@ -358,15 +407,14 @@ export const RobopulseHero: React.FC<RobopulseHeroProps> = ({ navigate }) => {
           {/* ---------------------------------------------------------- */}
           {/* LEFT: EDITORIAL COPY & CALL TO ACTION                      */}
           {/* ---------------------------------------------------------- */}
-          <div className="robopulse-hero-content lg:col-span-7 space-y-7 sm:space-y-8">
-            
+          <motion.div
+            className="robopulse-hero-content lg:col-span-7 space-y-7 sm:space-y-8"
+            variants={heroContainerVariants}
+            initial="hidden"
+            animate="visible"
+          >
             {/* Step 1: Eyebrow + Status indicator */}
-            <div
-              className="space-y-2"
-              style={{
-                animation: reducedMotion ? "none" : "heroFadeIn 0.7s cubic-bezier(.16,1,.3,1) 0.1s both",
-              }}
-            >
+            <motion.div variants={heroItemFadeUpVariants} className="space-y-2">
               <div className="inline-flex items-center gap-2.5 px-3 py-1 rounded-full bg-white/[0.03] border border-white/10 text-xs font-mono tracking-[0.2em] text-[#00C9FF]">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#00C9FF] animate-pulse" />
                 <span className="font-semibold">ROBOPULSE INTELLIGENCE</span>
@@ -378,37 +426,31 @@ export const RobopulseHero: React.FC<RobopulseHeroProps> = ({ navigate }) => {
                 <span className="text-[#00C9FF]">◆</span>
                 <span>STEM EDUCATION</span>
               </div>
-            </div>
+            </motion.div>
 
             {/* Step 2: Main Hero Heading */}
-            <h1
+            <motion.h1
+              variants={heroItemFadeUpVariants}
               className="robopulse-hero-title font-display text-5xl sm:text-7xl lg:text-[84px] leading-[0.92] text-white tracking-[-0.04em] font-normal"
-              style={{
-                animation: reducedMotion ? "none" : "heroSlideUp 0.8s cubic-bezier(.16,1,.3,1) 0.2s both",
-              }}
             >
               Building the Intelligence{" "}
               <span className="block text-shimmer italic font-normal">
                 Behind Tomorrow.
               </span>
-            </h1>
+            </motion.h1>
 
             {/* Step 3: Supporting Copy */}
-            <p
+            <motion.p
+              variants={heroItemFadeUpVariants}
               className="text-base sm:text-lg text-neutral-300 max-w-xl font-sans font-normal leading-relaxed"
-              style={{
-                animation: reducedMotion ? "none" : "heroSlideUp 0.8s cubic-bezier(.16,1,.3,1) 0.35s both",
-              }}
             >
               Empowering the next generation through Robotics, Artificial Intelligence and Future-Ready STEM Education. Experience practical training with autonomous mechatronics.
-            </p>
+            </motion.p>
 
             {/* Step 4: Primary CTA + WhatsApp Secondary */}
-            <div
+            <motion.div
+              variants={heroItemFadeUpVariants}
               className="flex flex-wrap items-center gap-4 pt-2"
-              style={{
-                animation: reducedMotion ? "none" : "heroSlideUp 0.8s cubic-bezier(.16,1,.3,1) 0.5s both",
-              }}
             >
               {/* Primary Conic Shiny Border CTA */}
               <div className="relative p-[1px] rounded-full overflow-hidden inline-block group">
@@ -439,17 +481,17 @@ export const RobopulseHero: React.FC<RobopulseHeroProps> = ({ navigate }) => {
                 <MessageCircle className="w-4 h-4 text-[#00C9FF]" />
                 <span>WhatsApp Enquiries</span>
               </button>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* ---------------------------------------------------------- */}
           {/* RIGHT: ANIMATED 3D ROBOT HEAD & HALF BODY REACTING TO CURSOR */}
           {/* ---------------------------------------------------------- */}
-          <div
+          <motion.div
             className="robopulse-hero-visual lg:col-span-5 relative"
-            style={{
-              animation: reducedMotion ? "none" : "heroVisualEntrance 0.9s cubic-bezier(.16,1,.3,1) 0.45s both",
-            }}
+            variants={heroVisualVariants}
+            initial="hidden"
+            animate="visible"
           >
             {/* Breathing & Floating Animation Wrapper */}
             <div
@@ -478,7 +520,7 @@ export const RobopulseHero: React.FC<RobopulseHeroProps> = ({ navigate }) => {
                 >
                   {/* LAYER 1: Front Robot Head & Half Body (High-Tech Photorealistic) */}
                   <img
-                    src="/src/assets/images/interactive_robot_head_body_1790353827292.jpg"
+                    src="/assets/images/interactive_robot_head_body_1790353827292.jpg"
                     alt="Autonomous AI Robot Head and Half Body"
                     referrerPolicy="no-referrer"
                     className="hero-front absolute inset-0 w-full h-full object-cover object-center scale-[1.03] transition-transform duration-300"
@@ -490,7 +532,7 @@ export const RobopulseHero: React.FC<RobopulseHeroProps> = ({ navigate }) => {
                   {/* LAYER 2: Back Mechatronic Neural Blueprint Scanner (Revealed at Cursor) */}
                   <img
                     ref={backImageRef}
-                    src="/src/assets/images/robot_internal_schematic_1790353848882.jpg"
+                    src="/assets/images/robot_internal_schematic_1790353848882.jpg"
                     alt="Robot internal neural blueprint scan"
                     aria-hidden="true"
                     referrerPolicy="no-referrer"
@@ -630,7 +672,7 @@ export const RobopulseHero: React.FC<RobopulseHeroProps> = ({ navigate }) => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
         </div>
       </div>
@@ -639,33 +681,6 @@ export const RobopulseHero: React.FC<RobopulseHeroProps> = ({ navigate }) => {
       {/* 03 — SCOPED CSS ANIMATIONS                                     */}
       {/* ============================================================== */}
       <style>{`
-        @keyframes heroFadeIn {
-          from { opacity: 0; }
-          to { opacity: 1; }
-        }
-
-        @keyframes heroSlideUp {
-          from {
-            opacity: 0;
-            transform: translateY(22px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @keyframes heroVisualEntrance {
-          from {
-            opacity: 0;
-            transform: scale(0.96) translateY(18px);
-          }
-          to {
-            opacity: 1;
-            transform: scale(1) translateY(0);
-          }
-        }
-
         @keyframes heroFloat {
           0%, 100% {
             transform: translateY(0);

@@ -133,7 +133,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ navigate }) => {
           <div className="lg:col-span-5">
             <div className="rounded-2xl overflow-hidden border border-white/15 relative">
               <img
-                src="/src/assets/images/director_leadership_portrait_1790153288824.jpg"
+                src="/assets/images/director_leadership_portrait_1790153288824.jpg"
                 alt="Director, Robopulse Intelligence"
                 referrerPolicy="no-referrer"
                 className="w-full h-[450px] object-cover"

@@ -371,7 +371,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
       <section className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="relative rounded-3xl overflow-hidden border border-white/15 bg-[#050509]">
           <img
-            src="/src/assets/images/ai_stem_lab_setup_1790153258870.jpg"
+            src="/assets/images/ai_stem_lab_setup_1790153258870.jpg"
             alt="Futuristic school STEM and robotics lab setup"
             referrerPolicy="no-referrer"
             className="w-full h-[400px] sm:h-[480px] object-cover opacity-35"
@@ -436,7 +436,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
           <div className="lg:col-span-5 flex justify-center">
             <div className="relative rounded-2xl overflow-hidden border border-white/15 max-w-sm w-full">
               <img
-                src="/src/assets/images/director_leadership_portrait_1790153288824.jpg"
+                src="/assets/images/director_leadership_portrait_1790153288824.jpg"
                 alt="Director of Robopulse Intelligence"
                 referrerPolicy="no-referrer"
                 className="w-full h-[400px] object-cover"

@@ -3,7 +3,6 @@
  */
 
 import React, { useState, useEffect } from "react";
-import { ThemeProvider } from "./context/ThemeContext";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
 import { FloatingWhatsApp } from "./components/FloatingWhatsApp";
@@ -87,10 +86,6 @@ function AppContent() {
 }
 
 export default function App() {
-  return (
-    <ThemeProvider>
-      <AppContent />
-    </ThemeProvider>
-  );
+  return <AppContent />;
 }
 

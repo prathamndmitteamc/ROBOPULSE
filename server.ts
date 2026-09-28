@@ -23,6 +23,12 @@ if (fs.existsSync(distPath)) {
   app.use(express.static(distPath));
 }
 
+// Also serve static assets from public directory
+const publicPath = path.resolve(__dirname, 'public');
+if (fs.existsSync(publicPath)) {
+  app.use(express.static(publicPath));
+}
+
 // Fallback all SPA routes to index.html with graceful safety
 app.get('*', (_req, res) => {
   const indexPath = path.join(distPath, 'index.html');

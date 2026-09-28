@@ -40,9 +40,13 @@ export const RobopulseLogo: React.FC<RobopulseLogoProps> = ({
         <div className="absolute inset-0 bg-[#00C9FF]/20 rounded-full blur-md group-hover:bg-[#00C9FF]/35 transition-all duration-500" />
         
         <img
-          src="https://i.ibb.co/GQW7R33B/remove-photos-removed-background-Copy.png"
+          src="/assets/images/robopulse_logo.png"
           alt="Robopulse Logo"
           className="relative w-full h-full object-contain drop-shadow-[0_0_12px_rgba(0,201,255,0.45)]"
+          onError={(e) => {
+            (e.currentTarget as HTMLImageElement).src =
+              "https://i.ibb.co/GQW7R33B/remove-photos-removed-background-Copy.png";
+          }}
         />
       </div>
 
