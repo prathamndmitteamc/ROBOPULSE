@@ -112,10 +112,10 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
             <div className="pt-2">
               <button
                 onClick={() => navigate("/about")}
-                className="inline-flex items-center gap-2 text-xs font-mono tracking-wider text-[#00C9FF] hover:text-white transition-colors"
+                className="inline-flex items-center gap-2 text-xs font-mono tracking-wider text-[#00C9FF] hover:text-white transition-all group cursor-pointer hover:translate-x-1.5"
               >
                 <span>EXPLORE OUR PEDAGOGY</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
           </MotionHeadingGroup>
@@ -154,7 +154,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
             <div
               key={sol.id}
               onClick={() => navigate("/solutions")}
-              className="glass-card rounded-[24px] overflow-hidden group cursor-pointer flex flex-col justify-between"
+              className="glass-card box-hover-pop rounded-[24px] overflow-hidden group cursor-pointer flex flex-col justify-between hover:border-[#00C9FF]/50 transition-all duration-300"
             >
               <div>
                 {/* Image container */}
@@ -163,10 +163,10 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
                     src={sol.image}
                     alt={sol.title}
                     referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-108"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A12] via-transparent to-transparent opacity-80" />
-                  <span className="absolute top-4 right-4 font-mono text-xs text-[#00C9FF] bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10">
+                  <span className="absolute top-4 right-4 font-mono text-xs text-[#00C9FF] bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10 group-hover:border-[#00C9FF]/40 transition-colors">
                     {sol.num}
                   </span>
                 </div>
@@ -245,7 +245,8 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
           {HANDS_ON_PROJECTS.map((proj) => (
             <div
               key={proj.id}
-              className="min-w-[300px] sm:min-w-[360px] max-w-[380px] snap-start rounded-2xl bg-[#080810] border border-white/10 p-5 space-y-4 hover:border-[#00C9FF]/40 transition-all flex flex-col justify-between shrink-0"
+              onClick={() => navigate("/robotics")}
+              className="box-hover-pop min-w-[300px] sm:min-w-[360px] max-w-[380px] snap-start rounded-2xl bg-[#080810] border border-white/10 p-5 space-y-4 hover:border-[#00C9FF]/50 hover:-translate-y-2 hover:shadow-[0_16px_35px_-8px_rgba(0,201,255,0.22)] transition-all duration-300 flex flex-col justify-between shrink-0 group cursor-pointer"
             >
               <div className="space-y-3">
                 <div className="h-44 rounded-xl overflow-hidden relative">
@@ -253,7 +254,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
                     src={proj.image}
                     alt={proj.title}
                     referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <span className="absolute top-3 left-3 px-2 py-0.5 rounded bg-black/70 backdrop-blur-md text-[10px] font-mono text-[#00C9FF]">
                     {proj.num}
@@ -264,7 +265,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
                   {proj.category}
                 </span>
 
-                <h3 className="font-display text-xl text-white">{proj.title}</h3>
+                <h3 className="font-display text-xl text-white group-hover:text-[#00C9FF] transition-colors">{proj.title}</h3>
 
                 <p className="text-xs text-neutral-300 leading-relaxed font-sans">
                   {proj.description}
@@ -307,10 +308,10 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
               <button
                 key={model.id}
                 onClick={() => setSelectedModel(model.id)}
-                className={`p-4 rounded-xl text-left border transition-all cursor-pointer ${
+                className={`p-4 rounded-xl text-left border transition-all duration-200 hover:-translate-y-1 hover:scale-[1.03] active:scale-95 cursor-pointer ${
                   isSelected
-                    ? "bg-[#250060]/40 border-[#00C9FF] text-white shadow-[0_0_20px_rgba(0,201,255,0.15)]"
-                    : "bg-white/[0.02] border-white/5 text-neutral-400 hover:border-white/20"
+                    ? "bg-[#250060]/40 border-[#00C9FF] text-white shadow-[0_0_20px_rgba(0,201,255,0.2)]"
+                    : "bg-white/[0.02] border-white/5 text-neutral-400 hover:border-[#00C9FF]/40 hover:text-white"
                 }`}
               >
                 <span className="text-[10px] font-mono text-[#00C9FF] block">
@@ -401,7 +402,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
                 />
                 <button
                   onClick={() => navigate("/gallery")}
-                  className="px-5 py-2.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-semibold tracking-wider text-white"
+                  className="px-5 py-2.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#00C9FF]/50 text-xs font-semibold tracking-wider text-white hover:-translate-y-1 hover:scale-[1.04] active:scale-95 transition-all duration-200 cursor-pointer"
                 >
                   View Installed Labs
                 </button>

@@ -117,7 +117,7 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({ navigate }) => {
                   "Hello Robopulse, I would like to inquire about robotics & AI courses for our students."
                 )
               }
-              className="px-6 py-3.5 rounded-full bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 text-xs sm:text-sm font-semibold tracking-wider text-neutral-200 hover:text-white transition-all flex items-center gap-2 hover:border-[#00C9FF]/40 cursor-pointer"
+              className="px-6 py-3.5 rounded-full bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 text-xs sm:text-sm font-semibold tracking-wider text-neutral-200 hover:text-white transition-all duration-200 flex items-center gap-2 hover:border-[#00C9FF]/60 hover:-translate-y-1 hover:scale-[1.03] hover:shadow-[0_8px_25px_rgba(0,201,255,0.25)] active:scale-95 cursor-pointer"
             >
               <MessageCircle className="w-4 h-4 text-[#00C9FF]" />
               <span>WhatsApp Academic Advisory</span>
@@ -270,10 +270,10 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({ navigate }) => {
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`px-4 py-2.5 rounded-full text-xs font-mono tracking-wider transition-all cursor-pointer ${
+              className={`px-4 py-2.5 rounded-full text-xs font-mono tracking-wider transition-all duration-200 hover:-translate-y-1 hover:scale-[1.04] active:scale-95 cursor-pointer ${
                 selectedCategory === cat
                   ? "bg-[#00C9FF] text-black font-semibold shadow-[0_0_18px_rgba(0,201,255,0.4)]"
-                  : "bg-white/5 border border-white/10 text-neutral-300 hover:text-white hover:border-white/20"
+                  : "bg-white/5 border border-white/10 text-neutral-300 hover:text-white hover:border-[#00C9FF]/40"
               }`}
             >
               {cat}
@@ -286,12 +286,17 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({ navigate }) => {
           {filteredCourses.map((course) => (
             <div
               key={course.id}
-              className="glass-card rounded-[24px] p-7 flex flex-col justify-between group hover:border-[#00C9FF]/30 transition-all duration-300"
+              onClick={() =>
+                openWhatsApp(
+                  `Hello Robopulse, I would like to inquire about the course "${course.title}".`
+                )
+              }
+              className="glass-card box-hover-pop rounded-[24px] p-7 flex flex-col justify-between group hover:border-[#00C9FF]/50 transition-all duration-300 cursor-pointer"
             >
               <div className="space-y-4">
                 {/* Header row: Icon & Level */}
                 <div className="flex items-center justify-between">
-                  <div className="w-11 h-11 rounded-2xl bg-white/[0.04] border border-white/10 flex items-center justify-center group-hover:border-[#00C9FF]/40 transition-colors">
+                  <div className="w-11 h-11 rounded-2xl bg-white/[0.04] border border-white/10 flex items-center justify-center group-hover:border-[#00C9FF]/50 group-hover:bg-[#00C9FF]/10 group-hover:scale-110 group-hover:rotate-[-3deg] transition-all duration-300">
                     {getCourseIcon(course.iconName)}
                   </div>
                   <div className="flex items-center gap-2">
@@ -341,7 +346,7 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({ navigate }) => {
                     {course.topics.map((topic, idx) => (
                       <span
                         key={idx}
-                        className="text-[10px] font-mono text-[#A9D4FF] bg-white/[0.03] border border-white/8 px-2 py-0.5 rounded"
+                        className="text-[10px] font-mono text-[#A9D4FF] bg-white/[0.03] border border-white/8 px-2 py-0.5 rounded group-hover:border-[#00C9FF]/30 transition-colors"
                       >
                         {topic}
                       </span>
@@ -353,12 +358,13 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({ navigate }) => {
               {/* Card Footer CTA */}
               <div className="pt-6 mt-6 border-t border-white/5 flex items-center justify-between">
                 <button
-                  onClick={() =>
+                  onClick={(e) => {
+                    e.stopPropagation();
                     openWhatsApp(
                       `Hello Robopulse, I would like to inquire about the course "${course.title}".`
-                    )
-                  }
-                  className="text-xs font-semibold text-neutral-300 hover:text-white flex items-center gap-1.5 transition-colors group-hover:text-[#00C9FF] cursor-pointer"
+                    );
+                  }}
+                  className="px-3 py-1.5 rounded-lg bg-white/[0.03] hover:bg-[#00C9FF]/15 border border-white/10 hover:border-[#00C9FF]/40 text-xs font-semibold text-neutral-200 hover:text-white flex items-center gap-1.5 transition-all duration-200 group-hover:text-[#00C9FF] group-hover:translate-x-1 cursor-pointer"
                 >
                   <span>Inquire Syllabus</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
@@ -422,12 +428,12 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({ navigate }) => {
           ].map((stage, idx) => (
             <div
               key={idx}
-              className="p-6 rounded-2xl bg-white/[0.02] border border-white/8 space-y-3.5 hover:border-[#00C9FF]/30 transition-colors"
+              className="box-hover-pop p-6 rounded-2xl bg-white/[0.02] border border-white/8 space-y-3.5 hover:border-[#00C9FF]/40 transition-all duration-300 group cursor-pointer"
             >
-              <span className="font-mono text-xs text-[#00C9FF] tracking-widest uppercase">
+              <span className="font-mono text-xs text-[#00C9FF] tracking-widest uppercase block group-hover:translate-x-1 transition-transform">
                 {stage.step}
               </span>
-              <h3 className="font-display text-xl text-white">
+              <h3 className="font-display text-xl text-white group-hover:text-[#00C9FF] transition-colors">
                 {stage.title}
               </h3>
               <span className="text-[10px] font-mono text-[#A9D4FF] block">

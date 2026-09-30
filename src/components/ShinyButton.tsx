@@ -28,7 +28,7 @@ export const ShinyButton: React.FC<ShinyButtonProps> = ({
     <button
       type={type}
       onClick={onClick}
-      className={`shiny-border-wrapper group cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#00C9FF] transition-transform duration-300 hover:scale-[1.02] active:scale-[0.98] ${className}`}
+      className={`shiny-border-wrapper group cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#00C9FF] transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.04] hover:shadow-[0_12px_28px_-6px_rgba(0,201,255,0.45)] active:translate-y-0 active:scale-[0.98] ${className}`}
       aria-label={label}
     >
       <span className="shiny-border-conic" />
@@ -37,7 +37,7 @@ export const ShinyButton: React.FC<ShinyButtonProps> = ({
       >
         <span>{label}</span>
         {icon && (
-          <ArrowUpRight className="w-4 h-4 text-[#00C9FF] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          <ArrowUpRight className="w-4 h-4 text-[#00C9FF] transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
         )}
       </span>
     </button>

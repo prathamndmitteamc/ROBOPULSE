@@ -71,13 +71,54 @@ body {
   background: rgba(12, 12, 18, 0.65);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  transition: transform 0.35s cubic-bezier(0.23, 1, 0.32, 1), border-color 0.35s ease, box-shadow 0.35s ease;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.32s ease,
+              box-shadow 0.32s ease,
+              background 0.32s ease;
+  will-change: transform;
 }
 
 .glass-card:hover {
-  border-color: rgba(0, 201, 255, 0.28);
-  box-shadow: 0 10px 30px -10px rgba(0, 201, 255, 0.15), 0 0 20px -5px rgba(37, 0, 96, 0.3);
+  transform: translateY(-8px) scale(1.018);
+  background: rgba(15, 15, 24, 0.85);
+  border-color: rgba(0, 201, 255, 0.45);
+  box-shadow: 0 20px 45px -10px rgba(0, 201, 255, 0.25),
+              0 0 30px -5px rgba(37, 0, 96, 0.45);
+}
+
+/* Dedicated Pop-up Animation for Service & Course Box Containers */
+.box-hover-pop {
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.32s ease,
+              box-shadow 0.32s ease,
+              background-color 0.32s ease;
+  will-change: transform;
+}
+
+.box-hover-pop:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: rgba(0, 201, 255, 0.5);
+  box-shadow: 0 22px 50px -12px rgba(0, 201, 255, 0.3),
+              0 0 35px -5px rgba(37, 0, 96, 0.5);
+}
+
+/* Tactile Pop-up Hover Animation for Buttons */
+.btn-hover-pop {
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.22s ease,
+              background-color 0.22s ease;
+  will-change: transform;
+}
+
+.btn-hover-pop:hover {
+  transform: translateY(-2px) scale(1.035);
+  box-shadow: 0 10px 25px -4px rgba(0, 201, 255, 0.4);
+}
+
+.btn-hover-pop:active {
+  transform: translateY(0px) scale(0.97);
 }
 
 /* Text Shimmer */
@@ -212,5 +253,10 @@ body {
   .animate-orb-1,
   .animate-orb-2 {
     animation: none !important;
+  }
+  .glass-card:hover,
+  .box-hover-pop:hover,
+  .btn-hover-pop:hover {
+    transform: none !important;
   }
 }
