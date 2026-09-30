@@ -9,6 +9,7 @@ import React, { useEffect, useRef, useState, useCallback } from "react";
 import { openWhatsApp } from "../config";
 import { MessageCircle, ArrowRight, ShieldCheck, Cpu, Bot, Zap, Eye, Crosshair } from "lucide-react";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
+import { TextLoop } from "@/components/core/text-loop";
 
 interface RobopulseHeroProps {
   navigate: (path: string) => void;
@@ -351,50 +352,20 @@ export const RobopulseHero: React.FC<RobopulseHeroProps> = ({ navigate }) => {
   return (
     <section
       ref={heroSectionRef}
-      className="robopulse-hero relative min-h-[85vh] lg:min-h-[92vh] flex items-center justify-center overflow-hidden bg-[#000000] select-none"
+      className="robopulse-hero relative min-h-[85vh] lg:min-h-[92vh] flex items-center justify-center overflow-hidden bg-transparent select-none"
       aria-label="Robopulse Intelligence Interactive Hero"
     >
       {/* ============================================================== */}
-      {/* 01 — SCOPED FUTURISTIC BACKGROUND & AMBIENT GLOW               */}
+      {/* 01 — SCOPED FUTURISTIC CYBERNETIC GRID OVERLAY                 */}
       {/* ============================================================== */}
       <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: `
-            radial-gradient(circle at 70% 38%, rgba(0,201,255,0.14), transparent 35%),
-            radial-gradient(circle at 30% 60%, rgba(37,0,96,0.25), transparent 40%),
-            #050509
-          `,
-        }}
-      />
-
-      {/* Cybernetic Precision Grid */}
-      <div
-        className="absolute inset-0 opacity-[0.04] pointer-events-none"
+        className="absolute inset-0 opacity-[0.035] pointer-events-none"
         style={{
           backgroundImage: `
-            linear-gradient(to right, rgba(0,201,255,0.4) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(0,201,255,0.4) 1px, transparent 1px)
+            linear-gradient(to right, rgba(0,201,255,0.35) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(0,201,255,0.35) 1px, transparent 1px)
           `,
           backgroundSize: "48px 48px",
-        }}
-      />
-
-      {/* Floating Ambient Glow Orbs */}
-      <div
-        className="robopulse-hero-orb absolute top-12 left-1/4 w-[460px] h-[460px] rounded-full pointer-events-none"
-        style={{
-          background: "rgba(0,201,255,0.13)",
-          filter: "blur(70px)",
-          animation: reducedMotion ? "none" : "heroOrbFloat1 8s ease-in-out infinite",
-        }}
-      />
-      <div
-        className="robopulse-hero-orb absolute bottom-16 right-12 w-[500px] h-[500px] rounded-full pointer-events-none"
-        style={{
-          background: "rgba(37,0,96,0.22)",
-          filter: "blur(70px)",
-          animation: reducedMotion ? "none" : "heroOrbFloat2 12s ease-in-out infinite",
         }}
       />
 
@@ -413,12 +384,30 @@ export const RobopulseHero: React.FC<RobopulseHeroProps> = ({ navigate }) => {
             initial="hidden"
             animate="visible"
           >
-            {/* Step 1: Eyebrow + Status indicator */}
-            <motion.div variants={heroItemFadeUpVariants} className="space-y-2">
-              <div className="inline-flex items-center gap-2.5 px-3 py-1 rounded-full bg-white/[0.03] border border-white/10 text-xs font-mono tracking-[0.2em] text-[#00C9FF]">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#00C9FF] animate-pulse" />
-                <span className="font-semibold">ROBOPULSE INTELLIGENCE</span>
+            {/* Step 1: Eyebrow + Status indicator + TextLoop Assistant */}
+            <motion.div variants={heroItemFadeUpVariants} className="space-y-3">
+              <div className="flex flex-wrap items-center gap-2.5">
+                <div className="inline-flex items-center gap-2.5 px-3 py-1 rounded-full bg-white/[0.03] border border-white/10 text-xs font-mono tracking-[0.2em] text-[#00C9FF]">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#00C9FF] animate-pulse" />
+                  <span className="font-semibold">ROBOPULSE INTELLIGENCE</span>
+                </div>
+
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/10 text-xs font-mono text-neutral-300">
+                  <span className="text-[#00C9FF]">✦</span>
+                  <TextLoop
+                    className="font-mono text-xs text-neutral-300"
+                    interval={3.2}
+                    transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
+                  >
+                    <span>How can I assist you today?</span>
+                    <span>Explore robotics labs</span>
+                    <span>Create school curriculum</span>
+                    <span>Train campus faculty</span>
+                    <span>Build autonomous AI</span>
+                  </TextLoop>
+                </div>
               </div>
+
               <div className="text-[11px] font-mono tracking-[0.22em] text-[#A9D4FF]/75 uppercase pl-1 flex items-center gap-2">
                 <span>ROBOTICS</span>
                 <span className="text-[#00C9FF]">◆</span>
@@ -431,11 +420,20 @@ export const RobopulseHero: React.FC<RobopulseHeroProps> = ({ navigate }) => {
             {/* Step 2: Main Hero Heading */}
             <motion.h1
               variants={heroItemFadeUpVariants}
-              className="robopulse-hero-title font-display text-5xl sm:text-7xl lg:text-[84px] leading-[0.92] text-white tracking-[-0.04em] font-normal"
+              className="robopulse-hero-title font-display text-5xl sm:text-7xl lg:text-[84px] leading-[1.04] text-white tracking-[-0.04em] font-normal"
             >
               Building the Intelligence{" "}
-              <span className="block text-shimmer italic font-normal">
-                Behind Tomorrow.
+              <span className="block italic font-normal text-transparent bg-clip-text bg-gradient-to-r from-[#A9D4FF] via-white to-[#00C9FF] min-h-[1.12em] py-1">
+                <TextLoop
+                  interval={3.6}
+                  transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                  className="overflow-hidden py-1"
+                >
+                  <span className="inline-block">Behind Tomorrow.</span>
+                  <span className="inline-block">In Every Classroom.</span>
+                  <span className="inline-block">For Next-Gen Creators.</span>
+                  <span className="inline-block">Of Future Innovators.</span>
+                </TextLoop>
               </span>
             </motion.h1>
 
@@ -714,24 +712,6 @@ export const RobopulseHero: React.FC<RobopulseHeroProps> = ({ navigate }) => {
           }
         }
 
-        @keyframes heroOrbFloat1 {
-          0%, 100% {
-            transform: translateY(0) scale(1);
-          }
-          50% {
-            transform: translateY(-20px) scale(1.05);
-          }
-        }
-
-        @keyframes heroOrbFloat2 {
-          0%, 100% {
-            transform: translateY(0) scale(1);
-          }
-          50% {
-            transform: translateY(-24px) scale(1.06);
-          }
-        }
-
         @keyframes heroConicSpin {
           from {
             transform: rotate(0deg);
@@ -747,8 +727,7 @@ export const RobopulseHero: React.FC<RobopulseHeroProps> = ({ navigate }) => {
           .hero-stack,
           .hero-front,
           .hero-back,
-          .robot-rig,
-          .robopulse-hero-orb {
+          .robot-rig {
             animation: none !important;
             transition: none !important;
           }

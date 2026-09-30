@@ -1,5 +1,6 @@
 import React from "react";
 import { ShinyButton } from "../components/ShinyButton";
+import { MotionHeadingGroup } from "../components/MotionHeading";
 import { PARENT_AND_SCHOOL_REVIEWS, SCHOOLS, PARTNERS } from "../data/feedbackData";
 import { Star, Quote, Building2, MapPin, CheckCircle, ShieldCheck } from "lucide-react";
 
@@ -14,7 +15,7 @@ export const ReviewsPage: React.FC<ReviewsPageProps> = ({ navigate }) => {
       {/* 01 — HERO HEADER                                               */}
       {/* ============================================================== */}
       <section className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="max-w-3xl space-y-6">
+        <MotionHeadingGroup className="max-w-3xl space-y-6">
           <div className="inline-flex items-center gap-2 text-xs font-mono tracking-[0.2em] text-[#00C9FF]">
             <span className="w-1.5 h-1.5 rounded-full bg-[#00C9FF] animate-pulse" />
             <span>COMMUNITY // AUTHENTIC FEEDBACK</span>
@@ -28,21 +29,21 @@ export const ReviewsPage: React.FC<ReviewsPageProps> = ({ navigate }) => {
           <p className="text-base sm:text-lg text-neutral-300 leading-relaxed font-sans">
             Direct observations from school administrators, science coordinators, and parents whose students engage with Robopulse robotics and STEM learning programs.
           </p>
-        </div>
+        </MotionHeadingGroup>
       </section>
 
       {/* ============================================================== */}
       {/* 02 — REVIEWS & TESTIMONIALS GRID (#42)                         */}
       {/* ============================================================== */}
       <section className="max-w-7xl mx-auto px-6 lg:px-8 space-y-8">
-        <div className="border-b border-white/8 pb-4">
+        <MotionHeadingGroup className="border-b border-white/8 pb-4">
           <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#00C9FF]">
             VERIFIED EXPERIENCES
           </span>
           <h2 className="font-display text-3xl sm:text-5xl text-white mt-1">
             Testimonials from Campus Deployments
           </h2>
-        </div>
+        </MotionHeadingGroup>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {PARENT_AND_SCHOOL_REVIEWS.map((rev) => (

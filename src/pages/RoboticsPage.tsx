@@ -1,5 +1,6 @@
 import React from "react";
 import { ShinyButton } from "../components/ShinyButton";
+import { MotionHeadingGroup } from "../components/MotionHeading";
 import { InteractiveSystemDiagram } from "../components/InteractiveSystemDiagram";
 import { HANDS_ON_PROJECTS } from "../data/solutionsData";
 import {
@@ -24,7 +25,7 @@ export const RoboticsPage: React.FC<RoboticsPageProps> = ({ navigate }) => {
       {/* 01 — HERO HEADER                                               */}
       {/* ============================================================== */}
       <section className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="max-w-3xl space-y-6">
+        <MotionHeadingGroup className="max-w-3xl space-y-6">
           <div className="inline-flex items-center gap-2 text-xs font-mono tracking-[0.2em] text-[#00C9FF]">
             <span className="w-1.5 h-1.5 rounded-full bg-[#00C9FF] animate-pulse" />
             <span>DISCIPLINE // ROBOTICS &amp; MECHATRONICS</span>
@@ -38,21 +39,21 @@ export const RoboticsPage: React.FC<RoboticsPageProps> = ({ navigate }) => {
           <p className="text-base sm:text-lg text-neutral-300 leading-relaxed font-sans">
             Robotics is not merely programming code on a monitor or assembling plastic blocks. It is the multidisciplinary intersection of mechanical engineering, electronic circuitry, sensory perception, and autonomous control algorithms.
           </p>
-        </div>
+        </MotionHeadingGroup>
       </section>
 
       {/* ============================================================== */}
       {/* 02 — THE FOUR FOUNDATIONAL PILLARS                             */}
       {/* ============================================================== */}
       <section className="max-w-7xl mx-auto px-6 lg:px-8 space-y-8">
-        <div className="border-b border-white/8 pb-4">
+        <MotionHeadingGroup className="border-b border-white/8 pb-4">
           <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#00C9FF]">
             ENGINEERING SUB-SYSTEMS
           </span>
           <h2 className="font-display text-3xl sm:text-5xl text-white mt-1">
             The Anatomy of an Intelligent Machine
           </h2>
-        </div>
+        </MotionHeadingGroup>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
@@ -126,7 +127,7 @@ export const RoboticsPage: React.FC<RoboticsPageProps> = ({ navigate }) => {
       {/* 04 — HANDS-ON STUDENT PROJECTS SHOWCASE                        */}
       {/* ============================================================== */}
       <section className="max-w-7xl mx-auto px-6 lg:px-8 space-y-10">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/8 pb-4">
+        <MotionHeadingGroup className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/8 pb-4">
           <div>
             <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#00C9FF]">
               REAL ENGINEERING BUILDS
@@ -138,7 +139,7 @@ export const RoboticsPage: React.FC<RoboticsPageProps> = ({ navigate }) => {
           <span className="text-xs font-mono text-[#00C9FF]">
             ACTIVE CURRICULUM BUILDS
           </span>
-        </div>
+        </MotionHeadingGroup>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {HANDS_ON_PROJECTS.map((proj) => (

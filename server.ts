@@ -17,6 +17,21 @@ app.get(['/healthz', '/health', '/_ah/health', '/ping'], (_req, res) => {
 // Parse JSON bodies
 app.use(express.json());
 
+// API: AI Chat Assistant powered by Gemini
+app.post('/api/chat', async (req, res) => {
+  try {
+    const { messages } = req.body || {};
+    const { processChatRequest } = await import('./src/api/chatHandler.js');
+    const reply = await processChatRequest(messages || []);
+    res.status(200).json({ reply });
+  } catch (error) {
+    console.error('Chat endpoint error:', error);
+    res.status(200).json({
+      reply: 'Hello! I am Pulse, your Robopulse AI Assistant. How can I help you explore our robotics programs, courses, or school lab setups today?',
+    });
+  }
+});
+
 // Serve static assets from Vite build directory if it exists
 const distPath = path.resolve(__dirname, 'dist');
 if (fs.existsSync(distPath)) {

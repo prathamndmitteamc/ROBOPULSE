@@ -125,42 +125,42 @@ export const Footer: React.FC<FooterProps> = ({ navigate }) => {
             </ul>
           </div>
 
-          {/* Column 3: Solutions */}
+          {/* Column 3: Offerings */}
           <div className="space-y-3">
             <h4 className="text-xs font-mono uppercase tracking-[0.2em] text-white/80">
-              Solutions
+              Offerings
             </h4>
             <ul className="space-y-2 text-xs">
+              <li>
+                <button
+                  onClick={() => handleNav("/services")}
+                  className="hover:text-white transition-colors"
+                >
+                  Institutional Services
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => handleNav("/courses")}
+                  className="hover:text-white transition-colors"
+                >
+                  Robotics & AI Courses
+                </button>
+              </li>
               <li>
                 <button
                   onClick={() => handleNav("/robotics")}
                   className="hover:text-white transition-colors"
                 >
-                  Robotics Education
+                  Robotics Lab Infrastructure
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => handleNav("/solutions")}
+                  onClick={() => handleNav("/stem")}
                   className="hover:text-white transition-colors"
                 >
-                  AI & Emerging Tech
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => handleNav("/solutions")}
-                  className="hover:text-white transition-colors"
-                >
-                  STEM Lab Setup
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => handleNav("/solutions")}
-                  className="hover:text-white transition-colors"
-                >
-                  Teacher Orientation
+                  STEM Learning Methodology
                 </button>
               </li>
               <li>
@@ -168,7 +168,7 @@ export const Footer: React.FC<FooterProps> = ({ navigate }) => {
                   onClick={() => handleNav("/gallery")}
                   className="hover:text-white transition-colors"
                 >
-                  Robotics Exhibitions
+                  Exhibition Showcase
                 </button>
               </li>
             </ul>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { CONFIG, submitLead, openWhatsApp, LeadPayload } from "../config";
 import { ShinyButton } from "../components/ShinyButton";
+import { MotionHeadingGroup } from "../components/MotionHeading";
 import {
   Mail,
   Phone,
@@ -76,7 +77,7 @@ export const ContactPage: React.FC = () => {
       {/* 01 — HERO HEADER                                               */}
       {/* ============================================================== */}
       <section className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="max-w-3xl space-y-6">
+        <MotionHeadingGroup className="max-w-3xl space-y-6">
           <div className="inline-flex items-center gap-2 text-xs font-mono tracking-[0.2em] text-[#00C9FF]">
             <span className="w-1.5 h-1.5 rounded-full bg-[#00C9FF] animate-pulse" />
             <span>CONTACT // INSTITUTIONAL ENQUIRY</span>
@@ -90,7 +91,7 @@ export const ContactPage: React.FC = () => {
           <p className="text-base sm:text-lg text-neutral-300 leading-relaxed font-sans">
             Bring robotics, artificial intelligence, and hands-on STEM education to your school. Submit an institutional enquiry or schedule a campus demonstration.
           </p>
-        </div>
+        </MotionHeadingGroup>
       </section>
 
       {/* ============================================================== */}
@@ -216,14 +217,14 @@ export const ContactPage: React.FC = () => {
           {/* Right / Interactive Form (#58, #59, #60, #71) */}
           <div className="lg:col-span-7">
             <div className="p-8 sm:p-10 rounded-3xl bg-[#080814] border border-white/10 space-y-6">
-              <div className="space-y-1">
+              <MotionHeadingGroup className="space-y-1">
                 <h3 className="font-display text-3xl text-white">
                   Institutional Enquiry Form
                 </h3>
                 <p className="text-xs text-neutral-400 font-sans">
                   Please complete the details below. Required fields are marked with an asterisk (*).
                 </p>
-              </div>
+              </MotionHeadingGroup>
 
               {/* Success state banner */}
               {status === "success" && (

@@ -1,5 +1,6 @@
 import React from "react";
 import { ShinyButton } from "../components/ShinyButton";
+import { MotionHeadingGroup } from "../components/MotionHeading";
 import { openWhatsApp } from "../config";
 import {
   Compass,
@@ -23,7 +24,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ navigate }) => {
       {/* 01 — HERO HEADER                                               */}
       {/* ============================================================== */}
       <section className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="max-w-3xl space-y-6">
+        <MotionHeadingGroup className="max-w-3xl space-y-6">
           <div className="inline-flex items-center gap-2 text-xs font-mono tracking-[0.2em] text-[#00C9FF]">
             <span className="w-1.5 h-1.5 rounded-full bg-[#00C9FF] animate-pulse" />
             <span>ABOUT // ROBOPULSE INTELLIGENCE</span>
@@ -37,7 +38,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ navigate }) => {
           <p className="text-base sm:text-lg text-neutral-300 leading-relaxed font-sans">
             Robopulse Intelligence operates at the vital convergence of advanced robotics, artificial intelligence literacy, and institutional STEM education. We exist to ensure that young minds do not simply observe the technological revolution—they architect it.
           </p>
-        </div>
+        </MotionHeadingGroup>
       </section>
 
       {/* ============================================================== */}
@@ -84,14 +85,14 @@ export const AboutPage: React.FC<AboutPageProps> = ({ navigate }) => {
       {/* ============================================================== */}
       <section className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="p-8 sm:p-14 rounded-3xl bg-gradient-to-br from-[#090915] to-[#040409] border border-white/10 space-y-12">
-          <div className="max-w-2xl space-y-2">
+          <MotionHeadingGroup className="max-w-2xl space-y-2">
             <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#00C9FF]">
               CORE FOUNDATIONAL TENETS
             </span>
             <h2 className="font-display text-3xl sm:text-5xl text-white">
               Guided by Purpose, Built for Permanence.
             </h2>
-          </div>
+          </MotionHeadingGroup>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {/* Innovation Philosophy (#47) */}
@@ -150,7 +151,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ navigate }) => {
             </div>
           </div>
 
-          <div className="lg:col-span-7 space-y-6">
+          <MotionHeadingGroup className="lg:col-span-7 space-y-6">
             <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#00C9FF]">
               LEADERSHIP MESSAGE
             </span>
@@ -167,7 +168,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ navigate }) => {
             <p className="text-xs text-neutral-400 font-mono">
               DIRECTOR // ROBOPULSE INTELLIGENCE
             </p>
-          </div>
+          </MotionHeadingGroup>
         </div>
       </section>
 

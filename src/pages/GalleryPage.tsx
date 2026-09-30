@@ -2,6 +2,7 @@ import React, { useState, useMemo } from "react";
 import { GALLERY_CATEGORIES, ALL_GALLERY_ITEMS, GalleryItem } from "../data/galleryData";
 import { GalleryLightbox } from "../components/GalleryLightbox";
 import { ShinyButton } from "../components/ShinyButton";
+import { MotionHeadingGroup } from "../components/MotionHeading";
 import { Search, MapPin, Calendar, Tag, Maximize2, Filter } from "lucide-react";
 
 interface GalleryPageProps {
@@ -41,7 +42,7 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ navigate }) => {
       {/* 01 — HERO HEADER                                               */}
       {/* ============================================================== */}
       <section className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="max-w-3xl space-y-6">
+        <MotionHeadingGroup className="max-w-3xl space-y-6">
           <div className="inline-flex items-center gap-2 text-xs font-mono tracking-[0.2em] text-[#00C9FF]">
             <span className="w-1.5 h-1.5 rounded-full bg-[#00C9FF] animate-pulse" />
             <span>DOCUMENTATION // ARCHIVE</span>
@@ -55,7 +56,7 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ navigate }) => {
           <p className="text-base sm:text-lg text-neutral-300 leading-relaxed font-sans">
             Explore authentic moments from our campus deployments, student robotics challenges, teacher enablement workshops, and state-of-the-art innovation laboratories.
           </p>
-        </div>
+        </MotionHeadingGroup>
       </section>
 
       {/* ============================================================== */}

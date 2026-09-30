@@ -3,6 +3,7 @@ import { RobopulseHero } from "../components/RobopulseHero";
 import { ShinyButton } from "../components/ShinyButton";
 import { RoboticsControlInterface } from "../components/RoboticsControlInterface";
 import { SchoolValueRadial } from "../components/SchoolValueRadial";
+import { MotionHeadingGroup, MotionItem } from "../components/MotionHeading";
 import { openWhatsApp } from "../config";
 import { SOLUTIONS_LIST, HANDS_ON_PROJECTS, PROGRAM_MODELS } from "../data/solutionsData";
 import { SCHOOLS, PARTNERS } from "../data/feedbackData";
@@ -94,7 +95,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
       {/* ============================================================== */}
       <section className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-6 space-y-6">
+          <MotionHeadingGroup className="lg:col-span-6 space-y-6">
             <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#00C9FF]">
               01. PHILOSOPHY &amp; APPROACH
             </span>
@@ -117,7 +118,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>
-          </div>
+          </MotionHeadingGroup>
 
           <div className="lg:col-span-6">
             <RoboticsControlInterface />
@@ -129,7 +130,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
       {/* 05 — SOLUTIONS TRACKS (#24, #25, #26)                          */}
       {/* ============================================================== */}
       <section className="max-w-7xl mx-auto px-6 lg:px-8 space-y-12">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/8 pb-8">
+        <MotionHeadingGroup className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/8 pb-8">
           <div>
             <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#00C9FF]">
               PROGRAM ARCHITECTURE
@@ -145,7 +146,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
             <span>VIEW ALL SOLUTIONS</span>
             <ArrowRight className="w-4 h-4" />
           </button>
-        </div>
+        </MotionHeadingGroup>
 
         {/* 6 Core Visual Solution Cards (#24, #25) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
@@ -219,7 +220,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
       {/* 07 — PROJECT-BASED LEARNING SHOWCASE (#29, #30)                */}
       {/* ============================================================== */}
       <section className="max-w-7xl mx-auto px-6 lg:px-8 space-y-8">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/8 pb-6">
+        <MotionHeadingGroup className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/8 pb-6">
           <div>
             <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#00C9FF]">
               EXPERIENTIAL CURRICULUM
@@ -237,7 +238,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
           >
             ALL PROJECTS &gt;
           </button>
-        </div>
+        </MotionHeadingGroup>
 
         {/* Horizontal Project Cards (#30) */}
         <div className="flex gap-6 overflow-x-auto pb-4 no-scrollbar snap-x">
@@ -289,14 +290,14 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
       {/* 08 — SCHOOL PROGRAM MODELS (#31)                               */}
       {/* ============================================================== */}
       <section className="max-w-7xl mx-auto px-6 lg:px-8 space-y-8">
-        <div>
+        <MotionHeadingGroup>
           <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#00C9FF]">
             FLEXIBLE INSTITUTIONAL ADOPTION
           </span>
           <h2 className="font-display text-4xl sm:text-5xl text-white tracking-tight mt-1">
             Programs Designed Around Your School.
           </h2>
-        </div>
+        </MotionHeadingGroup>
 
         {/* 4 Program Model Tabs */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
@@ -378,7 +379,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
           />
 
           <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent flex items-center p-8 sm:p-14">
-            <div className="max-w-xl space-y-6">
+            <MotionHeadingGroup className="max-w-xl space-y-6">
               <div className="flex items-center gap-2 font-mono text-xs text-[#00C9FF]">
                 <Activity className="w-4 h-4 animate-pulse" />
                 <span>LAB STATUS // ACTIVE &amp; READY</span>
@@ -405,7 +406,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
                   View Installed Labs
                 </button>
               </div>
-            </div>
+            </MotionHeadingGroup>
           </div>
         </div>
       </section>
@@ -414,7 +415,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
       {/* 10 — CINEMATIC STATEMENT TRANSITION (#33)                      */}
       {/* ============================================================== */}
       <section className="relative py-24 text-center border-y border-white/5 bg-[#020205]">
-        <div className="max-w-4xl mx-auto px-6 space-y-4">
+        <MotionHeadingGroup className="max-w-4xl mx-auto px-6 space-y-4">
           <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#00C9FF]">
             ROBOPULSE MANDATE
           </span>
@@ -424,7 +425,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
           <p className="text-xs sm:text-sm text-neutral-400 font-mono">
             WHERE PRACTICAL ENGINEERING MEETS TOMORROW'S INTELLECT
           </p>
-        </div>
+        </MotionHeadingGroup>
       </section>
 
       {/* ============================================================== */}
@@ -492,7 +493,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
           <div className="absolute top-0 left-1/3 w-80 h-80 bg-[#00C9FF]/15 rounded-full blur-[100px] pointer-events-none" />
           <div className="absolute bottom-0 right-1/3 w-96 h-96 bg-[#250060]/35 rounded-full blur-[120px] pointer-events-none" />
 
-          <div className="relative z-10 max-w-2xl mx-auto space-y-4">
+          <MotionHeadingGroup className="relative z-10 max-w-2xl mx-auto space-y-4">
             <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#00C9FF]">
               TAKE ACTION // FUTURE READY
             </span>
@@ -504,7 +505,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
             <p className="text-sm sm:text-base text-neutral-300 leading-relaxed font-sans">
               Bring robotics, AI, and future-ready STEM learning into your educational environment. Schedule an on-campus demonstration or institutional consultation.
             </p>
-          </div>
+          </MotionHeadingGroup>
 
           <div className="relative z-10 flex flex-wrap justify-center gap-4">
             <ShinyButton

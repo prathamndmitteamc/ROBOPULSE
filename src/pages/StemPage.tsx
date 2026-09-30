@@ -1,5 +1,6 @@
 import React from "react";
 import { ShinyButton } from "../components/ShinyButton";
+import { MotionHeadingGroup } from "../components/MotionHeading";
 import { STUDENT_SKILLS } from "../data/solutionsData";
 import {
   Atom,
@@ -70,7 +71,7 @@ export const StemPage: React.FC<StemPageProps> = ({ navigate }) => {
       {/* 01 — HERO HEADER                                               */}
       {/* ============================================================== */}
       <section className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="max-w-3xl space-y-6">
+        <MotionHeadingGroup className="max-w-3xl space-y-6">
           <div className="inline-flex items-center gap-2 text-xs font-mono tracking-[0.2em] text-[#00C9FF]">
             <span className="w-1.5 h-1.5 rounded-full bg-[#00C9FF] animate-pulse" />
             <span>PEDAGOGY // STEM EDUCATION</span>
@@ -84,21 +85,21 @@ export const StemPage: React.FC<StemPageProps> = ({ navigate }) => {
           <p className="text-base sm:text-lg text-neutral-300 leading-relaxed font-sans">
             Bridging theoretical classroom equations with tactile physical engineering. When students assemble microcontrollers, measure sensor signals, and calculate torque, science and mathematics cease to be abstractions—they become instruments of creation.
           </p>
-        </div>
+        </MotionHeadingGroup>
       </section>
 
       {/* ============================================================== */}
       {/* 02 — S.T.E.M. ARCHITECTURE BREAKDOWN                           */}
       {/* ============================================================== */}
       <section className="max-w-7xl mx-auto px-6 lg:px-8 space-y-8">
-        <div className="border-b border-white/8 pb-4">
+        <MotionHeadingGroup className="border-b border-white/8 pb-4">
           <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#00C9FF]">
             DISCIPLINARY ALIGNMENT
           </span>
           <h2 className="font-display text-3xl sm:text-5xl text-white mt-1">
             How Robotics Unifies S.T.E.M.
           </h2>
-        </div>
+        </MotionHeadingGroup>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {stemPillars.map((item) => {
@@ -142,7 +143,7 @@ export const StemPage: React.FC<StemPageProps> = ({ navigate }) => {
       {/* 03 — 8 STUDENT SKILLS DEVELOPMENT (#28)                        */}
       {/* ============================================================== */}
       <section className="max-w-7xl mx-auto px-6 lg:px-8 space-y-8">
-        <div className="border-b border-white/8 pb-4">
+        <MotionHeadingGroup className="border-b border-white/8 pb-4">
           <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#00C9FF]">
             COGNITIVE OUTCOMES
           </span>
@@ -152,7 +153,7 @@ export const StemPage: React.FC<StemPageProps> = ({ navigate }) => {
           <p className="text-sm text-neutral-400 mt-2">
             Measurable, high-impact cognitive and emotional traits developed through repetitive hardware problem solving.
           </p>
-        </div>
+        </MotionHeadingGroup>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {STUDENT_SKILLS.map((skill, idx) => (

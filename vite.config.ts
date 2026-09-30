@@ -5,7 +5,46 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
-    plugins: [react(), tailwindcss()],
+    plugins: [
+      react(),
+      tailwindcss(),
+      {
+        name: 'api-chat-dev-server',
+        configureServer(server) {
+          server.middlewares.use('/api/chat', async (req, res) => {
+            if (req.method !== 'POST') {
+              res.statusCode = 405;
+              res.end('Method Not Allowed');
+              return;
+            }
+            let body = '';
+            req.on('data', (chunk) => {
+              body += chunk;
+            });
+            req.on('end', async () => {
+              try {
+                const parsed = JSON.parse(body || '{}');
+                const { processChatRequest } = await import('./src/api/chatHandler');
+                const reply = await processChatRequest(parsed.messages || []);
+                res.setHeader('Content-Type', 'application/json');
+                res.statusCode = 200;
+                res.end(JSON.stringify({ reply }));
+              } catch (err) {
+                console.error('Dev server chat error:', err);
+                res.setHeader('Content-Type', 'application/json');
+                res.statusCode = 200;
+                res.end(
+                  JSON.stringify({
+                    reply:
+                      'Hello! I am Pulse, your Robopulse AI Assistant. How can I help you explore our robotics programs, courses, or school lab setups today?',
+                  })
+                );
+              }
+            });
+          });
+        },
+      },
+    ],
     resolve: {
       alias: [
         { find: /^@\/(.*)/, replacement: path.resolve(__dirname, 'src/$1') },
