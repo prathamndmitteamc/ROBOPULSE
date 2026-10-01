@@ -423,17 +423,8 @@ export const RobopulseHero: React.FC<RobopulseHeroProps> = ({ navigate }) => {
               className="robopulse-hero-title font-display text-5xl sm:text-7xl lg:text-[84px] leading-[1.04] text-white tracking-[-0.04em] font-normal"
             >
               Building the Intelligence{" "}
-              <span className="block italic font-normal text-transparent bg-clip-text bg-gradient-to-r from-[#A9D4FF] via-white to-[#00C9FF] min-h-[1.12em] py-1">
-                <TextLoop
-                  interval={3.6}
-                  transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                  className="overflow-hidden py-1"
-                >
-                  <span className="inline-block">Behind Tomorrow.</span>
-                  <span className="inline-block">In Every Classroom.</span>
-                  <span className="inline-block">For Next-Gen Creators.</span>
-                  <span className="inline-block">Of Future Innovators.</span>
-                </TextLoop>
+              <span className="block italic font-normal text-shimmer">
+                Behind Tomorrow.
               </span>
             </motion.h1>
 
