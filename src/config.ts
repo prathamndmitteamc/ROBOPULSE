@@ -110,11 +110,13 @@ export interface LeadPayload {
 
 /**
  * Central Lead Submission Architecture
+ * Production-ready for Hostinger (PHP mailer endpoint), Node.js Express server, Formspree/webhooks
+ * Recipient: Aashishgyan2007@gmail.com
  */
 export async function submitLead(payload: LeadPayload): Promise<{ success: boolean; message: string }> {
   trackAnalyticsEvent("contact_form_submit", { requirement: payload.requirement });
   
-  // 1. Client-side field validations
+  // 1. Client-side field validations with specific, helpful feedback
   if (!payload.name || !payload.name.trim()) {
     return {
       success: false,
@@ -155,41 +157,120 @@ export async function submitLead(payload: LeadPayload): Promise<{ success: boole
     };
   }
 
-  // 2. Transmit to server lead routing API (/api/lead)
+  const submissionPayload = {
+    ...payload,
+    _replyto: payload.email,
+    _subject: `New Institutional Lead: ${payload.name} (${payload.organization || payload.city || "Website Inquiry"})`,
+    recipientEmail: CONFIG.email,
+    timestamp: new Date().toISOString(),
+  };
+
+  // 2. Try Primary Endpoint: Local Node/Express server route (/api/lead)
+  let primaryFetchSuccess = false;
+  let primaryErrorMessage = "";
+
   try {
     const response = await fetch(CONFIG.integrations.apiEndpoint, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Accept: "application/json",
       },
-      body: JSON.stringify({
-        ...payload,
-        recipientEmail: CONFIG.email,
-        timestamp: new Date().toISOString(),
-      }),
+      body: JSON.stringify(submissionPayload),
     });
 
     if (response.ok) {
-      const data = await response.json();
-      return {
-        success: true,
-        message: data.message || `ENQUIRY TRANSMITTED // Notification routed to ${CONFIG.email}.`,
-      };
+      // Check content-type to ensure we got a valid JSON API response (not an HTML fallback)
+      const contentType = response.headers.get("content-type") || "";
+      if (contentType.includes("application/json")) {
+        const data = await response.json();
+        if (data.success !== false) {
+          return {
+            success: true,
+            message: data.message || `ENQUIRY TRANSMITTED // Details forwarded to ${CONFIG.email}.`,
+          };
+        } else {
+          primaryErrorMessage = data.message || "Endpoint returned error.";
+        }
+      }
     } else {
-      const errData = await response.json().catch(() => ({}));
-      return {
-        success: false,
-        message: errData.message || "Failed to submit enquiry. Please verify your details or try again.",
-      };
+      console.warn(`[LEAD] Primary /api/lead returned HTTP ${response.status}. Attempting Hostinger PHP mailer...`);
     }
   } catch (err) {
-    console.error("Lead submission fetch error:", err);
-    // If running in preview static mode where backend isn't mounted, ensure lead still resolves with confirmed destination
-    return {
-      success: true,
-      message: `ENQUIRY RECEIVED // Routed to ${CONFIG.email}.`,
-    };
+    console.warn("[LEAD] Primary /api/lead endpoint unreachable or returned HTML. Trying production fallback...", err);
   }
+
+  // 3. Try Hostinger PHP Mailer Endpoint (/api/contact.php and /contact.php)
+  // Hostinger Apache/LiteSpeed web servers natively execute PHP scripts in /public or document root
+  const hostingerEndpoints = ["/api/contact.php", "/contact.php"];
+  for (const phpEndpoint of hostingerEndpoints) {
+    try {
+      const phpRes = await fetch(phpEndpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(submissionPayload),
+      });
+
+      if (phpRes.ok) {
+        const contentType = phpRes.headers.get("content-type") || "";
+        if (contentType.includes("application/json")) {
+          const phpData = await phpRes.json();
+          if (phpData.success !== false) {
+            return {
+              success: true,
+              message: phpData.message || `ENQUIRY TRANSMITTED // Email forwarded to ${CONFIG.email}.`,
+            };
+          }
+        }
+      }
+    } catch (phpErr) {
+      console.warn(`[LEAD] Hostinger endpoint ${phpEndpoint} check:`, phpErr);
+    }
+  }
+
+  // 4. Try Direct Cloud Webhook / Formspree gateway to guarantee email delivery to Aashishgyan2007@gmail.com
+  // Formspree / FormSubmit provides a reliable, secure server-side forwarding gateway without exposing credentials
+  try {
+    const cloudGatewayUrl = `https://formsubmit.co/ajax/${encodeURIComponent(CONFIG.email)}`;
+    const cloudRes = await fetch(cloudGatewayUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        name: payload.name,
+        phone: payload.phone,
+        email: payload.email,
+        organization: payload.organization,
+        city: payload.city,
+        requirement: payload.requirement,
+        message: payload.message,
+        _subject: `New Robopulse Enquiry: ${payload.name} (${payload.organization || payload.city || "Campus"})`,
+        _template: "table",
+        _captcha: "false",
+      }),
+    });
+
+    if (cloudRes.ok) {
+      const cloudData = await cloudRes.json().catch(() => ({}));
+      return {
+        success: true,
+        message: `ENQUIRY TRANSMITTED // Lead successfully sent to ${CONFIG.email}. Our robotics team will get back to you shortly.`,
+      };
+    }
+  } catch (cloudErr) {
+    console.warn("[LEAD] Cloud mail gateway attempt:", cloudErr);
+  }
+
+  // If every network path failed or was blocked by client network/offline state
+  return {
+    success: false,
+    message: primaryErrorMessage || "Network connection issue. Unable to dispatch enquiry to our server. Please verify your connection or reach us directly via WhatsApp.",
+  };
 }
 
 /**
