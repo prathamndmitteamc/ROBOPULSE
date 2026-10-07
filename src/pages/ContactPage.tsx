@@ -46,11 +46,13 @@ export const ContactPage: React.FC = () => {
     setStatus("loading");
     setFeedbackMsg("");
 
+    const submittedName = formData.name.trim();
     const result = await submitLead(formData);
 
     if (result.success) {
       setStatus("success");
       setFeedbackMsg(result.message);
+
       // Reset form
       setFormData({
         name: "",
@@ -61,6 +63,17 @@ export const ContactPage: React.FC = () => {
         requirement: "Robotics Education Program",
         message: "",
       });
+
+      // Prepare personalized pre-filled WhatsApp message
+      const whatsappMsg = submittedName
+        ? `Hello Robopulse Intelligence! I'm ${submittedName}. I just submitted an enquiry through your website. I would like to know more about your Robotics, AI and STEM programs.`
+        : `Hello Robopulse Intelligence! I just submitted an enquiry through your website. I would like to know more about your Robotics, AI and STEM programs.`;
+
+      // Open official WhatsApp (+91 80904 05992) smoothly after success confirmation
+      setTimeout(() => {
+        const whatsappUrl = `https://wa.me/918090405992?text=${encodeURIComponent(whatsappMsg)}`;
+        window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+      }, 700);
     } else {
       setStatus("error");
       setFeedbackMsg(result.message);
@@ -78,17 +91,17 @@ export const ContactPage: React.FC = () => {
       {/* ============================================================== */}
       <section className="max-w-7xl mx-auto px-6 lg:px-8">
         <MotionHeadingGroup className="max-w-3xl space-y-6">
-          <div className="inline-flex items-center gap-2 text-xs font-mono tracking-[0.2em] text-[#00C9FF]">
+          <div className="inline-flex items-center gap-2 typo-eyebrow text-[#00C9FF]">
             <span className="w-1.5 h-1.5 rounded-full bg-[#00C9FF] animate-pulse" />
             <span>CONTACT // INSTITUTIONAL ENQUIRY</span>
           </div>
 
-          <h1 className="font-display text-5xl sm:text-7xl lg:text-8xl text-white tracking-tight leading-[0.95]">
+          <h1 className="typo-h1 text-white">
             Let's Build What{" "}
             <span className="italic text-shimmer">Comes Next.</span>
           </h1>
 
-          <p className="text-base sm:text-lg text-neutral-300 leading-relaxed font-sans">
+          <p className="typo-lead text-neutral-300">
             Bring robotics, artificial intelligence, and hands-on STEM education to your school. Submit an institutional enquiry or schedule a campus demonstration.
           </p>
         </MotionHeadingGroup>
@@ -102,7 +115,7 @@ export const ContactPage: React.FC = () => {
           {/* Left / Contact Information Card */}
           <div className="lg:col-span-5 space-y-8">
             <div className="p-8 rounded-3xl bg-[#080812] border border-white/10 space-y-6">
-              <span className="text-xs font-mono uppercase tracking-widest text-[#00C9FF] block">
+              <span className="typo-eyebrow text-[#00C9FF] block uppercase">
                 DIRECT INSTITUTIONAL CHANNELS
               </span>
 
@@ -218,10 +231,10 @@ export const ContactPage: React.FC = () => {
           <div className="lg:col-span-7">
             <div className="p-8 sm:p-10 rounded-3xl bg-[#080814] border border-white/10 space-y-6">
               <MotionHeadingGroup className="space-y-1">
-                <h3 className="font-display text-3xl text-white">
+                <h3 className="typo-h3 text-white">
                   Institutional Enquiry Form
                 </h3>
-                <p className="text-xs text-neutral-400 font-sans">
+                <p className="typo-small text-neutral-400">
                   Please complete the details below. Required fields are marked with an asterisk (*).
                 </p>
               </MotionHeadingGroup>
@@ -246,7 +259,7 @@ export const ContactPage: React.FC = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {/* Full Name */}
                   <div className="space-y-1.5">
-                    <label className="text-[11px] font-mono text-neutral-300 uppercase tracking-wider block">
+                    <label className="text-xs font-mono text-neutral-300 uppercase tracking-wider block font-medium">
                       Full Name *
                     </label>
                     <input
@@ -256,13 +269,13 @@ export const ContactPage: React.FC = () => {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="e.g. Dr. Anita Sharma"
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-black/50 border border-white/10 text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-[#00C9FF]"
+                      className="w-full px-4 py-2.5 rounded-xl bg-black/50 border border-white/10 text-sm sm:text-base text-white placeholder-neutral-500 focus:outline-none focus:border-[#00C9FF]"
                     />
                   </div>
 
                   {/* Mobile Number */}
                   <div className="space-y-1.5">
-                    <label className="text-[11px] font-mono text-neutral-300 uppercase tracking-wider block">
+                    <label className="text-xs font-mono text-neutral-300 uppercase tracking-wider block font-medium">
                       Mobile Number * (10 Digits)
                     </label>
                     <input
@@ -272,7 +285,7 @@ export const ContactPage: React.FC = () => {
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="e.g. 9876543210"
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-black/50 border border-white/10 text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-[#00C9FF]"
+                      className="w-full px-4 py-2.5 rounded-xl bg-black/50 border border-white/10 text-sm sm:text-base text-white placeholder-neutral-500 focus:outline-none focus:border-[#00C9FF]"
                     />
                   </div>
                 </div>
@@ -280,7 +293,7 @@ export const ContactPage: React.FC = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {/* Email */}
                   <div className="space-y-1.5">
-                    <label className="text-[11px] font-mono text-neutral-300 uppercase tracking-wider block">
+                    <label className="text-xs font-mono text-neutral-300 uppercase tracking-wider block font-medium">
                       Email Address *
                     </label>
                     <input
@@ -290,13 +303,13 @@ export const ContactPage: React.FC = () => {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="e.g. principal@institution.edu.in"
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-black/50 border border-white/10 text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-[#00C9FF]"
+                      className="w-full px-4 py-2.5 rounded-xl bg-black/50 border border-white/10 text-sm sm:text-base text-white placeholder-neutral-500 focus:outline-none focus:border-[#00C9FF]"
                     />
                   </div>
 
                   {/* City */}
                   <div className="space-y-1.5">
-                    <label className="text-[11px] font-mono text-neutral-300 uppercase tracking-wider block">
+                    <label className="text-xs font-mono text-neutral-300 uppercase tracking-wider block font-medium">
                       City / Location *
                     </label>
                     <input
@@ -306,7 +319,7 @@ export const ContactPage: React.FC = () => {
                       value={formData.city}
                       onChange={handleChange}
                       placeholder="e.g. Varanasi, Lucknow, Delhi"
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-black/50 border border-white/10 text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-[#00C9FF]"
+                      className="w-full px-4 py-2.5 rounded-xl bg-black/50 border border-white/10 text-sm sm:text-base text-white placeholder-neutral-500 focus:outline-none focus:border-[#00C9FF]"
                     />
                   </div>
                 </div>
@@ -314,7 +327,7 @@ export const ContactPage: React.FC = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {/* School Name */}
                   <div className="space-y-1.5">
-                    <label className="text-[11px] font-mono text-neutral-300 uppercase tracking-wider block">
+                    <label className="text-xs font-mono text-neutral-300 uppercase tracking-wider block font-medium">
                       School / Organization Name *
                     </label>
                     <input
@@ -324,20 +337,20 @@ export const ContactPage: React.FC = () => {
                       value={formData.organization}
                       onChange={handleChange}
                       placeholder="e.g. Delhi Public School / Horizon Academy"
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-black/50 border border-white/10 text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-[#00C9FF]"
+                      className="w-full px-4 py-2.5 rounded-xl bg-black/50 border border-white/10 text-sm sm:text-base text-white placeholder-neutral-500 focus:outline-none focus:border-[#00C9FF]"
                     />
                   </div>
 
                   {/* Requirement Type */}
                   <div className="space-y-1.5">
-                    <label className="text-[11px] font-mono text-neutral-300 uppercase tracking-wider block">
+                    <label className="text-xs font-mono text-neutral-300 uppercase tracking-wider block font-medium">
                       Primary Requirement *
                     </label>
                     <select
                       name="requirement"
                       value={formData.requirement}
                       onChange={handleChange}
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-black/50 border border-white/10 text-xs text-white focus:outline-none focus:border-[#00C9FF]"
+                      className="w-full px-4 py-2.5 rounded-xl bg-black/50 border border-white/10 text-sm sm:text-base text-white focus:outline-none focus:border-[#00C9FF]"
                     >
                       <option value="Robotics Education Program">Robotics Education Program</option>
                       <option value="AI & Emerging Technology">AI & Emerging Technology</option>
@@ -351,7 +364,7 @@ export const ContactPage: React.FC = () => {
 
                 {/* Message */}
                 <div className="space-y-1.5">
-                  <label className="text-[11px] font-mono text-neutral-300 uppercase tracking-wider block">
+                  <label className="text-xs font-mono text-neutral-300 uppercase tracking-wider block font-medium">
                     Message / Batch Size / Specific Goals
                   </label>
                   <textarea
@@ -360,7 +373,7 @@ export const ContactPage: React.FC = () => {
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="Tell us about your student grades, timetable preferences, or campus laboratory goals..."
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-black/50 border border-white/10 text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-[#00C9FF]"
+                    className="w-full px-4 py-2.5 rounded-xl bg-black/50 border border-white/10 text-sm sm:text-base text-white placeholder-neutral-500 focus:outline-none focus:border-[#00C9FF]"
                   />
                 </div>
 

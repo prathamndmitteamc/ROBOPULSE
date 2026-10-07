@@ -208,7 +208,7 @@ export const AiChatBot: React.FC<AiChatBotProps> = ({ isOpen, onClose, navigate 
     const lines = content.split("\n");
 
     return (
-      <div className="space-y-2 text-xs sm:text-sm leading-relaxed">
+      <div className="space-y-2 text-sm sm:text-base leading-relaxed">
         {lines.map((line, lIdx) => {
           const trimmed = line.trim();
           if (!trimmed) return <div key={lIdx} className="h-1" />;
@@ -415,7 +415,7 @@ export const AiChatBot: React.FC<AiChatBotProps> = ({ isOpen, onClose, navigate 
 
                   {/* Bubble */}
                   <div
-                    className={`max-w-[85%] sm:max-w-[80%] rounded-2xl p-3 sm:p-4 text-xs sm:text-sm ${
+                    className={`max-w-[85%] sm:max-w-[80%] rounded-2xl p-3 sm:p-4 text-sm sm:text-base ${
                       isUser
                         ? "bg-gradient-to-r from-[#006CFF] to-[#00A8FF] text-white rounded-tr-none shadow-[0_4px_20px_rgba(0,108,255,0.25)]"
                         : "bg-[#0B0B16] border border-white/10 text-neutral-200 rounded-tl-none shadow-[0_4px_15px_rgba(0,0,0,0.5)]"
@@ -428,7 +428,7 @@ export const AiChatBot: React.FC<AiChatBotProps> = ({ isOpen, onClose, navigate 
                     )}
 
                     <div
-                      className={`text-[9px] font-mono mt-1.5 flex items-center gap-1 ${
+                      className={`text-[10px] sm:text-xs font-mono mt-1.5 flex items-center gap-1 ${
                         isUser ? "text-blue-100 justify-end" : "text-neutral-500 justify-start"
                       }`}
                     >
@@ -455,7 +455,7 @@ export const AiChatBot: React.FC<AiChatBotProps> = ({ isOpen, onClose, navigate 
                     className="w-2 h-2 rounded-full bg-[#00C9FF] animate-bounce"
                     style={{ animationDelay: "300ms" }}
                   />
-                  <span className="text-[11px] font-mono text-neutral-400 pl-2">
+                  <span className="text-xs font-mono text-neutral-400 pl-2">
                     Pulse is thinking...
                   </span>
                 </div>
@@ -467,8 +467,8 @@ export const AiChatBot: React.FC<AiChatBotProps> = ({ isOpen, onClose, navigate 
 
           {/* Quick Prompt Chips (when few messages or on start) */}
           {messages.length <= 3 && !isLoading && (
-            <div className="px-4 py-2 border-t border-white/5 bg-[#05050C] shrink-0">
-              <span className="text-[10px] font-mono uppercase text-neutral-400 block mb-1.5">
+            <div className="px-4 py-2.5 border-t border-white/5 bg-[#05050C] shrink-0">
+              <span className="text-xs font-mono uppercase text-neutral-400 block mb-1.5">
                 Quick Questions:
               </span>
               <div className="flex gap-2 overflow-x-auto no-scrollbar pb-1">
@@ -477,7 +477,7 @@ export const AiChatBot: React.FC<AiChatBotProps> = ({ isOpen, onClose, navigate 
                     key={idx}
                     type="button"
                     onClick={() => handleSend(prompt)}
-                    className="shrink-0 text-[11px] px-2.5 py-1 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-neutral-300 hover:text-[#00C9FF] hover:border-[#00C9FF]/40 transition-colors cursor-pointer"
+                    className="shrink-0 text-xs px-3 py-1 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-neutral-300 hover:text-[#00C9FF] hover:border-[#00C9FF]/40 transition-colors cursor-pointer"
                   >
                     {prompt}
                   </button>
@@ -504,7 +504,7 @@ export const AiChatBot: React.FC<AiChatBotProps> = ({ isOpen, onClose, navigate 
                   onKeyDown={handleKeyDown}
                   placeholder="Ask about robotics labs, courses, or tech..."
                   disabled={isLoading}
-                  className="w-full px-4 py-2.5 rounded-full bg-white/5 border border-white/10 text-xs sm:text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-[#00C9FF] focus:ring-1 focus:ring-[#00C9FF] transition-all disabled:opacity-50"
+                  className="w-full px-4 py-2.5 rounded-full bg-white/5 border border-white/10 text-sm sm:text-base text-white placeholder-neutral-500 focus:outline-none focus:border-[#00C9FF] focus:ring-1 focus:ring-[#00C9FF] transition-all disabled:opacity-50"
                 />
               </div>
 
@@ -518,7 +518,7 @@ export const AiChatBot: React.FC<AiChatBotProps> = ({ isOpen, onClose, navigate 
               </button>
             </form>
 
-            <div className="mt-2 flex items-center justify-between text-[10px] font-mono text-neutral-500 px-1">
+            <div className="mt-2 flex items-center justify-between text-xs font-mono text-neutral-400 px-1">
               <span>Powered by Gemini 3 Flash Intelligence</span>
               <button
                 type="button"

@@ -181,14 +181,14 @@ export const MotionSectionHeader: React.FC<MotionSectionHeaderProps> = ({
   const getTitleSizeClasses = () => {
     switch (size) {
       case "hero":
-        return "text-5xl sm:text-7xl lg:text-8xl leading-[0.95] tracking-tight";
+        return "typo-h1";
       case "lg":
-        return "text-4xl sm:text-6xl lg:text-7xl leading-[0.98] tracking-tight";
+        return "typo-h2";
       case "sm":
-        return "text-2xl sm:text-3xl lg:text-4xl leading-snug";
+        return "typo-h4";
       case "md":
       default:
-        return "text-3xl sm:text-5xl leading-tight";
+        return "typo-h3";
     }
   };
 
@@ -211,7 +211,7 @@ export const MotionSectionHeader: React.FC<MotionSectionHeaderProps> = ({
         {/* 1. Eyebrow */}
         {eyebrow && (
           <motion.div variants={itemVariants}>
-            <div className="inline-flex items-center gap-2 text-xs font-mono tracking-[0.2em] text-[#00C9FF]">
+            <div className="inline-flex items-center gap-2 typo-eyebrow text-[#00C9FF]">
               {badgePulse && (
                 <span className="w-1.5 h-1.5 rounded-full bg-[#00C9FF] animate-pulse" />
               )}
@@ -240,7 +240,7 @@ export const MotionSectionHeader: React.FC<MotionSectionHeaderProps> = ({
         {description && (
           <motion.p
             variants={itemVariants}
-            className="text-base sm:text-lg text-neutral-300 leading-relaxed font-sans font-normal"
+            className="typo-lead text-neutral-300 font-sans font-normal max-prose-readable"
           >
             {description}
           </motion.p>

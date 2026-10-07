@@ -36,9 +36,9 @@ export function AnimatedTabsHover({
             data-id={tab}
             type="button"
             onClick={() => onTabClick?.(tab)}
-            className={`px-2.5 py-1 text-xs lg:text-[13px] font-medium tracking-wide transition-colors duration-300 ${
+            className={`px-3.5 py-1.5 typo-nav font-medium transition-colors duration-200 ${
               buttonClassName ||
-              'text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-50'
+              'text-zinc-400 hover:text-white'
             }`}
           >
             {tab}

@@ -408,7 +408,7 @@ export const RobopulseHero: React.FC<RobopulseHeroProps> = ({ navigate }) => {
                 </div>
               </div>
 
-              <div className="text-[11px] font-mono tracking-[0.22em] text-[#A9D4FF]/75 uppercase pl-1 flex items-center gap-2">
+              <div className="typo-eyebrow text-[#A9D4FF]/90 uppercase pl-1 flex items-center gap-2">
                 <span>ROBOTICS</span>
                 <span className="text-[#00C9FF]">◆</span>
                 <span>AI VISION</span>
@@ -420,10 +420,10 @@ export const RobopulseHero: React.FC<RobopulseHeroProps> = ({ navigate }) => {
             {/* Step 2: Main Hero Heading */}
             <motion.h1
               variants={heroItemFadeUpVariants}
-              className="robopulse-hero-title font-display text-5xl sm:text-7xl lg:text-[84px] leading-[1.04] text-white tracking-[-0.04em] font-normal"
+              className="robopulse-hero-title typo-h1 text-white"
             >
-              Building the Intelligence{" "}
-              <span className="block italic font-normal text-shimmer">
+              <span className="block">Building the Intelligence</span>
+              <span className="block italic font-medium text-shimmer">
                 Behind Tomorrow.
               </span>
             </motion.h1>
@@ -431,7 +431,7 @@ export const RobopulseHero: React.FC<RobopulseHeroProps> = ({ navigate }) => {
             {/* Step 3: Supporting Copy */}
             <motion.p
               variants={heroItemFadeUpVariants}
-              className="text-base sm:text-lg text-neutral-300 max-w-xl font-sans font-normal leading-relaxed"
+              className="typo-lead text-neutral-300 max-w-xl font-normal leading-relaxed"
             >
               Empowering the next generation through Robotics, Artificial Intelligence and Future-Ready STEM Education. Experience practical training with autonomous mechatronics.
             </motion.p>

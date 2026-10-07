@@ -72,17 +72,17 @@ export const StemPage: React.FC<StemPageProps> = ({ navigate }) => {
       {/* ============================================================== */}
       <section className="max-w-7xl mx-auto px-6 lg:px-8">
         <MotionHeadingGroup className="max-w-3xl space-y-6">
-          <div className="inline-flex items-center gap-2 text-xs font-mono tracking-[0.2em] text-[#00C9FF]">
+          <div className="inline-flex items-center gap-2 typo-eyebrow text-[#00C9FF]">
             <span className="w-1.5 h-1.5 rounded-full bg-[#00C9FF] animate-pulse" />
             <span>PEDAGOGY // STEM EDUCATION</span>
           </div>
 
-          <h1 className="font-display text-5xl sm:text-7xl lg:text-8xl text-white tracking-tight leading-[0.95]">
+          <h1 className="typo-h1 text-white">
             Experiential &amp; Project-Based{" "}
             <span className="italic text-shimmer">STEM Learning.</span>
           </h1>
 
-          <p className="text-base sm:text-lg text-neutral-300 leading-relaxed font-sans">
+          <p className="typo-lead text-neutral-300">
             Bridging theoretical classroom equations with tactile physical engineering. When students assemble microcontrollers, measure sensor signals, and calculate torque, science and mathematics cease to be abstractions—they become instruments of creation.
           </p>
         </MotionHeadingGroup>
@@ -93,10 +93,10 @@ export const StemPage: React.FC<StemPageProps> = ({ navigate }) => {
       {/* ============================================================== */}
       <section className="max-w-7xl mx-auto px-6 lg:px-8 space-y-8">
         <MotionHeadingGroup className="border-b border-white/8 pb-4">
-          <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#00C9FF]">
+          <span className="typo-eyebrow text-[#00C9FF] uppercase">
             DISCIPLINARY ALIGNMENT
           </span>
-          <h2 className="font-display text-3xl sm:text-5xl text-white mt-1">
+          <h2 className="typo-h2 text-white mt-1">
             How Robotics Unifies S.T.E.M.
           </h2>
         </MotionHeadingGroup>
@@ -119,15 +119,15 @@ export const StemPage: React.FC<StemPageProps> = ({ navigate }) => {
                 </div>
 
                 <div>
-                  <h3 className="font-display text-2xl text-white">{item.title}</h3>
-                  <span className="text-[10px] font-mono tracking-widest text-neutral-400 block mt-0.5">
+                  <h3 className="typo-h3 text-white">{item.title}</h3>
+                  <span className="typo-eyebrow text-neutral-400 block mt-0.5">
                     {item.tagline}
                   </span>
                 </div>
 
                 <ul className="space-y-2 pt-3 border-t border-white/5">
                   {item.examples.map((ex, i) => (
-                    <li key={i} className="text-xs text-neutral-300 flex items-start gap-1.5 font-sans leading-relaxed">
+                    <li key={i} className="typo-body text-neutral-300 flex items-start gap-1.5">
                       <span className="text-[#00C9FF] mt-0.5">›</span>
                       <span>{ex}</span>
                     </li>
@@ -144,13 +144,13 @@ export const StemPage: React.FC<StemPageProps> = ({ navigate }) => {
       {/* ============================================================== */}
       <section className="max-w-7xl mx-auto px-6 lg:px-8 space-y-8">
         <MotionHeadingGroup className="border-b border-white/8 pb-4">
-          <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#00C9FF]">
+          <span className="typo-eyebrow text-[#00C9FF] uppercase">
             COGNITIVE OUTCOMES
           </span>
-          <h2 className="font-display text-3xl sm:text-5xl text-white mt-1">
+          <h2 className="typo-h2 text-white mt-1">
             Eight Student Competencies Built Through Robotics
           </h2>
-          <p className="text-sm text-neutral-400 mt-2">
+          <p className="typo-lead text-neutral-300 mt-2">
             Measurable, high-impact cognitive and emotional traits developed through repetitive hardware problem solving.
           </p>
         </MotionHeadingGroup>
@@ -163,26 +163,26 @@ export const StemPage: React.FC<StemPageProps> = ({ navigate }) => {
             >
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-mono uppercase text-[#00C9FF]">
+                  <span className="typo-eyebrow text-[#00C9FF]">
                     {skill.focusArea}
                   </span>
-                  <span className="text-[11px] font-mono text-neutral-400">
+                  <span className="typo-eyebrow text-neutral-400">
                     SKILL 0{idx + 1}
                   </span>
                 </div>
 
-                <h3 className="font-display text-2xl text-white">
+                <h3 className="typo-h4 text-white">
                   {skill.name}
                 </h3>
 
-                <p className="text-xs text-neutral-300 leading-relaxed font-sans">
+                <p className="typo-small text-neutral-300">
                   {skill.definition}
                 </p>
               </div>
 
               {/* Visual Competency Indicator bar */}
               <div className="pt-4 border-t border-white/5 space-y-1.5">
-                <div className="flex justify-between text-[10px] font-mono text-neutral-400">
+                <div className="flex justify-between typo-eyebrow text-neutral-400">
                   <span>MASTERY INDEX</span>
                   <span className="text-[#A9D4FF]">{skill.progressPercent}%</span>
                 </div>
@@ -203,13 +203,13 @@ export const StemPage: React.FC<StemPageProps> = ({ navigate }) => {
       {/* ============================================================== */}
       <section className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="p-10 rounded-3xl bg-gradient-to-r from-[#070712] via-[#090918] to-[#040409] border border-white/15 text-center space-y-6">
-          <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#00C9FF]">
+          <span className="typo-eyebrow uppercase text-[#00C9FF]">
             ENHANCE YOUR CURRICULUM
           </span>
-          <h2 className="font-display text-4xl sm:text-5xl text-white">
+          <h2 className="typo-h2 text-white">
             Embed Practical STEM In Your Timetable.
           </h2>
-          <p className="text-sm text-neutral-300 max-w-xl mx-auto font-sans">
+          <p className="typo-lead text-neutral-300 max-w-xl mx-auto">
             Connect with our academic team to review curriculum mapping against your state, CBSE, ICSE, or Cambridge standards.
           </p>
           <div className="pt-2">

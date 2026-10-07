@@ -26,17 +26,17 @@ export const RoboticsPage: React.FC<RoboticsPageProps> = ({ navigate }) => {
       {/* ============================================================== */}
       <section className="max-w-7xl mx-auto px-6 lg:px-8">
         <MotionHeadingGroup className="max-w-3xl space-y-6">
-          <div className="inline-flex items-center gap-2 text-xs font-mono tracking-[0.2em] text-[#00C9FF]">
+          <div className="inline-flex items-center gap-2 typo-eyebrow text-[#00C9FF]">
             <span className="w-1.5 h-1.5 rounded-full bg-[#00C9FF] animate-pulse" />
             <span>DISCIPLINE // ROBOTICS &amp; MECHATRONICS</span>
           </div>
 
-          <h1 className="font-display text-5xl sm:text-7xl lg:text-8xl text-white tracking-tight leading-[0.95]">
+          <h1 className="typo-h1 text-white">
             What is Robotics? <br />
             <span className="italic text-shimmer">Why Robotics Education?</span>
           </h1>
 
-          <p className="text-base sm:text-lg text-neutral-300 leading-relaxed font-sans">
+          <p className="typo-lead text-neutral-300">
             Robotics is not merely programming code on a monitor or assembling plastic blocks. It is the multidisciplinary intersection of mechanical engineering, electronic circuitry, sensory perception, and autonomous control algorithms.
           </p>
         </MotionHeadingGroup>
@@ -47,10 +47,10 @@ export const RoboticsPage: React.FC<RoboticsPageProps> = ({ navigate }) => {
       {/* ============================================================== */}
       <section className="max-w-7xl mx-auto px-6 lg:px-8 space-y-8">
         <MotionHeadingGroup className="border-b border-white/8 pb-4">
-          <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#00C9FF]">
+          <span className="typo-eyebrow text-[#00C9FF] uppercase">
             ENGINEERING SUB-SYSTEMS
           </span>
-          <h2 className="font-display text-3xl sm:text-5xl text-white mt-1">
+          <h2 className="typo-h2 text-white mt-1">
             The Anatomy of an Intelligent Machine
           </h2>
         </MotionHeadingGroup>
@@ -91,11 +91,11 @@ export const RoboticsPage: React.FC<RoboticsPageProps> = ({ navigate }) => {
                 <div className="w-10 h-10 rounded-xl bg-[#00C9FF]/10 text-[#00C9FF] flex items-center justify-center">
                   <Icon className="w-5 h-5" />
                 </div>
-                <span className="text-[10px] font-mono tracking-widest text-[#A9D4FF] block uppercase">
+                <span className="typo-eyebrow text-[#A9D4FF] block uppercase">
                   {item.sub}
                 </span>
-                <h3 className="font-display text-2xl text-white">{item.title}</h3>
-                <p className="text-xs text-neutral-300 leading-relaxed font-sans">
+                <h3 className="typo-h3 text-white">{item.title}</h3>
+                <p className="typo-body text-neutral-300">
                   {item.desc}
                 </p>
               </div>
@@ -109,13 +109,13 @@ export const RoboticsPage: React.FC<RoboticsPageProps> = ({ navigate }) => {
       {/* ============================================================== */}
       <section className="max-w-7xl mx-auto px-6 lg:px-8 space-y-6">
         <div>
-          <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#00C9FF]">
+          <span className="typo-eyebrow text-[#00C9FF] uppercase">
             INTERACTIVE SCHEMATIC
           </span>
-          <h2 className="font-display text-3xl sm:text-5xl text-white mt-1">
+          <h2 className="typo-h2 text-white mt-1">
             Interactive Robotics System Architecture
           </h2>
-          <p className="text-sm text-neutral-400 mt-2">
+          <p className="typo-lead text-neutral-400 mt-2">
             Click any subsystem node below to inspect hardware components, algorithmic roles, and student takeaways.
           </p>
         </div>
@@ -129,14 +129,14 @@ export const RoboticsPage: React.FC<RoboticsPageProps> = ({ navigate }) => {
       <section className="max-w-7xl mx-auto px-6 lg:px-8 space-y-10">
         <MotionHeadingGroup className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/8 pb-4">
           <div>
-            <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#00C9FF]">
+            <span className="typo-eyebrow text-[#00C9FF] uppercase">
               REAL ENGINEERING BUILDS
             </span>
-            <h2 className="font-display text-3xl sm:text-5xl text-white mt-1">
+            <h2 className="typo-h2 text-white mt-1">
               Sample Student Engineering Projects
             </h2>
           </div>
-          <span className="text-xs font-mono text-[#00C9FF]">
+          <span className="typo-eyebrow text-[#00C9FF]">
             ACTIVE CURRICULUM BUILDS
           </span>
         </MotionHeadingGroup>
@@ -160,10 +160,10 @@ export const RoboticsPage: React.FC<RoboticsPageProps> = ({ navigate }) => {
               <div className="p-6 md:w-1/2 flex flex-col justify-between space-y-4">
                 <div className="space-y-2">
                   <div className="flex items-center justify-between">
-                    <span className="text-[10px] font-mono tracking-widest text-[#00C9FF]">
+                    <span className="text-xs font-mono tracking-widest text-[#00C9FF]">
                       {proj.num}
                     </span>
-                    <span className="text-[10px] font-mono uppercase text-[#A9D4FF]">
+                    <span className="text-xs font-mono uppercase text-[#A9D4FF]">
                       {proj.category}
                     </span>
                   </div>
@@ -172,7 +172,7 @@ export const RoboticsPage: React.FC<RoboticsPageProps> = ({ navigate }) => {
                     {proj.title}
                   </h3>
 
-                  <p className="text-xs text-neutral-300 leading-relaxed font-sans">
+                  <p className="text-sm sm:text-base text-neutral-300 leading-relaxed font-sans">
                     {proj.description}
                   </p>
                 </div>
@@ -182,7 +182,7 @@ export const RoboticsPage: React.FC<RoboticsPageProps> = ({ navigate }) => {
                     {proj.techTags.map((tag, i) => (
                       <span
                         key={i}
-                        className="px-2 py-0.5 rounded bg-white/5 text-[10px] font-mono text-neutral-300"
+                        className="px-2.5 py-0.5 rounded bg-white/5 text-xs font-mono text-neutral-300"
                       >
                         {tag}
                       </span>
@@ -208,10 +208,10 @@ export const RoboticsPage: React.FC<RoboticsPageProps> = ({ navigate }) => {
       {/* ============================================================== */}
       <section className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="p-10 rounded-3xl bg-gradient-to-r from-[#070712] via-[#0A0A1A] to-[#040409] border border-white/15 text-center space-y-6">
-          <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#00C9FF]">
+          <span className="typo-eyebrow uppercase text-[#00C9FF]">
             NEXT STEP // BRING ROBOTICS TO CAMPUS
           </span>
-          <h2 className="font-display text-4xl sm:text-5xl text-white">
+          <h2 className="typo-h2 text-white">
             Equip Your Students with Real Robotics Capability.
           </h2>
           <div className="pt-2">

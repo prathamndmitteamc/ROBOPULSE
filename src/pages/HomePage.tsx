@@ -3,6 +3,7 @@ import { RobopulseHero } from "../components/RobopulseHero";
 import { ShinyButton } from "../components/ShinyButton";
 import { RoboticsControlInterface } from "../components/RoboticsControlInterface";
 import { SchoolValueRadial } from "../components/SchoolValueRadial";
+import { ProgramPillarsStrip } from "../components/ProgramPillarsStrip";
 import { MotionHeadingGroup, MotionItem } from "../components/MotionHeading";
 import { openWhatsApp } from "../config";
 import { SOLUTIONS_LIST, HANDS_ON_PROJECTS, PROGRAM_MODELS } from "../data/solutionsData";
@@ -66,29 +67,9 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
       </section>
 
       {/* ============================================================== */}
-      {/* 03 — TRUST STRIP (#21)                                         */}
+      {/* 03 — PROGRAM NAVIGATION PILLARS STRIP                          */}
       {/* ============================================================== */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="p-8 rounded-2xl bg-white/[0.02] border border-white/8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 text-center">
-          {[
-            { label: "Robotics Education", code: "01 // MECHATRONICS" },
-            { label: "AI Learning", code: "02 // NEURAL LOGIC" },
-            { label: "STEM Programs", code: "03 // EXPERIENTIAL" },
-            { label: "Practical Training", code: "04 // HANDS-ON" },
-            { label: "Robotics Labs", code: "05 // TURNKEY BAYS" },
-            { label: "School Innovation", code: "06 // FUTURE READINESS" },
-          ].map((item, idx) => (
-            <div key={idx} className="space-y-1">
-              <span className="font-mono text-[10px] text-[#00C9FF] tracking-widest block">
-                {item.code}
-              </span>
-              <span className="text-xs sm:text-sm font-medium text-white">
-                {item.label}
-              </span>
-            </div>
-          ))}
-        </div>
-      </section>
+      <ProgramPillarsStrip />
 
       {/* ============================================================== */}
       {/* 04 — EDITORIAL INTRODUCTION (#22)                              */}
@@ -96,23 +77,23 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
       <section className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <MotionHeadingGroup className="lg:col-span-6 space-y-6">
-            <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#00C9FF]">
+            <span className="typo-eyebrow text-[#00C9FF] uppercase">
               01. PHILOSOPHY &amp; APPROACH
             </span>
-            <h2 className="font-display text-4xl sm:text-6xl text-white tracking-tight leading-[0.95]">
+            <h2 className="typo-h2 text-white">
               From Curiosity <br />
               <span className="italic text-neutral-400">to Creation.</span>
             </h2>
-            <p className="text-base text-neutral-300 leading-relaxed font-sans">
+            <p className="typo-lead text-neutral-300">
               Robopulse Intelligence transforms technology education into hands-on experiences where students learn to build, experiment, solve problems and create.
             </p>
-            <p className="text-sm text-neutral-400 leading-relaxed font-sans">
+            <p className="typo-body text-neutral-400">
               Rather than viewing robotics as a novelty or an isolated extracurricular, we embed it as a fundamental discipline for systems thinking, spatial mechanics, and cognitive resilience.
             </p>
             <div className="pt-2">
               <button
                 onClick={() => navigate("/about")}
-                className="inline-flex items-center gap-2 text-xs font-mono tracking-wider text-[#00C9FF] hover:text-white transition-all group cursor-pointer hover:translate-x-1.5"
+                className="inline-flex items-center gap-2 typo-btn text-xs text-[#00C9FF] hover:text-white transition-all group cursor-pointer hover:translate-x-1.5"
               >
                 <span>EXPLORE OUR PEDAGOGY</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -132,16 +113,16 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
       <section className="max-w-7xl mx-auto px-6 lg:px-8 space-y-12">
         <MotionHeadingGroup className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/8 pb-8">
           <div>
-            <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#00C9FF]">
+            <span className="typo-eyebrow text-[#00C9FF] uppercase">
               PROGRAM ARCHITECTURE
             </span>
-            <h2 className="font-display text-4xl sm:text-6xl text-white tracking-tight mt-2">
+            <h2 className="typo-h2 text-white mt-2">
               Technology Programs Built for Schools.
             </h2>
           </div>
           <button
             onClick={() => navigate("/solutions")}
-            className="inline-flex items-center gap-2 text-xs font-mono text-neutral-300 hover:text-[#00C9FF] transition-colors"
+            className="inline-flex items-center gap-2 typo-eyebrow text-neutral-300 hover:text-[#00C9FF] transition-colors"
           >
             <span>VIEW ALL SOLUTIONS</span>
             <ArrowRight className="w-4 h-4" />
@@ -166,20 +147,20 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-108"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A12] via-transparent to-transparent opacity-80" />
-                  <span className="absolute top-4 right-4 font-mono text-xs text-[#00C9FF] bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10 group-hover:border-[#00C9FF]/40 transition-colors">
+                  <span className="absolute top-4 right-4 typo-eyebrow text-[#00C9FF] bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10 group-hover:border-[#00C9FF]/40 transition-colors">
                     {sol.num}
                   </span>
                 </div>
 
                 {/* Content */}
                 <div className="p-6 space-y-3">
-                  <span className="text-[10px] font-mono tracking-widest text-[#A9D4FF] uppercase">
+                  <span className="typo-eyebrow text-[#A9D4FF] uppercase">
                     {sol.category}
                   </span>
-                  <h3 className="font-display text-2xl text-white group-hover:text-[#00C9FF] transition-colors">
+                  <h3 className="typo-h3 text-white group-hover:text-[#00C9FF] transition-colors">
                     {sol.title}
                   </h3>
-                  <p className="text-xs text-neutral-300 leading-relaxed font-sans">
+                  <p className="typo-body text-neutral-300">
                     {sol.description}
                   </p>
                 </div>
@@ -187,7 +168,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
 
               {/* Bottom Cyan interaction line */}
               <div className="px-6 pb-6 pt-2">
-                <div className="flex items-center justify-between text-xs font-mono text-[#00C9FF] pt-3 border-t border-white/5">
+                <div className="flex items-center justify-between typo-eyebrow text-[#00C9FF] pt-3 border-t border-white/5">
                   <span>DISCOVER TRACK</span>
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </div>
@@ -202,13 +183,13 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
       {/* ============================================================== */}
       <section className="max-w-7xl mx-auto px-6 lg:px-8 space-y-8">
         <div className="text-center max-w-2xl mx-auto space-y-3">
-          <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#00C9FF]">
+          <span className="typo-eyebrow text-[#00C9FF] uppercase">
             INSTITUTIONAL IMPACT
           </span>
-          <h2 className="font-display text-4xl sm:text-5xl text-white tracking-tight">
+          <h2 className="typo-h2 text-white">
             Why Schools Choose Robotics-Driven Learning
           </h2>
-          <p className="text-xs sm:text-sm text-neutral-400">
+          <p className="typo-small text-neutral-400">
             Click any pillar to inspect the institutional, pedagogical, and student outcomes.
           </p>
         </div>
@@ -222,19 +203,19 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
       <section className="max-w-7xl mx-auto px-6 lg:px-8 space-y-8">
         <MotionHeadingGroup className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/8 pb-6">
           <div>
-            <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#00C9FF]">
+            <span className="typo-eyebrow text-[#00C9FF] uppercase">
               EXPERIENTIAL CURRICULUM
             </span>
-            <h2 className="font-display text-4xl sm:text-5xl text-white tracking-tight mt-1">
+            <h2 className="typo-h2 text-white mt-1">
               Learning Happens When Students Build.
             </h2>
-            <p className="text-xs sm:text-sm text-neutral-400 mt-2">
+            <p className="typo-small text-neutral-400 mt-2">
               Move beyond theory. Build. Test. Break. Improve. Learn.
             </p>
           </div>
           <button
             onClick={() => navigate("/robotics")}
-            className="text-xs font-mono text-[#00C9FF] hover:underline whitespace-nowrap"
+            className="typo-eyebrow text-[#00C9FF] hover:underline whitespace-nowrap"
           >
             ALL PROJECTS &gt;
           </button>
@@ -256,18 +237,18 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <span className="absolute top-3 left-3 px-2 py-0.5 rounded bg-black/70 backdrop-blur-md text-[10px] font-mono text-[#00C9FF]">
+                  <span className="absolute top-3 left-3 px-2 py-0.5 rounded bg-black/70 backdrop-blur-md typo-eyebrow text-[#00C9FF]">
                     {proj.num}
                   </span>
                 </div>
 
-                <span className="text-[10px] font-mono tracking-widest text-[#A9D4FF] uppercase">
+                <span className="typo-eyebrow text-[#A9D4FF] uppercase">
                   {proj.category}
                 </span>
 
-                <h3 className="font-display text-xl text-white group-hover:text-[#00C9FF] transition-colors">{proj.title}</h3>
+                <h3 className="typo-h3 text-white group-hover:text-[#00C9FF] transition-colors">{proj.title}</h3>
 
-                <p className="text-xs text-neutral-300 leading-relaxed font-sans">
+                <p className="typo-body text-neutral-300">
                   {proj.description}
                 </p>
               </div>
@@ -276,7 +257,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
                 {proj.techTags.map((tag, i) => (
                   <span
                     key={i}
-                    className="px-2 py-0.5 rounded bg-white/5 text-[10px] font-mono text-neutral-400"
+                    className="px-2.5 py-0.5 rounded bg-white/5 typo-eyebrow text-neutral-300"
                   >
                     {tag}
                   </span>
@@ -292,10 +273,10 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
       {/* ============================================================== */}
       <section className="max-w-7xl mx-auto px-6 lg:px-8 space-y-8">
         <MotionHeadingGroup>
-          <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#00C9FF]">
+          <span className="typo-eyebrow text-[#00C9FF] uppercase">
             FLEXIBLE INSTITUTIONAL ADOPTION
           </span>
-          <h2 className="font-display text-4xl sm:text-5xl text-white tracking-tight mt-1">
+          <h2 className="typo-h2 text-white mt-1">
             Programs Designed Around Your School.
           </h2>
         </MotionHeadingGroup>
@@ -314,10 +295,10 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
                     : "bg-white/[0.02] border-white/5 text-neutral-400 hover:border-[#00C9FF]/40 hover:text-white"
                 }`}
               >
-                <span className="text-[10px] font-mono text-[#00C9FF] block">
+                <span className="typo-eyebrow text-[#00C9FF] block">
                   {model.num}
                 </span>
-                <span className="text-xs sm:text-sm font-semibold text-white block mt-1">
+                <span className="typo-nav font-semibold text-white block mt-1">
                   {model.name}
                 </span>
               </button>
@@ -328,28 +309,28 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
         {/* Selected Model Details Panel */}
         <div className="p-8 rounded-2xl bg-[#090912] border border-white/10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-7 space-y-4">
-            <span className="text-xs font-mono uppercase tracking-widest text-[#00C9FF]">
+            <span className="typo-eyebrow text-[#00C9FF] uppercase">
               {activeProgramModel.subtitle}
             </span>
-            <h3 className="font-display text-3xl sm:text-4xl text-white">
+            <h3 className="typo-h2 text-white">
               {activeProgramModel.name}
             </h3>
-            <p className="text-sm text-neutral-300 leading-relaxed font-sans">
+            <p className="typo-lead text-neutral-300">
               {activeProgramModel.description}
             </p>
-            <div className="p-3 rounded-lg bg-white/[0.02] border border-white/5 text-xs text-neutral-400">
+            <div className="p-3.5 rounded-lg bg-white/[0.02] border border-white/5 typo-small text-neutral-300">
               <span className="text-white font-medium">Ideal Fit: </span>
               {activeProgramModel.idealFor}
             </div>
           </div>
 
           <div className="lg:col-span-5 bg-black/50 p-6 rounded-xl border border-white/5 space-y-3">
-            <span className="text-xs font-mono uppercase tracking-widest text-[#A9D4FF] block">
+            <span className="typo-eyebrow text-[#A9D4FF] uppercase block">
               Program Deliverables
             </span>
             <ul className="space-y-2.5">
               {activeProgramModel.deliverables.map((del, i) => (
-                <li key={i} className="flex items-start gap-2 text-xs text-neutral-300">
+                <li key={i} className="flex items-start gap-2 typo-small text-neutral-300">
                   <CheckCircle className="w-4 h-4 text-[#00C9FF] shrink-0 mt-0.5" />
                   <span>{del}</span>
                 </li>
@@ -381,16 +362,16 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
 
           <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent flex items-center p-8 sm:p-14">
             <MotionHeadingGroup className="max-w-xl space-y-6">
-              <div className="flex items-center gap-2 font-mono text-xs text-[#00C9FF]">
+              <div className="flex items-center gap-2 typo-eyebrow text-[#00C9FF]">
                 <Activity className="w-4 h-4 animate-pulse" />
                 <span>LAB STATUS // ACTIVE &amp; READY</span>
               </div>
 
-              <h2 className="font-display text-4xl sm:text-6xl text-white leading-tight">
+              <h2 className="typo-h2 text-white">
                 Turn a Classroom Into an Innovation Lab.
               </h2>
 
-              <p className="text-sm text-neutral-300 leading-relaxed font-sans">
+              <p className="typo-lead text-neutral-300">
                 Modular workstations, precision robotics toolsets, certified microcontrollers, and comprehensive grade-mapped safety guidelines installed directly on your campus.
               </p>
 
@@ -402,7 +383,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
                 />
                 <button
                   onClick={() => navigate("/gallery")}
-                  className="px-5 py-2.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#00C9FF]/50 text-xs font-semibold tracking-wider text-white hover:-translate-y-1 hover:scale-[1.04] active:scale-95 transition-all duration-200 cursor-pointer"
+                  className="px-5 py-2.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#00C9FF]/50 typo-btn text-white hover:-translate-y-1 hover:scale-[1.04] active:scale-95 transition-all duration-200 cursor-pointer"
                 >
                   View Installed Labs
                 </button>
@@ -417,13 +398,13 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
       {/* ============================================================== */}
       <section className="relative py-24 text-center border-y border-white/5 bg-[#020205]">
         <MotionHeadingGroup className="max-w-4xl mx-auto px-6 space-y-4">
-          <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#00C9FF]">
+          <span className="typo-eyebrow text-[#00C9FF] uppercase tracking-[0.2em]">
             ROBOPULSE MANDATE
           </span>
-          <p className="font-display text-4xl sm:text-6xl md:text-7xl text-white italic tracking-tight">
+          <p className="typo-h2 text-white font-semibold italic">
             "The future is built, not predicted."
           </p>
-          <p className="text-xs sm:text-sm text-neutral-400 font-mono">
+          <p className="typo-eyebrow text-neutral-400">
             WHERE PRACTICAL ENGINEERING MEETS TOMORROW'S INTELLECT
           </p>
         </MotionHeadingGroup>
@@ -445,10 +426,10 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
               <div className="absolute bottom-4 left-4 right-4">
-                <span className="text-[10px] font-mono tracking-widest text-[#00C9FF] block">
+                <span className="typo-eyebrow text-[#00C9FF] block">
                   LEADERSHIP
                 </span>
-                <span className="font-display text-xl text-white font-medium">
+                <span className="typo-h5 text-white font-medium block">
                   Director, Robopulse Intelligence
                 </span>
               </div>
@@ -457,17 +438,17 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
 
           {/* Right: Leadership Message (#45 verbatim) */}
           <div className="lg:col-span-7 space-y-6">
-            <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#00C9FF]">
+            <span className="typo-eyebrow text-[#00C9FF] uppercase">
               LEADERSHIP // VISION
             </span>
 
-            <h2 className="font-display text-3xl sm:text-5xl text-white leading-tight">
+            <h2 className="typo-h2 text-white">
               A Message From Our Director
             </h2>
 
             {/* Thin cyan vertical line as requested in prompt #45 */}
             <div className="pl-5 border-l-2 border-[#00C9FF] space-y-4">
-              <p className="text-sm sm:text-base text-neutral-200 leading-relaxed font-sans italic">
+              <p className="typo-lead text-neutral-200 italic">
                 "As Director of Robopulse Intelligence, I'm proud to lead a team of innovators passionate about revolutionizing industries with cutting-edge robotics solutions. We're committed to harnessing the power of AI and robotics to drive efficiency, productivity, and progress in India. Let's collaborate to shape a smarter, more sustainable future."
               </p>
             </div>
@@ -475,7 +456,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
             <div className="pt-2 flex items-center gap-4">
               <button
                 onClick={() => navigate("/about")}
-                className="inline-flex items-center gap-2 text-xs font-mono text-[#00C9FF] hover:underline"
+                className="inline-flex items-center gap-2 typo-btn text-xs text-[#00C9FF] hover:underline"
               >
                 <span>READ ABOUT OUR MISSION</span>
                 <ArrowRight className="w-4 h-4" />
@@ -495,15 +476,15 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
           <div className="absolute bottom-0 right-1/3 w-96 h-96 bg-[#250060]/35 rounded-full blur-[120px] pointer-events-none" />
 
           <MotionHeadingGroup className="relative z-10 max-w-2xl mx-auto space-y-4">
-            <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#00C9FF]">
+            <span className="typo-eyebrow text-[#00C9FF] uppercase">
               TAKE ACTION // FUTURE READY
             </span>
 
-            <h2 className="font-display text-4xl sm:text-6xl text-white leading-tight">
+            <h2 className="typo-h2 text-white">
               Build the Future With Robopulse.
             </h2>
 
-            <p className="text-sm sm:text-base text-neutral-300 leading-relaxed font-sans">
+            <p className="typo-lead text-neutral-300">
               Bring robotics, AI, and future-ready STEM learning into your educational environment. Schedule an on-campus demonstration or institutional consultation.
             </p>
           </MotionHeadingGroup>
@@ -516,7 +497,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
             />
             <button
               onClick={() => openWhatsApp()}
-              className="px-6 py-3.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-xs sm:text-sm font-semibold tracking-wider text-white flex items-center gap-2"
+              className="px-6 py-3.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 typo-btn text-white flex items-center gap-2"
             >
               <MessageCircle className="w-4 h-4 text-[#00C9FF]" />
               <span>Direct WhatsApp Chat</span>

@@ -63,17 +63,17 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ navigate }) => {
       {/* ============================================================== */}
       <section className="max-w-7xl mx-auto px-6 lg:px-8">
         <MotionHeadingGroup className="max-w-3xl space-y-6">
-          <div className="inline-flex items-center gap-2 text-xs font-mono tracking-[0.2em] text-[#00C9FF]">
+          <div className="inline-flex items-center gap-2 typo-eyebrow text-[#00C9FF]">
             <span className="w-1.5 h-1.5 rounded-full bg-[#00C9FF] animate-pulse" />
             <span>SERVICES // INSTITUTIONAL CAPABILITIES</span>
           </div>
 
-          <h1 className="font-display text-5xl sm:text-7xl lg:text-8xl text-white tracking-tight leading-[0.95]">
+          <h1 className="typo-h1 text-white">
             Transforming Campuses into{" "}
             <span className="italic text-shimmer">Innovation Hubs.</span>
           </h1>
 
-          <p className="text-base sm:text-lg text-neutral-300 leading-relaxed font-sans">
+          <p className="typo-lead text-neutral-300">
             Comprehensive institutional services spanning turnkey robotics laboratory setups, grade-aligned curriculum integration, hands-on STEM bootcamps, and continuous teacher enablement.
           </p>
 
@@ -89,7 +89,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ navigate }) => {
                   "Hello Robopulse, I would like to explore institutional robotics & STEM services for our school."
                 )
               }
-              className="px-6 py-3.5 rounded-full bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 text-xs sm:text-sm font-semibold tracking-wider text-neutral-200 hover:text-white transition-all duration-200 flex items-center gap-2 hover:border-[#00C9FF]/60 hover:-translate-y-1 hover:scale-[1.03] hover:shadow-[0_8px_25px_rgba(0,201,255,0.25)] active:scale-95 cursor-pointer"
+              className="px-6 py-3.5 rounded-full bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 typo-btn text-neutral-200 hover:text-white transition-all duration-200 flex items-center gap-2 hover:border-[#00C9FF]/60 hover:-translate-y-1 hover:scale-[1.03] hover:shadow-[0_8px_25px_rgba(0,201,255,0.25)] active:scale-95 cursor-pointer"
             >
               <MessageCircle className="w-4 h-4 text-[#00C9FF]" />
               <span>WhatsApp Consultation</span>
@@ -110,21 +110,21 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ navigate }) => {
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
             {/* Left Copy */}
             <div className="lg:col-span-6 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00C9FF]/10 border border-[#00C9FF]/30 text-[11px] font-mono tracking-widest text-[#00C9FF]">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00C9FF]/10 border border-[#00C9FF]/30 typo-eyebrow text-[#00C9FF]">
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>{FEATURED_SERVICE.tag}</span>
               </div>
 
               <div className="space-y-2">
-                <span className="text-xs font-mono tracking-[0.2em] text-[#A9D4FF] uppercase block">
+                <span className="typo-eyebrow text-[#A9D4FF] uppercase block">
                   {FEATURED_SERVICE.subtitle}
                 </span>
-                <h2 className="font-display text-3xl sm:text-5xl text-white leading-tight">
+                <h2 className="typo-h2 text-white">
                   {FEATURED_SERVICE.title}
                 </h2>
               </div>
 
-              <p className="text-sm sm:text-base text-neutral-300 leading-relaxed font-sans">
+              <p className="typo-lead text-neutral-300">
                 {FEATURED_SERVICE.description}
               </p>
 
@@ -135,10 +135,10 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ navigate }) => {
                     key={idx}
                     className="p-3.5 rounded-xl bg-white/[0.03] border border-white/8 text-center"
                   >
-                    <span className="block font-display text-xl sm:text-2xl text-white font-normal">
+                    <span className="block typo-h3 text-white">
                       {m.value}
                     </span>
-                    <span className="text-[10px] font-mono text-[#A9D4FF] tracking-wider uppercase">
+                    <span className="typo-eyebrow text-[#A9D4FF] uppercase">
                       {m.label}
                     </span>
                   </div>
@@ -168,14 +168,14 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ navigate }) => {
                 <div className="absolute bottom-5 left-5 right-5 p-4 rounded-xl bg-black/75 backdrop-blur-md border border-white/15">
                   <div className="flex items-center justify-between">
                     <div>
-                      <span className="text-[10px] font-mono text-[#00C9FF] uppercase tracking-wider block">
+                      <span className="typo-eyebrow text-[#00C9FF] uppercase block">
                         CAMPUS INFRASTRUCTURE
                       </span>
-                      <p className="text-xs font-semibold text-white mt-0.5">
+                      <p className="typo-small font-semibold text-white mt-0.5">
                         Modular Workbenches, Component Bays & Safety Tested
                       </p>
                     </div>
-                    <span className="text-[10px] font-mono text-neutral-400 bg-white/10 px-2 py-1 rounded">
+                    <span className="typo-eyebrow text-neutral-300 bg-white/10 px-2.5 py-1 rounded">
                       ISO 9001
                     </span>
                   </div>
@@ -192,14 +192,14 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ navigate }) => {
       <section className="max-w-7xl mx-auto px-6 lg:px-8 space-y-12">
         <MotionHeadingGroup className="border-b border-white/8 pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
           <div>
-            <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#00C9FF]">
+            <span className="typo-eyebrow text-[#00C9FF] uppercase">
               CORE CATALOGUE
             </span>
-            <h2 className="font-display text-3xl sm:text-5xl text-white mt-1">
+            <h2 className="typo-h2 text-white mt-1">
               Six Tailored Service Domains
             </h2>
           </div>
-          <p className="text-xs text-neutral-400 font-mono max-w-sm sm:text-right">
+          <p className="typo-small text-neutral-400 max-w-sm sm:text-right">
             Integrated engineering programs configured for schools, colleges, and training institutes.
           </p>
         </MotionHeadingGroup>
@@ -217,35 +217,35 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ navigate }) => {
                     {getServiceIcon(service.iconName)}
                   </div>
                   {service.badge && (
-                    <span className="text-[10px] font-mono text-[#00C9FF] bg-[#00C9FF]/10 px-2.5 py-1 rounded-full border border-[#00C9FF]/25 uppercase tracking-wider group-hover:border-[#00C9FF]/50 transition-colors">
+                    <span className="typo-eyebrow text-[#00C9FF] bg-[#00C9FF]/10 px-2.5 py-1 rounded-full border border-[#00C9FF]/25 uppercase group-hover:border-[#00C9FF]/50 transition-colors">
                       {service.badge}
                     </span>
                   )}
                 </div>
 
                 <div className="space-y-1.5">
-                  <span className="text-[10px] font-mono tracking-widest text-[#A9D4FF] uppercase block">
+                  <span className="typo-eyebrow text-[#A9D4FF] uppercase block">
                     {service.category}
                   </span>
-                  <h3 className="font-display text-2xl text-white group-hover:text-[#00C9FF] transition-colors">
+                  <h3 className="typo-h3 text-white group-hover:text-[#00C9FF] transition-colors">
                     {service.title}
                   </h3>
                 </div>
 
-                <p className="text-xs text-neutral-300 font-sans leading-relaxed">
+                <p className="typo-body text-neutral-300">
                   {service.description}
                 </p>
 
                 <div className="pt-4 border-t border-white/5 space-y-2">
-                  <span className="text-[10px] font-mono uppercase text-neutral-400 tracking-wider block">
+                  <span className="typo-eyebrow text-neutral-400 uppercase block">
                     Key Deliverables:
                   </span>
                   {service.highlights.map((h, idx) => (
                     <div
                       key={idx}
-                      className="flex items-center gap-2 text-xs text-neutral-300"
+                      className="flex items-center gap-2 typo-small text-neutral-300"
                     >
-                      <CheckCircle2 className="w-3.5 h-3.5 text-[#00C9FF] shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-[#00C9FF] shrink-0" />
                       <span>{h}</span>
                     </div>
                   ))}
@@ -258,12 +258,12 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ navigate }) => {
                     e.stopPropagation();
                     navigate("/contact");
                   }}
-                  className="px-3 py-1.5 rounded-lg bg-white/[0.03] hover:bg-[#00C9FF]/15 border border-white/10 hover:border-[#00C9FF]/40 text-xs font-semibold text-neutral-200 hover:text-white flex items-center gap-1.5 transition-all duration-200 group-hover:text-[#00C9FF] group-hover:translate-x-1 cursor-pointer"
+                  className="px-3.5 py-1.5 rounded-lg bg-white/[0.03] hover:bg-[#00C9FF]/15 border border-white/10 hover:border-[#00C9FF]/40 typo-btn text-xs text-neutral-200 hover:text-white flex items-center gap-1.5 transition-all duration-200 group-hover:text-[#00C9FF] group-hover:translate-x-1 cursor-pointer"
                 >
                   <span>Inquire For Campus</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </button>
-                <span className="text-[10px] font-mono text-neutral-500">
+                <span className="typo-eyebrow text-neutral-400">
                   INSTITUTIONAL
                 </span>
               </div>
@@ -277,10 +277,10 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ navigate }) => {
       {/* ============================================================== */}
       <section className="max-w-7xl mx-auto px-6 lg:px-8 space-y-12">
         <MotionHeadingGroup className="border-b border-white/8 pb-4">
-          <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#00C9FF]">
+          <span className="typo-eyebrow text-[#00C9FF] uppercase">
             PROVEN METHODOLOGY
           </span>
-          <h2 className="font-display text-3xl sm:text-5xl text-white mt-1">
+          <h2 className="typo-h2 text-white mt-1">
             How Robopulse Deploys on Campus
           </h2>
         </MotionHeadingGroup>
@@ -324,14 +324,14 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ navigate }) => {
                 <span className="font-mono text-3xl font-light text-[#00C9FF]/40 group-hover:text-[#00C9FF] transition-colors">
                   {phase.step}
                 </span>
-                <span className="text-[9px] font-mono text-[#A9D4FF] bg-white/5 px-2 py-0.5 rounded border border-white/10 group-hover:border-[#00C9FF]/30 transition-colors">
+                <span className="typo-eyebrow text-[#A9D4FF] bg-white/5 px-2 py-0.5 rounded border border-white/10 group-hover:border-[#00C9FF]/30 transition-colors">
                   {phase.tag}
                 </span>
               </div>
-              <h3 className="font-display text-xl text-white group-hover:text-[#00C9FF] transition-colors">
+              <h3 className="typo-h4 text-white group-hover:text-[#00C9FF] transition-colors">
                 {phase.title}
               </h3>
-              <p className="text-xs text-neutral-400 leading-relaxed font-sans">
+              <p className="typo-body text-neutral-300">
                 {phase.description}
               </p>
             </div>
@@ -344,10 +344,10 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ navigate }) => {
       {/* ============================================================== */}
       <section className="max-w-7xl mx-auto px-6 lg:px-8 space-y-10">
         <MotionHeadingGroup className="border-b border-white/8 pb-4">
-          <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#00C9FF]">
+          <span className="typo-eyebrow text-[#00C9FF] uppercase">
             ENGAGEMENT MODELS
           </span>
-          <h2 className="font-display text-3xl sm:text-5xl text-white mt-1">
+          <h2 className="typo-h2 text-white mt-1">
             Choose Your Institutional Framework
           </h2>
         </MotionHeadingGroup>
@@ -358,7 +358,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ navigate }) => {
             <button
               key={model.id}
               onClick={() => setSelectedModel(model.id)}
-              className={`px-5 py-3 rounded-full text-xs font-mono tracking-wider transition-all duration-200 hover:-translate-y-1 hover:scale-[1.04] active:scale-95 cursor-pointer ${
+              className={`px-5 py-3 rounded-full typo-btn text-xs transition-all duration-200 hover:-translate-y-1 hover:scale-[1.04] active:scale-95 cursor-pointer ${
                 selectedModel === model.id
                   ? "bg-[#00C9FF] text-black font-bold shadow-[0_0_20px_rgba(0,201,255,0.4)]"
                   : "bg-white/5 border border-white/10 text-neutral-300 hover:text-white hover:border-[#00C9FF]/50"
@@ -373,43 +373,43 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ navigate }) => {
         <div className="glass-panel rounded-3xl p-8 sm:p-12 border border-white/10 space-y-8">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/8 pb-6">
             <div>
-              <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#00C9FF]">
+              <span className="typo-eyebrow text-[#00C9FF] uppercase">
                 {activeModel.subtitle}
               </span>
-              <h3 className="font-display text-3xl sm:text-4xl text-white mt-1">
+              <h3 className="typo-h2 text-white mt-1">
                 {activeModel.name}
               </h3>
             </div>
             <div className="flex items-center gap-3">
-              <span className="text-xs font-mono text-neutral-400 bg-white/5 px-3 py-1.5 rounded-lg border border-white/10">
+              <span className="typo-eyebrow text-neutral-400 bg-white/5 px-3 py-1.5 rounded-lg border border-white/10">
                 {activeModel.num}
               </span>
-              <span className="text-xs font-mono text-[#00C9FF] bg-[#00C9FF]/10 px-3 py-1.5 rounded-lg border border-[#00C9FF]/30">
+              <span className="typo-eyebrow text-[#00C9FF] bg-[#00C9FF]/10 px-3 py-1.5 rounded-lg border border-[#00C9FF]/30">
                 Turnkey Deployment
               </span>
             </div>
           </div>
 
-          <p className="text-sm sm:text-base text-neutral-200 leading-relaxed font-sans max-w-4xl">
+          <p className="typo-lead text-neutral-200 max-w-4xl">
             {activeModel.description}
           </p>
 
-          <div className="p-4 rounded-xl bg-white/[0.02] border border-white/8 text-xs text-neutral-300">
-            <span className="text-[#00C9FF] font-mono uppercase text-[10px] tracking-wider block mb-1">
+          <div className="p-4 rounded-xl bg-white/[0.02] border border-white/8 typo-small text-neutral-300">
+            <span className="text-[#00C9FF] uppercase typo-eyebrow block mb-1">
               Ideal Institutional Profile:
             </span>
             {activeModel.idealFor}
           </div>
 
           <div className="pt-2 space-y-3">
-            <h4 className="text-xs font-mono uppercase tracking-wider text-[#A9D4FF]">
+            <h4 className="typo-eyebrow text-[#A9D4FF] uppercase">
               Key Institutional Deliverables & Commitments:
             </h4>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {activeModel.deliverables.map((deliv, idx) => (
                 <div
                   key={idx}
-                  className="flex items-start gap-2.5 text-xs text-neutral-300 p-2.5 rounded-lg bg-white/[0.02] border border-white/5"
+                  className="flex items-start gap-2.5 typo-small text-neutral-300 p-2.5 rounded-lg bg-white/[0.02] border border-white/5"
                 >
                   <CheckCircle2 className="w-4 h-4 text-[#00C9FF] shrink-0 mt-0.5" />
                   <span>{deliv}</span>
@@ -419,7 +419,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ navigate }) => {
           </div>
 
           <div className="pt-6 border-t border-white/8 flex flex-wrap items-center justify-between gap-4">
-            <p className="text-xs text-neutral-400 font-mono">
+            <p className="typo-small text-neutral-400">
               Tailored proposals provided within 48 hours following an initial discovery call.
             </p>
             <ShinyButton
@@ -439,13 +439,13 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ navigate }) => {
           <div className="absolute top-0 left-1/3 w-80 h-80 bg-[#00C9FF]/10 rounded-full blur-[100px] pointer-events-none" />
 
           <MotionHeadingGroup className="relative z-10 max-w-2xl mx-auto space-y-3">
-            <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#00C9FF]">
+            <span className="typo-eyebrow text-[#00C9FF] uppercase">
               PARTNER WITH ROBOPULSE
             </span>
-            <h2 className="font-display text-4xl sm:text-5xl text-white">
+            <h2 className="typo-h2 text-white">
               Ready to Upgrade Your Institution's Tech Profile?
             </h2>
-            <p className="text-xs sm:text-sm text-neutral-300 font-sans leading-relaxed">
+            <p className="typo-lead text-neutral-300">
               Book an exploratory session with our educational engineers. We will review your campus layout, grade levels, and educational goals to configure the perfect implementation.
             </p>
           </MotionHeadingGroup>
@@ -462,7 +462,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ navigate }) => {
                   "Hello, I would like to schedule an institutional robotics demo for our school."
                 )
               }
-              className="px-6 py-3.5 rounded-full bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 text-xs sm:text-sm font-semibold tracking-wider text-neutral-200 hover:text-white transition-all duration-200 flex items-center gap-2 hover:border-[#00C9FF]/60 hover:-translate-y-1 hover:scale-[1.03] hover:shadow-[0_8px_25px_rgba(0,201,255,0.25)] active:scale-95 cursor-pointer"
+              className="px-6 py-3.5 rounded-full bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 typo-btn text-neutral-200 hover:text-white transition-all duration-200 flex items-center gap-2 hover:border-[#00C9FF]/60 hover:-translate-y-1 hover:scale-[1.03] hover:shadow-[0_8px_25px_rgba(0,201,255,0.25)] active:scale-95 cursor-pointer"
             >
               <MessageCircle className="w-4 h-4 text-[#00C9FF]" />
               <span>Direct WhatsApp Chat</span>

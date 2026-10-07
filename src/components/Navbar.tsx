@@ -62,30 +62,30 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, navigate }) => {
       {/* DESKTOP FLOATING GLASS PILL NAVBAR                             */}
       {/* Order: Robopulse Logo | Home | About | Services | Courses | Gallery | Contact Us */}
       {/* ============================================================== */}
-      <div className="fixed top-5 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-[1140px] hidden md:block">
+      <div className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[94%] max-w-[1120px] hidden md:block">
         <header>
           <nav
-            className={`flex items-center justify-between px-6 py-3 rounded-full transition-all duration-300 relative z-50 ${
+            className={`flex items-center justify-between px-6 sm:px-8 py-3 rounded-full transition-all duration-300 relative z-50 ${
               scrolled
-                ? "bg-[#07070b]/90 backdrop-blur-xl border border-white/10 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.8),0_0_20px_rgba(0,201,255,0.08)]"
-                : "bg-[#090910]/75 backdrop-blur-lg border border-white/8 shadow-lg"
+                ? "bg-[#07070b]/94 backdrop-blur-xl border border-white/12 shadow-[0_12px_36px_-10px_rgba(0,0,0,0.85),0_0_24px_rgba(0,201,255,0.1)]"
+                : "bg-[#090910]/85 backdrop-blur-lg border border-white/10 shadow-xl"
             }`}
             aria-label="Main Navigation"
           >
             {/* 1. Robopulse Logo */}
             <div className="flex items-center">
-              <RobopulseLogo size="sm" onClick={() => handleLinkClick("/")} />
+              <RobopulseLogo size="md" onClick={() => handleLinkClick("/")} />
             </div>
 
             {/* 2. Main Navigation Links with AnimatedBackground Hover Pill */}
-            <div className="flex items-center">
+            <div className="flex items-center gap-[28px] lg:gap-[32px]">
               <AnimatedBackground
                 defaultValue={getActiveTab()}
-                className="rounded-lg bg-zinc-100 dark:bg-zinc-800"
+                className="rounded-full bg-white/[0.05]"
                 transition={{
                   type: "spring",
-                  bounce: 0.2,
-                  duration: 0.3,
+                  bounce: 0.15,
+                  duration: 0.25,
                 }}
                 enableHover
               >
@@ -94,13 +94,16 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, navigate }) => {
                   data-id="Home"
                   type="button"
                   onClick={() => handleLinkClick("/")}
-                  className={`px-3 py-1.5 text-xs lg:text-[13px] tracking-wide font-medium cursor-pointer transition-colors duration-300 focus:outline-none ${
+                  className={`relative px-3 py-1.5 font-sans text-[14px] sm:text-[14.5px] leading-[1.2] tracking-[0] cursor-pointer transition-colors duration-250 ease-out focus:outline-none whitespace-nowrap ${
                     currentPath === "/"
-                      ? "text-zinc-950 dark:text-zinc-50 font-semibold"
-                      : "text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-50"
+                      ? "text-white font-semibold drop-shadow-[0_0_8px_rgba(0,201,255,0.45)]"
+                      : "text-neutral-200 font-medium hover:text-[#00C9FF]"
                   }`}
                 >
-                  Home
+                  <span>Home</span>
+                  {currentPath === "/" && (
+                    <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-5 h-[2px] rounded-full bg-[#00C9FF] shadow-[0_0_8px_#00C9FF]" />
+                  )}
                 </button>
 
                 {/* About */}
@@ -108,13 +111,16 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, navigate }) => {
                   data-id="About"
                   type="button"
                   onClick={() => handleLinkClick("/about")}
-                  className={`px-3 py-1.5 text-xs lg:text-[13px] tracking-wide font-medium cursor-pointer transition-colors duration-300 focus:outline-none ${
+                  className={`relative px-3 py-1.5 font-sans text-[14px] sm:text-[14.5px] leading-[1.2] tracking-[0] cursor-pointer transition-colors duration-250 ease-out focus:outline-none whitespace-nowrap ${
                     currentPath === "/about"
-                      ? "text-zinc-950 dark:text-zinc-50 font-semibold"
-                      : "text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-50"
+                      ? "text-white font-semibold drop-shadow-[0_0_8px_rgba(0,201,255,0.45)]"
+                      : "text-neutral-200 font-medium hover:text-[#00C9FF]"
                   }`}
                 >
-                  About
+                  <span>About</span>
+                  {currentPath === "/about" && (
+                    <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-5 h-[2px] rounded-full bg-[#00C9FF] shadow-[0_0_8px_#00C9FF]" />
+                  )}
                 </button>
 
                 {/* Services (Direct Clickable Page) */}
@@ -122,13 +128,16 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, navigate }) => {
                   data-id="Services"
                   type="button"
                   onClick={() => handleLinkClick("/services")}
-                  className={`px-3 py-1.5 text-xs lg:text-[13px] tracking-wide font-medium cursor-pointer transition-colors duration-300 focus:outline-none ${
+                  className={`relative px-3 py-1.5 font-sans text-[14px] sm:text-[14.5px] leading-[1.2] tracking-[0] cursor-pointer transition-colors duration-250 ease-out focus:outline-none whitespace-nowrap ${
                     currentPath === "/services" || currentPath === "/solutions"
-                      ? "text-zinc-950 dark:text-zinc-50 font-semibold"
-                      : "text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-50"
+                      ? "text-white font-semibold drop-shadow-[0_0_8px_rgba(0,201,255,0.45)]"
+                      : "text-neutral-200 font-medium hover:text-[#00C9FF]"
                   }`}
                 >
-                  Services
+                  <span>Services</span>
+                  {(currentPath === "/services" || currentPath === "/solutions") && (
+                    <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-5 h-[2px] rounded-full bg-[#00C9FF] shadow-[0_0_8px_#00C9FF]" />
+                  )}
                 </button>
 
                 {/* Courses (Direct Clickable Page) */}
@@ -136,13 +145,16 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, navigate }) => {
                   data-id="Courses"
                   type="button"
                   onClick={() => handleLinkClick("/courses")}
-                  className={`px-3 py-1.5 text-xs lg:text-[13px] tracking-wide font-medium cursor-pointer transition-colors duration-300 focus:outline-none ${
+                  className={`relative px-3 py-1.5 font-sans text-[14px] sm:text-[14.5px] leading-[1.2] tracking-[0] cursor-pointer transition-colors duration-250 ease-out focus:outline-none whitespace-nowrap ${
                     currentPath === "/courses"
-                      ? "text-zinc-950 dark:text-zinc-50 font-semibold"
-                      : "text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-50"
+                      ? "text-white font-semibold drop-shadow-[0_0_8px_rgba(0,201,255,0.45)]"
+                      : "text-neutral-200 font-medium hover:text-[#00C9FF]"
                   }`}
                 >
-                  Courses
+                  <span>Courses</span>
+                  {currentPath === "/courses" && (
+                    <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-5 h-[2px] rounded-full bg-[#00C9FF] shadow-[0_0_8px_#00C9FF]" />
+                  )}
                 </button>
 
                 {/* Gallery */}
@@ -150,22 +162,26 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, navigate }) => {
                   data-id="Gallery"
                   type="button"
                   onClick={() => handleLinkClick("/gallery")}
-                  className={`px-3 py-1.5 text-xs lg:text-[13px] tracking-wide font-medium cursor-pointer transition-colors duration-300 focus:outline-none ${
+                  className={`relative px-3 py-1.5 font-sans text-[14px] sm:text-[14.5px] leading-[1.2] tracking-[0] cursor-pointer transition-colors duration-250 ease-out focus:outline-none whitespace-nowrap ${
                     currentPath === "/gallery"
-                      ? "text-zinc-950 dark:text-zinc-50 font-semibold"
-                      : "text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-50"
+                      ? "text-white font-semibold drop-shadow-[0_0_8px_rgba(0,201,255,0.45)]"
+                      : "text-neutral-200 font-medium hover:text-[#00C9FF]"
                   }`}
                 >
-                  Gallery
+                  <span>Gallery</span>
+                  {currentPath === "/gallery" && (
+                    <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-5 h-[2px] rounded-full bg-[#00C9FF] shadow-[0_0_8px_#00C9FF]" />
+                  )}
                 </button>
               </AnimatedBackground>
             </div>
 
             {/* 3. Contact Us Primary Button */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center">
               <ShinyButton
-                size="sm"
+                size="md"
                 label="Contact Us"
+                textClassName="font-sans !text-[14px] !font-semibold !leading-[1.2] !tracking-[0.01em]"
                 onClick={() => handleLinkClick("/contact")}
               />
             </div>
@@ -176,19 +192,19 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, navigate }) => {
       {/* ============================================================== */}
       {/* MOBILE STICKY TOP BAR                                          */}
       {/* ============================================================== */}
-      <header className="fixed top-0 left-0 right-0 z-40 md:hidden bg-[#050509]/92 backdrop-blur-md border-b border-white/8 px-4 py-3 flex items-center justify-between">
-        <RobopulseLogo size="sm" onClick={() => handleLinkClick("/")} />
+      <header className="fixed top-0 left-0 right-0 z-40 md:hidden bg-[#050509]/94 backdrop-blur-md border-b border-white/8 px-4 sm:px-6 py-2.5 flex items-center justify-between">
+        <RobopulseLogo size="md" onClick={() => handleLinkClick("/")} />
 
         <div className="flex items-center gap-2">
           <button
             onClick={() => handleLinkClick("/contact")}
-            className="text-[11px] font-semibold tracking-wider px-3 py-1.5 rounded-full bg-[#00C9FF]/10 border border-[#00C9FF]/30 text-[#00C9FF] active:bg-[#00C9FF]/20 cursor-pointer"
+            className="font-sans text-[14px] font-semibold leading-[1.2] tracking-[0.01em] min-h-[44px] px-4 py-2 rounded-full bg-[#00C9FF]/10 border border-[#00C9FF]/30 text-[#00C9FF] active:bg-[#00C9FF]/20 cursor-pointer flex items-center justify-center whitespace-nowrap"
           >
             CONTACT US
           </button>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 text-neutral-300 hover:text-white rounded-lg focus:outline-none focus:ring-1 focus:ring-[#00C9FF] cursor-pointer"
+            className="min-w-[44px] min-h-[44px] flex items-center justify-center text-neutral-300 hover:text-white rounded-lg focus:outline-none focus:ring-1 focus:ring-[#00C9FF] cursor-pointer"
             aria-label="Toggle Navigation Menu"
           >
             {mobileMenuOpen ? (
@@ -205,9 +221,9 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, navigate }) => {
       {/* Order: Home | About | Services | Courses | Gallery | Contact Us*/}
       {/* ============================================================== */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 top-[53px] z-30 bg-[#030303]/98 backdrop-blur-2xl md:hidden px-5 py-6 flex flex-col justify-between overflow-y-auto pb-24">
+        <div className="fixed inset-0 top-[60px] z-30 bg-[#030303]/98 backdrop-blur-2xl md:hidden px-5 py-6 flex flex-col justify-between overflow-y-auto pb-24">
           <div className="space-y-4">
-            <p className="text-[10px] font-mono uppercase tracking-[0.25em] text-[#00C9FF]/80">
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#00C9FF]/80">
               NAVIGATION // ROBOPULSE INTELLIGENCE
             </p>
 
@@ -215,10 +231,10 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, navigate }) => {
               {/* 1. Home */}
               <button
                 onClick={() => handleLinkClick("/")}
-                className={`w-full text-left text-lg font-display tracking-tight py-2.5 px-3 rounded-xl transition-colors cursor-pointer ${
+                className={`w-full text-left min-h-[44px] flex items-center px-3.5 py-2 rounded-xl font-sans text-[14px] leading-[1.2] tracking-normal transition-colors duration-250 cursor-pointer whitespace-nowrap ${
                   currentPath === "/"
-                    ? "text-[#00C9FF] bg-white/[0.04]"
-                    : "text-neutral-200 hover:text-white"
+                    ? "text-white font-semibold bg-white/[0.05] border-l-2 border-[#00C9FF] shadow-[0_0_12px_rgba(0,201,255,0.15)]"
+                    : "text-neutral-300 font-medium hover:text-[#00C9FF]"
                 }`}
               >
                 Home
@@ -227,10 +243,10 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, navigate }) => {
               {/* 2. About */}
               <button
                 onClick={() => handleLinkClick("/about")}
-                className={`w-full text-left text-lg font-display tracking-tight py-2.5 px-3 rounded-xl transition-colors cursor-pointer ${
+                className={`w-full text-left min-h-[44px] flex items-center px-3.5 py-2 rounded-xl font-sans text-[14px] leading-[1.2] tracking-normal transition-colors duration-250 cursor-pointer whitespace-nowrap ${
                   currentPath === "/about"
-                    ? "text-[#00C9FF] bg-white/[0.04]"
-                    : "text-neutral-200 hover:text-white"
+                    ? "text-white font-semibold bg-white/[0.05] border-l-2 border-[#00C9FF] shadow-[0_0_12px_rgba(0,201,255,0.15)]"
+                    : "text-neutral-300 font-medium hover:text-[#00C9FF]"
                 }`}
               >
                 About
@@ -239,10 +255,10 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, navigate }) => {
               {/* 3. Services */}
               <button
                 onClick={() => handleLinkClick("/services")}
-                className={`w-full text-left text-lg font-display tracking-tight py-2.5 px-3 rounded-xl transition-colors cursor-pointer ${
+                className={`w-full text-left min-h-[44px] flex items-center px-3.5 py-2 rounded-xl font-sans text-[14px] leading-[1.2] tracking-normal transition-colors duration-250 cursor-pointer whitespace-nowrap ${
                   currentPath === "/services" || currentPath === "/solutions"
-                    ? "text-[#00C9FF] bg-white/[0.04]"
-                    : "text-neutral-200 hover:text-white"
+                    ? "text-white font-semibold bg-white/[0.05] border-l-2 border-[#00C9FF] shadow-[0_0_12px_rgba(0,201,255,0.15)]"
+                    : "text-neutral-300 font-medium hover:text-[#00C9FF]"
                 }`}
               >
                 Services
@@ -251,10 +267,10 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, navigate }) => {
               {/* 4. Courses */}
               <button
                 onClick={() => handleLinkClick("/courses")}
-                className={`w-full text-left text-lg font-display tracking-tight py-2.5 px-3 rounded-xl transition-colors cursor-pointer ${
+                className={`w-full text-left min-h-[44px] flex items-center px-3.5 py-2 rounded-xl font-sans text-[14px] leading-[1.2] tracking-normal transition-colors duration-250 cursor-pointer whitespace-nowrap ${
                   currentPath === "/courses"
-                    ? "text-[#00C9FF] bg-white/[0.04]"
-                    : "text-neutral-200 hover:text-white"
+                    ? "text-white font-semibold bg-white/[0.05] border-l-2 border-[#00C9FF] shadow-[0_0_12px_rgba(0,201,255,0.15)]"
+                    : "text-neutral-300 font-medium hover:text-[#00C9FF]"
                 }`}
               >
                 Courses
@@ -263,10 +279,10 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, navigate }) => {
               {/* 5. Gallery */}
               <button
                 onClick={() => handleLinkClick("/gallery")}
-                className={`w-full text-left text-lg font-display tracking-tight py-2.5 px-3 rounded-xl transition-colors cursor-pointer ${
+                className={`w-full text-left min-h-[44px] flex items-center px-3.5 py-2 rounded-xl font-sans text-[14px] leading-[1.2] tracking-normal transition-colors duration-250 cursor-pointer whitespace-nowrap ${
                   currentPath === "/gallery"
-                    ? "text-[#00C9FF] bg-white/[0.04]"
-                    : "text-neutral-200 hover:text-white"
+                    ? "text-white font-semibold bg-white/[0.05] border-l-2 border-[#00C9FF] shadow-[0_0_12px_rgba(0,201,255,0.15)]"
+                    : "text-neutral-300 font-medium hover:text-[#00C9FF]"
                 }`}
               >
                 Gallery
@@ -275,10 +291,10 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, navigate }) => {
               {/* 6. Contact Us */}
               <button
                 onClick={() => handleLinkClick("/contact")}
-                className={`w-full text-left text-lg font-display tracking-tight py-2.5 px-3 rounded-xl transition-colors cursor-pointer ${
+                className={`w-full text-left min-h-[44px] flex items-center px-3.5 py-2 rounded-xl font-sans text-[14px] leading-[1.2] tracking-normal transition-colors duration-250 cursor-pointer whitespace-nowrap ${
                   currentPath === "/contact"
-                    ? "text-[#00C9FF] bg-white/[0.04]"
-                    : "text-neutral-200 hover:text-white"
+                    ? "text-white font-semibold bg-white/[0.05] border-l-2 border-[#00C9FF] shadow-[0_0_12px_rgba(0,201,255,0.15)]"
+                    : "text-neutral-300 font-medium hover:text-[#00C9FF]"
                 }`}
               >
                 Contact Us
@@ -290,10 +306,11 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, navigate }) => {
             <ShinyButton
               label="Contact Us"
               size="md"
-              className="w-full"
+              textClassName="font-sans !text-[14px] !font-semibold !leading-[1.2] !tracking-[0.01em]"
+              className="w-full min-h-[44px]"
               onClick={() => handleLinkClick("/contact")}
             />
-            <p className="text-center text-[11px] text-neutral-500 font-mono">
+            <p className="text-center text-xs font-mono text-neutral-500 uppercase tracking-wider">
               ROBOPULSE SYSTEMS · READY FOR EXPLORATION
             </p>
           </div>
@@ -305,61 +322,61 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, navigate }) => {
       {/* Order: Home | Services | Courses | Gallery | Contact           */}
       {/* ============================================================== */}
       <nav
-        className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-[#07070b]/94 backdrop-blur-xl border-t border-white/8 px-2 py-2 flex items-center justify-around"
+        className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-[#07070b]/94 backdrop-blur-xl border-t border-white/8 px-2 py-1.5 flex items-center justify-around"
         aria-label="Mobile Bottom Navigation"
       >
         <button
           onClick={() => handleLinkClick("/")}
-          className={`flex flex-col items-center gap-1 py-1 px-2.5 rounded-lg transition-colors cursor-pointer ${
+          className={`min-h-[44px] min-w-[44px] flex flex-col items-center justify-center gap-1 py-1 px-2.5 rounded-lg transition-colors cursor-pointer ${
             currentPath === "/" ? "text-[#00C9FF]" : "text-neutral-400 hover:text-neutral-200"
           }`}
         >
           <Home className="w-4 h-4" />
-          <span className="text-[10px] font-medium tracking-tight">Home</span>
+          <span className="font-sans text-[11px] font-medium leading-[1.2] tracking-normal whitespace-nowrap">Home</span>
         </button>
 
         <button
           onClick={() => handleLinkClick("/services")}
-          className={`flex flex-col items-center gap-1 py-1 px-2.5 rounded-lg transition-colors cursor-pointer ${
+          className={`min-h-[44px] min-w-[44px] flex flex-col items-center justify-center gap-1 py-1 px-2.5 rounded-lg transition-colors cursor-pointer ${
             currentPath === "/services" || currentPath === "/solutions"
               ? "text-[#00C9FF]"
               : "text-neutral-400 hover:text-neutral-200"
           }`}
         >
           <Briefcase className="w-4 h-4" />
-          <span className="text-[10px] font-medium tracking-tight">Services</span>
+          <span className="font-sans text-[11px] font-medium leading-[1.2] tracking-normal whitespace-nowrap">Services</span>
         </button>
 
         <button
           onClick={() => handleLinkClick("/courses")}
-          className={`flex flex-col items-center gap-1 py-1 px-2.5 rounded-lg transition-colors cursor-pointer ${
+          className={`min-h-[44px] min-w-[44px] flex flex-col items-center justify-center gap-1 py-1 px-2.5 rounded-lg transition-colors cursor-pointer ${
             currentPath === "/courses"
               ? "text-[#00C9FF]"
               : "text-neutral-400 hover:text-neutral-200"
           }`}
         >
           <GraduationCap className="w-4 h-4" />
-          <span className="text-[10px] font-medium tracking-tight">Courses</span>
+          <span className="font-sans text-[11px] font-medium leading-[1.2] tracking-normal whitespace-nowrap">Courses</span>
         </button>
 
         <button
           onClick={() => handleLinkClick("/gallery")}
-          className={`flex flex-col items-center gap-1 py-1 px-2.5 rounded-lg transition-colors cursor-pointer ${
+          className={`min-h-[44px] min-w-[44px] flex flex-col items-center justify-center gap-1 py-1 px-2.5 rounded-lg transition-colors cursor-pointer ${
             currentPath === "/gallery" ? "text-[#00C9FF]" : "text-neutral-400 hover:text-neutral-200"
           }`}
         >
           <GalleryIcon className="w-4 h-4" />
-          <span className="text-[10px] font-medium tracking-tight">Gallery</span>
+          <span className="font-sans text-[11px] font-medium leading-[1.2] tracking-normal whitespace-nowrap">Gallery</span>
         </button>
 
         <button
           onClick={() => handleLinkClick("/contact")}
-          className={`flex flex-col items-center gap-1 py-1 px-2.5 rounded-lg transition-colors cursor-pointer ${
+          className={`min-h-[44px] min-w-[44px] flex flex-col items-center justify-center gap-1 py-1 px-2.5 rounded-lg transition-colors cursor-pointer ${
             currentPath === "/contact" ? "text-[#00C9FF]" : "text-neutral-400 hover:text-neutral-200"
           }`}
         >
           <PhoneCall className="w-4 h-4" />
-          <span className="text-[10px] font-medium tracking-tight">Contact</span>
+          <span className="font-sans text-[11px] font-medium leading-[1.2] tracking-normal whitespace-nowrap">Contact</span>
         </button>
       </nav>
     </>

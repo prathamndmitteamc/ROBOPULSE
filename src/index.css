@@ -3,7 +3,8 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-display: "Instrument Serif", Georgia, serif;
+  --font-display: "Outfit", "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: "Outfit", "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
@@ -16,6 +17,18 @@
   --color-rp-dark-purple: #18003F;
   --color-rp-light-cyan: #A9D4FF;
   --color-rp-white: #FFFFFF;
+
+  /* Standardized fluid typography scale */
+  --text-xs: clamp(0.72rem, 0.8vw, 0.8rem);
+  --text-xs--line-height: 1.25rem;
+  --text-sm: clamp(0.875rem, 0.95vw, 0.9375rem);
+  --text-sm--line-height: 1.5rem;
+  --text-base: clamp(1rem, 1.05vw, 1.0625rem);
+  --text-base--line-height: 1.65rem;
+  --text-lg: clamp(1.125rem, 1.3vw, 1.25rem);
+  --text-lg--line-height: 1.75rem;
+  --text-xl: clamp(1.25rem, 2vw, 1.75rem);
+  --text-xl--line-height: 1.85rem;
 }
 
 :root {
@@ -40,6 +53,9 @@
 
 html {
   color-scheme: dark;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -47,16 +63,155 @@ body {
   background-color: #030303;
   color: #FFFFFF;
   min-height: 100vh;
+  font-size: clamp(1rem, 1.05vw, 1.0625rem);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
-/* Editorial display font */
-.font-display {
+/* ========================================================================== */
+/* ROBOPULSE CENTRALIZED TYPOGRAPHY SYSTEM                                    */
+/* Headings: Outfit | Body/UI: Inter                                          */
+/* ========================================================================== */
+
+/* H1 — Main Hero Headings */
+h1, .typo-h1, .robopulse-hero-title {
   font-family: var(--font-display);
+  font-size: clamp(2.75rem, 5vw, 5rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+/* H2 — Major Section Headings */
+h2, .typo-h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 4vw, 3.75rem);
+  font-weight: 700;
+  line-height: 1.12;
   letter-spacing: -0.025em;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+/* H3 — Section/Card Headings */
+h3, .typo-h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+/* H4 — Subsection Headings */
+h4, .typo-h4 {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+/* H5 — Small Component Headings */
+h5, .typo-h5 {
+  font-family: var(--font-display);
+  font-size: clamp(1.125rem, 1.5vw, 1.375rem);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: 0;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+/* H6 — Smallest Semantic Headings */
+h6, .typo-h6 {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 1.2vw, 1.125rem);
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: 0;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+/* Body: Large Introductory / Lead Text */
+.typo-lead, .text-lead {
+  font-family: var(--font-sans);
+  font-size: clamp(1.125rem, 1.3vw, 1.25rem);
+  font-weight: 400;
+  line-height: 1.65;
+  letter-spacing: -0.01em;
+  max-width: 72ch;
+}
+
+/* Body: Normal Body Text */
+p, .typo-body, .text-body {
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 1.05vw, 1.0625rem);
+  font-weight: 400;
+  line-height: 1.65;
+  letter-spacing: -0.005em;
+  text-rendering: optimizeLegibility;
+}
+
+/* Body: Small Supporting Text / Meta */
+.typo-small, .text-small {
+  font-family: var(--font-sans);
+  font-size: clamp(0.875rem, 0.95vw, 0.9375rem);
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+/* UI: Navigation */
+.typo-nav, .text-nav {
+  font-family: var(--font-sans);
+  font-size: clamp(0.875rem, 0.92vw, 0.95rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+/* UI: Buttons / CTA Text */
+.typo-btn, .text-btn {
+  font-family: var(--font-sans);
+  font-size: clamp(0.875rem, 0.95vw, 1rem);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+}
+
+/* UI: Labels / Eyebrow Text / Badges */
+.typo-eyebrow, .text-eyebrow, .typo-label, .text-label {
+  font-family: var(--font-sans);
+  font-size: clamp(0.72rem, 0.8vw, 0.8rem);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: 0.1em;
+}
+
+/* Font Family Helper Classes */
+.font-display, .font-heading {
+  font-family: var(--font-display);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
 }
 
 .font-mono {
   font-family: var(--font-mono);
+}
+
+/* Readability constraint helper */
+.max-prose-readable {
+  max-width: 68ch;
 }
 
 /* Glassmorphism token */
@@ -245,13 +400,33 @@ body {
   scrollbar-width: none;
 }
 
+/* Card Light Sweep & Shimmer Animation */
+@keyframes light-sweep {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(200%);
+    opacity: 0;
+  }
+}
+
+.animate-light-sweep {
+  animation: light-sweep 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
   .shiny-border-conic,
   .text-shimmer,
   .animate-marquee,
   .animate-orb-1,
-  .animate-orb-2 {
+  .animate-orb-2,
+  .animate-light-sweep {
     animation: none !important;
   }
   .glass-card:hover,

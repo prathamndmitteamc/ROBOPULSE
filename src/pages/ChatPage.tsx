@@ -137,7 +137,7 @@ export const ChatPage: React.FC<ChatPageProps> = ({ navigate }) => {
     const lines = content.split("\n");
 
     return (
-      <div className="space-y-2 text-sm leading-relaxed">
+      <div className="space-y-2 text-sm sm:text-base leading-relaxed">
         {lines.map((line, lIdx) => {
           const trimmed = line.trim();
           if (!trimmed) return <div key={lIdx} className="h-1" />;
@@ -225,16 +225,16 @@ export const ChatPage: React.FC<ChatPageProps> = ({ navigate }) => {
     <div className="relative pt-24 md:pt-32 pb-24 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
       {/* Header */}
       <MotionHeadingGroup className="text-center max-w-2xl mx-auto space-y-3">
-        <div className="inline-flex items-center gap-2 text-xs font-mono tracking-[0.2em] text-[#00C9FF]">
+        <div className="inline-flex items-center gap-2 typo-eyebrow text-[#00C9FF]">
           <span className="w-1.5 h-1.5 rounded-full bg-[#00C9FF] animate-pulse" />
           <span>INTELLIGENT ADVISOR // GEMINI 3 FLASH</span>
         </div>
 
-        <h1 className="font-display text-4xl sm:text-6xl text-white">
+        <h1 className="typo-h1 text-white">
           Pulse <span className="italic text-shimmer">AI Assistant</span>
         </h1>
 
-        <p className="text-sm text-neutral-300">
+        <p className="typo-lead text-neutral-300">
           Ask questions regarding our School Robotics Labs, Grade-Wise Courses, Hardware Kits, or request an institutional proposal.
         </p>
       </MotionHeadingGroup>
@@ -248,8 +248,8 @@ export const ChatPage: React.FC<ChatPageProps> = ({ navigate }) => {
               <Bot className="w-5 h-5 text-black" />
             </div>
             <div>
-              <span className="text-sm font-semibold text-white block">Pulse AI Advisor</span>
-              <span className="text-[10px] font-mono text-emerald-400">● Systems Active</span>
+              <span className="text-base font-semibold text-white block">Pulse AI Advisor</span>
+              <span className="text-xs font-mono text-emerald-400">● Systems Active</span>
             </div>
           </div>
 
@@ -298,7 +298,7 @@ export const ChatPage: React.FC<ChatPageProps> = ({ navigate }) => {
                 )}
 
                 <div
-                  className={`max-w-[85%] rounded-2xl p-4 text-sm ${
+                  className={`max-w-[85%] rounded-2xl p-4 text-sm sm:text-base ${
                     isUser
                       ? "bg-gradient-to-r from-[#006CFF] to-[#00A8FF] text-white rounded-tr-none shadow-[0_4px_20px_rgba(0,108,255,0.25)]"
                       : "bg-[#0B0B16] border border-white/10 text-neutral-200 rounded-tl-none shadow-[0_4px_15px_rgba(0,0,0,0.5)]"
@@ -311,7 +311,7 @@ export const ChatPage: React.FC<ChatPageProps> = ({ navigate }) => {
                   )}
 
                   <div
-                    className={`text-[10px] font-mono mt-2 flex items-center gap-1 ${
+                    className={`text-xs font-mono mt-2 flex items-center gap-1 ${
                       isUser ? "text-blue-100 justify-end" : "text-neutral-500 justify-start"
                     }`}
                   >
@@ -379,7 +379,7 @@ export const ChatPage: React.FC<ChatPageProps> = ({ navigate }) => {
               onChange={(e) => setInput(e.target.value)}
               placeholder="Ask anything about Robopulse robotics, lab setups, courses, or technology..."
               disabled={isLoading}
-              className="flex-1 px-5 py-3 rounded-full bg-white/5 border border-white/10 text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-[#00C9FF] focus:ring-1 focus:ring-[#00C9FF] transition-all disabled:opacity-50"
+              className="flex-1 px-5 py-3 rounded-full bg-white/5 border border-white/10 text-sm sm:text-base text-white placeholder-neutral-500 focus:outline-none focus:border-[#00C9FF] focus:ring-1 focus:ring-[#00C9FF] transition-all disabled:opacity-50"
             />
             <button
               type="submit"

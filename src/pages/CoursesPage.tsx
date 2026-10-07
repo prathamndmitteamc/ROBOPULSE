@@ -91,17 +91,17 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({ navigate }) => {
       {/* ============================================================== */}
       <section className="max-w-7xl mx-auto px-6 lg:px-8">
         <MotionHeadingGroup className="max-w-3xl space-y-6">
-          <div className="inline-flex items-center gap-2 text-xs font-mono tracking-[0.2em] text-[#00C9FF]">
+          <div className="inline-flex items-center gap-2 typo-eyebrow text-[#00C9FF]">
             <span className="w-1.5 h-1.5 rounded-full bg-[#00C9FF] animate-pulse" />
             <span>CURRICULUM // GRADE-ALIGNED PATHWAYS</span>
           </div>
 
-          <h1 className="font-display text-5xl sm:text-7xl lg:text-8xl text-white tracking-tight leading-[0.95]">
+          <h1 className="typo-h1 text-white">
             Engineering Courses for{" "}
             <span className="italic text-shimmer">Every Stage.</span>
           </h1>
 
-          <p className="text-base sm:text-lg text-neutral-300 leading-relaxed font-sans">
+          <p className="typo-lead text-neutral-300">
             Progressive mechatronics and AI learning journeys crafted for young learners through to high school engineers. Real hardware, experiential problem-solving, and competition-ready skills.
           </p>
 
@@ -117,7 +117,7 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({ navigate }) => {
                   "Hello Robopulse, I would like to inquire about robotics & AI courses for our students."
                 )
               }
-              className="px-6 py-3.5 rounded-full bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 text-xs sm:text-sm font-semibold tracking-wider text-neutral-200 hover:text-white transition-all duration-200 flex items-center gap-2 hover:border-[#00C9FF]/60 hover:-translate-y-1 hover:scale-[1.03] hover:shadow-[0_8px_25px_rgba(0,201,255,0.25)] active:scale-95 cursor-pointer"
+              className="px-6 py-3.5 rounded-full bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 typo-btn text-neutral-200 hover:text-white transition-all duration-200 flex items-center gap-2 hover:border-[#00C9FF]/60 hover:-translate-y-1 hover:scale-[1.03] hover:shadow-[0_8px_25px_rgba(0,201,255,0.25)] active:scale-95 cursor-pointer"
             >
               <MessageCircle className="w-4 h-4 text-[#00C9FF]" />
               <span>WhatsApp Academic Advisory</span>
@@ -135,25 +135,25 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({ navigate }) => {
 
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00C9FF]/10 border border-[#00C9FF]/30 text-[11px] font-mono tracking-widest text-[#00C9FF]">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#00C9FF]/10 border border-[#00C9FF]/30 typo-eyebrow text-[#00C9FF]">
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>{FEATURED_COURSE.tag}</span>
               </div>
 
               <div className="space-y-2">
-                <span className="text-xs font-mono tracking-[0.2em] text-[#A9D4FF] uppercase block">
+                <span className="typo-eyebrow text-[#A9D4FF] uppercase block">
                   {FEATURED_COURSE.subtitle}
                 </span>
-                <h2 className="font-display text-3xl sm:text-5xl text-white leading-tight">
+                <h2 className="typo-h2 text-white">
                   {FEATURED_COURSE.title}
                 </h2>
               </div>
 
-              <p className="text-sm sm:text-base text-neutral-300 leading-relaxed font-sans">
+              <p className="typo-lead text-neutral-300">
                 {FEATURED_COURSE.description}
               </p>
 
-              <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-neutral-400">
+              <div className="flex flex-wrap items-center gap-4 typo-small text-neutral-400">
                 <span className="flex items-center gap-1.5 bg-white/5 px-3 py-1.5 rounded-lg border border-white/8">
                   <Users className="w-3.5 h-3.5 text-[#00C9FF]" />
                   <span>{FEATURED_COURSE.ageGroup}</span>
@@ -165,14 +165,14 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({ navigate }) => {
               </div>
 
               <div className="space-y-2 pt-2">
-                <span className="text-[10px] font-mono uppercase text-[#A9D4FF] tracking-wider block">
+                <span className="typo-eyebrow text-[#A9D4FF] uppercase block">
                   Curriculum Highlights:
                 </span>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                   {FEATURED_COURSE.highlights.map((h, idx) => (
                     <div
                       key={idx}
-                      className="flex items-center gap-2 text-xs text-neutral-200"
+                      className="flex items-center gap-2 typo-small text-neutral-200"
                     >
                       <CheckCircle2 className="w-3.5 h-3.5 text-[#00C9FF] shrink-0" />
                       <span>{h}</span>
@@ -194,17 +194,17 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({ navigate }) => {
             <div className="lg:col-span-5">
               <div className="glass-panel rounded-2xl p-7 border border-white/10 space-y-6">
                 <div className="border-b border-white/8 pb-4">
-                  <span className="text-[10px] font-mono text-[#00C9FF] uppercase tracking-widest block">
+                  <span className="typo-eyebrow text-[#00C9FF] uppercase block">
                     LEARNING OUTCOME PROFILE
                   </span>
-                  <h3 className="font-display text-2xl text-white mt-1">
+                  <h3 className="typo-h3 text-white mt-1">
                     Industry-Aligned Skillsets
                   </h3>
                 </div>
 
-                <div className="space-y-3.5 text-xs">
+                <div className="space-y-3.5 typo-small">
                   <div>
-                    <div className="flex justify-between font-mono text-[11px] mb-1">
+                    <div className="flex justify-between typo-eyebrow mb-1">
                       <span className="text-neutral-300">Hardware & Firmware C++</span>
                       <span className="text-[#00C9FF]">95% Practical</span>
                     </div>
@@ -214,7 +214,7 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({ navigate }) => {
                   </div>
 
                   <div>
-                    <div className="flex justify-between font-mono text-[11px] mb-1">
+                    <div className="flex justify-between typo-eyebrow mb-1">
                       <span className="text-neutral-300">Closed-Loop PID Control</span>
                       <span className="text-[#006CFF]">90% Mastery</span>
                     </div>
@@ -224,7 +224,7 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({ navigate }) => {
                   </div>
 
                   <div>
-                    <div className="flex justify-between font-mono text-[11px] mb-1">
+                    <div className="flex justify-between typo-eyebrow mb-1">
                       <span className="text-neutral-300">Edge AI Optical Vision</span>
                       <span className="text-[#A9D4FF]">85% Integration</span>
                     </div>
@@ -234,7 +234,7 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({ navigate }) => {
                   </div>
                 </div>
 
-                <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/8 text-[11px] font-mono text-neutral-400">
+                <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/8 typo-small text-neutral-300">
                   <span className="text-white font-semibold block mb-0.5">
                     Portfolio Certification:
                   </span>
@@ -252,14 +252,14 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({ navigate }) => {
       <section className="max-w-7xl mx-auto px-6 lg:px-8 space-y-10">
         <MotionHeadingGroup className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/8 pb-4">
           <div>
-            <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#00C9FF]">
+            <span className="typo-eyebrow text-[#00C9FF] uppercase">
               COURSE REPOSITORY
             </span>
-            <h2 className="font-display text-3xl sm:text-5xl text-white mt-1">
+            <h2 className="typo-h2 text-white mt-1">
               Select Your Learning Pathway
             </h2>
           </div>
-          <span className="text-xs font-mono text-neutral-400">
+          <span className="typo-small text-neutral-400">
             Showing {filteredCourses.length} of {COURSES_LIST.length} Courses
           </span>
         </MotionHeadingGroup>
@@ -270,7 +270,7 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({ navigate }) => {
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`px-4 py-2.5 rounded-full text-xs font-mono tracking-wider transition-all duration-200 hover:-translate-y-1 hover:scale-[1.04] active:scale-95 cursor-pointer ${
+              className={`px-4 py-2 rounded-full typo-btn text-xs transition-all duration-200 hover:-translate-y-1 hover:scale-[1.04] active:scale-95 cursor-pointer ${
                 selectedCategory === cat
                   ? "bg-[#00C9FF] text-black font-semibold shadow-[0_0_18px_rgba(0,201,255,0.4)]"
                   : "bg-white/5 border border-white/10 text-neutral-300 hover:text-white hover:border-[#00C9FF]/40"
@@ -301,7 +301,7 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({ navigate }) => {
                   </div>
                   <div className="flex items-center gap-2">
                     <span
-                      className={`text-[10px] font-mono px-2.5 py-0.5 rounded-full border uppercase tracking-wider ${getLevelBadgeClass(
+                      className={`typo-eyebrow px-2.5 py-0.5 rounded-full border uppercase ${getLevelBadgeClass(
                         course.level
                       )}`}
                     >
@@ -311,42 +311,42 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({ navigate }) => {
                 </div>
 
                 {/* Course Metadata Strip */}
-                <div className="flex items-center gap-3 text-[11px] font-mono text-neutral-400">
-                  <span className="flex items-center gap-1">
-                    <Users className="w-3 h-3 text-[#00C9FF]" />
+                <div className="flex items-center gap-3 typo-small text-neutral-300">
+                  <span className="flex items-center gap-1.5">
+                    <Users className="w-3.5 h-3.5 text-[#00C9FF]" />
                     <span>{course.ageGroup}</span>
                   </span>
                   <span>·</span>
-                  <span className="flex items-center gap-1">
-                    <Clock className="w-3 h-3 text-[#006CFF]" />
+                  <span className="flex items-center gap-1.5">
+                    <Clock className="w-3.5 h-3.5 text-[#006CFF]" />
                     <span>{course.duration}</span>
                   </span>
                 </div>
 
                 {/* Title & Tagline */}
                 <div className="space-y-1">
-                  <h3 className="font-display text-2xl text-white group-hover:text-[#00C9FF] transition-colors leading-snug">
+                  <h3 className="typo-h3 text-white group-hover:text-[#00C9FF] transition-colors leading-snug">
                     {course.title}
                   </h3>
-                  <p className="text-xs text-neutral-400 font-sans line-clamp-1 italic">
+                  <p className="typo-small text-neutral-400 font-sans line-clamp-1 italic">
                     "{course.tagline}"
                   </p>
                 </div>
 
-                <p className="text-xs text-neutral-300 font-sans leading-relaxed">
+                <p className="typo-body text-neutral-300">
                   {course.description}
                 </p>
 
                 {/* Syllabus Topic Chips */}
                 <div className="pt-3 border-t border-white/5 space-y-1.5">
-                  <span className="text-[10px] font-mono uppercase text-neutral-400 tracking-wider block">
+                  <span className="typo-eyebrow text-neutral-400 uppercase block">
                     Core Modules:
                   </span>
                   <div className="flex flex-wrap gap-1.5">
                     {course.topics.map((topic, idx) => (
                       <span
                         key={idx}
-                        className="text-[10px] font-mono text-[#A9D4FF] bg-white/[0.03] border border-white/8 px-2 py-0.5 rounded group-hover:border-[#00C9FF]/30 transition-colors"
+                        className="typo-eyebrow text-[#A9D4FF] bg-white/[0.03] border border-white/8 px-2.5 py-0.5 rounded group-hover:border-[#00C9FF]/30 transition-colors"
                       >
                         {topic}
                       </span>
@@ -364,12 +364,12 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({ navigate }) => {
                       `Hello Robopulse, I would like to inquire about the course "${course.title}".`
                     );
                   }}
-                  className="px-3 py-1.5 rounded-lg bg-white/[0.03] hover:bg-[#00C9FF]/15 border border-white/10 hover:border-[#00C9FF]/40 text-xs font-semibold text-neutral-200 hover:text-white flex items-center gap-1.5 transition-all duration-200 group-hover:text-[#00C9FF] group-hover:translate-x-1 cursor-pointer"
+                  className="px-3 py-1.5 rounded-lg bg-white/[0.03] hover:bg-[#00C9FF]/15 border border-white/10 hover:border-[#00C9FF]/40 typo-btn text-xs text-neutral-200 hover:text-white flex items-center gap-1.5 transition-all duration-200 group-hover:text-[#00C9FF] group-hover:translate-x-1 cursor-pointer"
                 >
                   <span>Inquire Syllabus</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </button>
-                <span className="text-[10px] font-mono text-neutral-500 uppercase">
+                <span className="typo-eyebrow text-neutral-500 uppercase">
                   {course.badge || "SYLLABUS"}
                 </span>
               </div>
@@ -383,10 +383,10 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({ navigate }) => {
       {/* ============================================================== */}
       <section className="max-w-7xl mx-auto px-6 lg:px-8 space-y-12">
         <MotionHeadingGroup className="border-b border-white/8 pb-4">
-          <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#00C9FF]">
+          <span className="typo-eyebrow text-[#00C9FF] uppercase">
             PROGRESSION FRAMEWORK
           </span>
-          <h2 className="font-display text-3xl sm:text-5xl text-white mt-1">
+          <h2 className="typo-h2 text-white mt-1">
             From First Mechanism to Edge AI
           </h2>
         </MotionHeadingGroup>
@@ -430,16 +430,16 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({ navigate }) => {
               key={idx}
               className="box-hover-pop p-6 rounded-2xl bg-white/[0.02] border border-white/8 space-y-3.5 hover:border-[#00C9FF]/40 transition-all duration-300 group cursor-pointer"
             >
-              <span className="font-mono text-xs text-[#00C9FF] tracking-widest uppercase block group-hover:translate-x-1 transition-transform">
+              <span className="typo-eyebrow text-[#00C9FF] uppercase block group-hover:translate-x-1 transition-transform">
                 {stage.step}
               </span>
-              <h3 className="font-display text-xl text-white group-hover:text-[#00C9FF] transition-colors">
+              <h3 className="typo-h4 text-white group-hover:text-[#00C9FF] transition-colors">
                 {stage.title}
               </h3>
-              <span className="text-[10px] font-mono text-[#A9D4FF] block">
+              <span className="typo-eyebrow text-[#A9D4FF] block">
                 {stage.grades}
               </span>
-              <p className="text-xs text-neutral-400 leading-relaxed font-sans">
+              <p className="typo-body text-neutral-300">
                 {stage.description}
               </p>
             </div>
@@ -455,13 +455,13 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({ navigate }) => {
           <div className="absolute top-0 right-1/3 w-80 h-80 bg-[#00C9FF]/10 rounded-full blur-[100px] pointer-events-none" />
 
           <MotionHeadingGroup className="relative z-10 max-w-2xl mx-auto space-y-3">
-            <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#00C9FF]">
+            <span className="typo-eyebrow text-[#00C9FF] uppercase">
               ENROLLMENT & SCHOOL ADOPTION
             </span>
-            <h2 className="font-display text-4xl sm:text-5xl text-white">
+            <h2 className="typo-h2 text-white">
               Introduce These Courses to Your Campus
             </h2>
-            <p className="text-xs sm:text-sm text-neutral-300 font-sans leading-relaxed">
+            <p className="typo-lead text-neutral-300">
               We offer full course licensing, hardware kit bundles, faculty training, and student certifications for academic institutions and learning centers.
             </p>
           </MotionHeadingGroup>
@@ -478,7 +478,7 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({ navigate }) => {
                   "Hello, I would like to discuss implementing Robopulse robotics courses in our school curriculum."
                 )
               }
-              className="px-6 py-3.5 rounded-full bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 text-xs sm:text-sm font-semibold tracking-wider text-neutral-200 hover:text-white transition-all flex items-center gap-2 cursor-pointer"
+              className="px-6 py-3.5 rounded-full bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 typo-btn text-neutral-200 hover:text-white transition-all flex items-center gap-2 cursor-pointer"
             >
               <MessageCircle className="w-4 h-4 text-[#00C9FF]" />
               <span>Direct WhatsApp Discussion</span>

@@ -15,13 +15,13 @@ export const NotFoundPage: React.FC<NotFoundPageProps> = ({ navigate }) => {
         </div>
 
         <div className="space-y-2">
-          <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#00C9FF]">
+          <span className="typo-eyebrow uppercase text-[#00C9FF]">
             ERROR 404 // TELEMETRY INTERRUPTED
           </span>
-          <h1 className="font-display text-5xl sm:text-6xl text-white">
+          <h1 className="typo-h1 text-white">
             Signal Lost.
           </h1>
-          <p className="text-xs sm:text-sm text-neutral-400 font-sans leading-relaxed">
+          <p className="typo-body text-neutral-400">
             The requested robotics node or coordinate does not exist in our system registry. Reconnect to headquarters via the links below.
           </p>
         </div>

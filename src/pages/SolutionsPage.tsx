@@ -21,17 +21,17 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({ navigate }) => {
       {/* ============================================================== */}
       <section className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="max-w-3xl space-y-6">
-          <div className="inline-flex items-center gap-2 text-xs font-mono tracking-[0.2em] text-[#00C9FF]">
+          <div className="inline-flex items-center gap-2 typo-eyebrow text-[#00C9FF]">
             <span className="w-1.5 h-1.5 rounded-full bg-[#00C9FF] animate-pulse" />
             <span>SOLUTIONS // SCHOOL OFFERINGS</span>
           </div>
 
-          <h1 className="font-display text-5xl sm:text-7xl lg:text-8xl text-white tracking-tight leading-[0.95]">
+          <h1 className="typo-h1 text-white">
             Technology Programs Built for{" "}
             <span className="italic text-shimmer">Schools.</span>
           </h1>
 
-          <p className="text-base sm:text-lg text-neutral-300 leading-relaxed font-sans">
+          <p className="typo-lead text-neutral-300">
             Modular, scalable, and turnkey educational architectures designed specifically to integrate seamlessly into modern school curricula, timetables, and campus facilities.
           </p>
         </div>
@@ -42,10 +42,10 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({ navigate }) => {
       {/* ============================================================== */}
       <section className="max-w-7xl mx-auto px-6 lg:px-8 space-y-12">
         <div className="border-b border-white/8 pb-4">
-          <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#00C9FF]">
+          <span className="typo-eyebrow text-[#00C9FF] uppercase">
             PROGRAM CATALOGUE
           </span>
-          <h2 className="font-display text-3xl sm:text-5xl text-white mt-1">
+          <h2 className="typo-h2 text-white mt-1">
             Six Specialized Institutional Tracks
           </h2>
         </div>
@@ -71,25 +71,25 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({ navigate }) => {
                 </div>
 
                 <div className="p-6 space-y-3">
-                  <span className="text-[10px] font-mono tracking-widest text-[#A9D4FF] uppercase">
+                  <span className="typo-eyebrow text-[#A9D4FF] uppercase">
                     {sol.category}
                   </span>
-                  <h3 className="font-display text-2xl text-white">
+                  <h3 className="typo-h3 text-white">
                     {sol.title}
                   </h3>
-                  <p className="text-xs text-neutral-400 italic font-display text-sm">
+                  <p className="typo-small text-neutral-400 italic">
                     "{sol.tagline}"
                   </p>
-                  <p className="text-xs text-neutral-300 leading-relaxed font-sans">
+                  <p className="typo-body text-neutral-300">
                     {sol.description}
                   </p>
 
                   <div className="pt-3 border-t border-white/5 space-y-1.5">
-                    <span className="text-[10px] font-mono uppercase text-neutral-400 block tracking-wider">
+                    <span className="text-xs font-mono uppercase text-neutral-400 block tracking-wider">
                       Key Competencies Built:
                     </span>
                     {sol.outcomes.map((out, idx) => (
-                      <div key={idx} className="flex items-start gap-1.5 text-xs text-neutral-300">
+                      <div key={idx} className="flex items-start gap-1.5 text-xs sm:text-sm text-neutral-300">
                         <CheckCircle2 className="w-3.5 h-3.5 text-[#00C9FF] shrink-0 mt-0.5" />
                         <span>{out}</span>
                       </div>
@@ -116,13 +116,13 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({ navigate }) => {
       {/* ============================================================== */}
       <section className="max-w-7xl mx-auto px-6 lg:px-8 space-y-10">
         <div>
-          <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#00C9FF]">
+          <span className="typo-eyebrow text-[#00C9FF] uppercase">
             DEPLOYMENT BLUEPRINTS
           </span>
-          <h2 className="font-display text-4xl sm:text-5xl text-white mt-1">
+          <h2 className="typo-h2 text-white mt-1">
             Programs Designed Around Your School.
           </h2>
-          <p className="text-sm text-neutral-400 mt-2 max-w-xl">
+          <p className="typo-lead text-neutral-300 mt-2 max-w-xl">
             Choose how Robopulse fits into your existing academic timetable and physical campus infrastructure.
           </p>
         </div>
@@ -141,13 +141,13 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({ navigate }) => {
                     : "bg-white/[0.02] border-white/5 text-neutral-400 hover:border-white/15"
                 }`}
               >
-                <span className="text-[10px] font-mono text-[#00C9FF] block">
+                <span className="text-xs font-mono text-[#00C9FF] block">
                   {model.num}
                 </span>
-                <span className="text-sm font-semibold text-white block mt-1">
+                <span className="text-sm sm:text-base font-semibold text-white block mt-1">
                   {model.name}
                 </span>
-                <span className="text-[11px] text-neutral-400 block mt-0.5 font-sans">
+                <span className="text-xs text-neutral-400 block mt-0.5 font-sans">
                   {model.subtitle}
                 </span>
               </button>
@@ -164,11 +164,11 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({ navigate }) => {
               <span>{currentModel.subtitle}</span>
             </div>
 
-            <h3 className="font-display text-3xl sm:text-5xl text-white">
+            <h3 className="typo-h3 text-white">
               {currentModel.name}
             </h3>
 
-            <p className="text-sm text-neutral-300 leading-relaxed font-sans">
+            <p className="typo-body text-neutral-300">
               {currentModel.description}
             </p>
 
@@ -220,13 +220,13 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({ navigate }) => {
       {/* ============================================================== */}
       <section className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="p-10 rounded-3xl bg-gradient-to-r from-[#070712] via-[#090918] to-[#040409] border border-white/15 text-center space-y-6">
-          <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#00C9FF]">
+          <span className="typo-eyebrow text-[#00C9FF] uppercase">
             TAILORED INSTITUTIONAL SOLUTIONS
           </span>
-          <h2 className="font-display text-4xl sm:text-5xl text-white">
+          <h2 className="typo-h2 text-white">
             Need a Custom Architecture for Your Campus?
           </h2>
-          <p className="text-sm text-neutral-300 max-w-xl mx-auto font-sans leading-relaxed">
+          <p className="typo-lead text-neutral-300 max-w-xl mx-auto">
             Our engineering education consultants can assess your classroom spaces, batch sizes, and syllabus requirements to formulate a comprehensive proposal.
           </p>
           <div className="pt-2">

@@ -101,10 +101,10 @@ export const GalleryLightbox: React.FC<GalleryLightboxProps> = ({
         <div className="lg:w-1/3 p-6 sm:p-8 flex flex-col justify-between overflow-y-auto bg-[#0A0A12] border-t lg:border-t-0 lg:border-l border-white/10">
           <div className="space-y-4">
             <div className="flex items-center justify-between">
-              <span className="font-mono text-[10px] uppercase tracking-widest text-[#00C9FF]">
+              <span className="font-mono text-xs uppercase tracking-widest text-[#00C9FF]">
                 {item.category}
               </span>
-              <span className="font-mono text-xs text-neutral-500">
+              <span className="font-mono text-xs text-neutral-400">
                 {currentIndex + 1} / {items.length}
               </span>
             </div>
@@ -113,11 +113,11 @@ export const GalleryLightbox: React.FC<GalleryLightboxProps> = ({
               {item.title}
             </h3>
 
-            <p className="text-xs text-neutral-300 leading-relaxed font-sans">
+            <p className="text-sm sm:text-base text-neutral-300 leading-relaxed font-sans">
               {item.description}
             </p>
 
-            <div className="pt-4 border-t border-white/5 space-y-2.5 text-xs text-neutral-400">
+            <div className="pt-4 border-t border-white/5 space-y-2.5 text-xs sm:text-sm text-neutral-300">
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-[#00C9FF] shrink-0" />
                 <span>{item.school}</span>
@@ -130,14 +130,14 @@ export const GalleryLightbox: React.FC<GalleryLightboxProps> = ({
 
             {item.tags && item.tags.length > 0 && (
               <div className="pt-3 border-t border-white/5">
-                <span className="text-[11px] font-mono text-neutral-500 uppercase tracking-wider block mb-2">
+                <span className="text-xs font-mono text-neutral-400 uppercase tracking-wider block mb-2">
                   Focus Tags:
                 </span>
                 <div className="flex flex-wrap gap-1.5">
                   {item.tags.map((tag, i) => (
                     <span
                       key={i}
-                      className="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[11px] font-mono text-neutral-300"
+                      className="px-2.5 py-0.5 rounded bg-white/5 border border-white/10 text-xs font-mono text-neutral-300"
                     >
                       {tag}
                     </span>

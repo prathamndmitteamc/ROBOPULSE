@@ -32,6 +32,22 @@ app.post('/api/chat', async (req, res) => {
   }
 });
 
+// API: Contact & Institutional Lead Submission
+app.post('/api/lead', async (req, res) => {
+  try {
+    const payload = req.body || {};
+    const { processContactLead } = await import('./src/api/leadHandler.js');
+    const result = await processContactLead(payload);
+    res.status(result.success ? 200 : 400).json(result);
+  } catch (error) {
+    console.error('Lead endpoint error:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Failed to process enquiry. Please try again or reach out on WhatsApp.',
+    });
+  }
+});
+
 // Serve static assets from Vite build directory if it exists
 const distPath = path.resolve(__dirname, 'dist');
 if (fs.existsSync(distPath)) {

@@ -43,17 +43,17 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ navigate }) => {
       {/* ============================================================== */}
       <section className="max-w-7xl mx-auto px-6 lg:px-8">
         <MotionHeadingGroup className="max-w-3xl space-y-6">
-          <div className="inline-flex items-center gap-2 text-xs font-mono tracking-[0.2em] text-[#00C9FF]">
+          <div className="inline-flex items-center gap-2 typo-eyebrow text-[#00C9FF]">
             <span className="w-1.5 h-1.5 rounded-full bg-[#00C9FF] animate-pulse" />
             <span>DOCUMENTATION // ARCHIVE</span>
           </div>
 
-          <h1 className="font-display text-5xl sm:text-7xl lg:text-8xl text-white tracking-tight leading-[0.95]">
+          <h1 className="typo-h1 text-white">
             Inside the Robopulse{" "}
             <span className="italic text-shimmer">Experience.</span>
           </h1>
 
-          <p className="text-base sm:text-lg text-neutral-300 leading-relaxed font-sans">
+          <p className="typo-lead text-neutral-300">
             Explore authentic moments from our campus deployments, student robotics challenges, teacher enablement workshops, and state-of-the-art innovation laboratories.
           </p>
         </MotionHeadingGroup>
@@ -149,7 +149,7 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ navigate }) => {
                       </span>
                     </div>
 
-                    <span className="absolute top-4 left-4 text-[10px] font-mono uppercase tracking-widest text-[#00C9FF] bg-black/70 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
+                    <span className="absolute top-4 left-4 text-xs font-mono uppercase tracking-widest text-[#00C9FF] bg-black/70 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
                       {item.category}
                     </span>
                   </div>
@@ -160,7 +160,7 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ navigate }) => {
                       {item.title}
                     </h3>
 
-                    <p className="text-xs text-neutral-300 line-clamp-2 leading-relaxed font-sans">
+                    <p className="text-sm text-neutral-300 line-clamp-2 leading-relaxed font-sans">
                       {item.description}
                     </p>
                   </div>
@@ -168,12 +168,12 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ navigate }) => {
 
                 {/* Footer Metadata */}
                 <div className="px-6 pb-6 pt-2 border-t border-white/5 space-y-2">
-                  <div className="flex items-center justify-between text-xs text-neutral-400">
+                  <div className="flex items-center justify-between text-xs sm:text-sm text-neutral-300">
                     <div className="flex items-center gap-1.5">
                       <MapPin className="w-3.5 h-3.5 text-[#00C9FF] shrink-0" />
                       <span className="truncate max-w-[160px]">{item.school}</span>
                     </div>
-                    <span className="font-mono text-[11px] text-neutral-500">
+                    <span className="font-mono text-xs text-neutral-400">
                       {item.date}
                     </span>
                   </div>
@@ -183,7 +183,7 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ navigate }) => {
                       {item.tags.slice(0, 2).map((t, idx) => (
                         <span
                           key={idx}
-                          className="px-2 py-0.5 rounded bg-white/5 text-[10px] font-mono text-neutral-400"
+                          className="px-2.5 py-0.5 rounded bg-white/5 text-xs font-mono text-neutral-300"
                         >
                           {t}
                         </span>
@@ -202,10 +202,10 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ navigate }) => {
       {/* ============================================================== */}
       <section className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="p-10 rounded-3xl bg-gradient-to-r from-[#070712] via-[#090918] to-[#040409] border border-white/15 text-center space-y-6">
-          <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#00C9FF]">
+          <span className="typo-eyebrow uppercase text-[#00C9FF]">
             FEATURE YOUR CAMPUS
           </span>
-          <h2 className="font-display text-4xl sm:text-5xl text-white">
+          <h2 className="typo-h2 text-white">
             Ready to Build Next-Level Robotics on Your Campus?
           </h2>
           <div className="pt-2">

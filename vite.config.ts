@@ -11,6 +11,38 @@ export default defineConfig(() => {
       {
         name: 'api-chat-dev-server',
         configureServer(server) {
+          server.middlewares.use('/api/lead', async (req, res) => {
+            if (req.method !== 'POST') {
+              res.statusCode = 405;
+              res.end('Method Not Allowed');
+              return;
+            }
+            let body = '';
+            req.on('data', (chunk) => {
+              body += chunk;
+            });
+            req.on('end', async () => {
+              try {
+                const parsed = JSON.parse(body || '{}');
+                const { processContactLead } = await import('./src/api/leadHandler');
+                const result = await processContactLead(parsed);
+                res.setHeader('Content-Type', 'application/json');
+                res.statusCode = result.success ? 200 : 400;
+                res.end(JSON.stringify(result));
+              } catch (err) {
+                console.error('Dev server lead error:', err);
+                res.setHeader('Content-Type', 'application/json');
+                res.statusCode = 500;
+                res.end(
+                  JSON.stringify({
+                    success: false,
+                    message: 'Internal server error while processing lead.',
+                  })
+                );
+              }
+            });
+          });
+
           server.middlewares.use('/api/chat', async (req, res) => {
             if (req.method !== 'POST') {
               res.statusCode = 405;
