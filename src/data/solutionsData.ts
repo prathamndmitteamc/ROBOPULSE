@@ -261,7 +261,7 @@ export const HANDS_ON_PROJECTS: HandsOnProject[] = [
     category: "ROBOTICS",
     description: "Wheeled rover utilizing dual ultrasonic sensors and motor drivers to autonomously map room boundaries and navigate without human intervention.",
     techTags: ["Ultrasonic Sensors", "Motor H-Bridge", "Microcontroller", "Autonomous Navigation"],
-    image: "/assets/images/student_robotics_project_1790153242579.jpg",
+    image: "https://i.postimg.cc/sgcH57K8/Cinematic-Robotics-Lab-Project.png",
   },
   {
     id: "proj-2",

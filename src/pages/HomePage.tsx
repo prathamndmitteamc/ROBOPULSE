@@ -6,7 +6,7 @@ import { SchoolValueRadial } from "../components/SchoolValueRadial";
 import { ProgramPillarsStrip } from "../components/ProgramPillarsStrip";
 import { MotionHeadingGroup, MotionItem } from "../components/MotionHeading";
 import { openWhatsApp } from "../config";
-import { SOLUTIONS_LIST, HANDS_ON_PROJECTS, PROGRAM_MODELS } from "../data/solutionsData";
+import { SOLUTIONS_LIST, PROGRAM_MODELS } from "../data/solutionsData";
 import { SCHOOLS, PARTNERS } from "../data/feedbackData";
 import {
   ArrowRight,
@@ -195,77 +195,6 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
         </div>
 
         <SchoolValueRadial />
-      </section>
-
-      {/* ============================================================== */}
-      {/* 07 — PROJECT-BASED LEARNING SHOWCASE (#29, #30)                */}
-      {/* ============================================================== */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-8 space-y-8">
-        <MotionHeadingGroup className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/8 pb-6">
-          <div>
-            <span className="typo-eyebrow text-[#00C9FF] uppercase">
-              EXPERIENTIAL CURRICULUM
-            </span>
-            <h2 className="typo-h2 text-white mt-1">
-              Learning Happens When Students Build.
-            </h2>
-            <p className="typo-small text-neutral-400 mt-2">
-              Move beyond theory. Build. Test. Break. Improve. Learn.
-            </p>
-          </div>
-          <button
-            onClick={() => navigate("/robotics")}
-            className="typo-eyebrow text-[#00C9FF] hover:underline whitespace-nowrap"
-          >
-            ALL PROJECTS &gt;
-          </button>
-        </MotionHeadingGroup>
-
-        {/* Horizontal Project Cards (#30) */}
-        <div className="flex gap-6 overflow-x-auto pb-4 no-scrollbar snap-x">
-          {HANDS_ON_PROJECTS.map((proj) => (
-            <div
-              key={proj.id}
-              onClick={() => navigate("/robotics")}
-              className="box-hover-pop min-w-[300px] sm:min-w-[360px] max-w-[380px] snap-start rounded-2xl bg-[#080810] border border-white/10 p-5 space-y-4 hover:border-[#00C9FF]/50 hover:-translate-y-2 hover:shadow-[0_16px_35px_-8px_rgba(0,201,255,0.22)] transition-all duration-300 flex flex-col justify-between shrink-0 group cursor-pointer"
-            >
-              <div className="space-y-3">
-                <div className="h-44 rounded-xl overflow-hidden relative">
-                  <img
-                    src={proj.image}
-                    alt={proj.title}
-                    referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <span className="absolute top-3 left-3 px-2 py-0.5 rounded bg-black/70 backdrop-blur-md typo-eyebrow text-[#00C9FF]">
-                    {proj.num}
-                  </span>
-                </div>
-
-                <span className="typo-eyebrow text-[#A9D4FF] uppercase">
-                  {proj.category}
-                </span>
-
-                <h3 className="typo-h3 text-white group-hover:text-[#00C9FF] transition-colors">{proj.title}</h3>
-
-                <p className="typo-body text-neutral-300">
-                  {proj.description}
-                </p>
-              </div>
-
-              <div className="pt-3 border-t border-white/5 flex flex-wrap gap-1.5">
-                {proj.techTags.map((tag, i) => (
-                  <span
-                    key={i}
-                    className="px-2.5 py-0.5 rounded bg-white/5 typo-eyebrow text-neutral-300"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
       </section>
 
       {/* ============================================================== */}
