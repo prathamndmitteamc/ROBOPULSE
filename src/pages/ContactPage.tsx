@@ -12,6 +12,7 @@ import {
   Send,
   Building,
   Clock,
+  ExternalLink,
   Facebook,
   Instagram,
   Linkedin,
@@ -31,6 +32,7 @@ export const ContactPage: React.FC = () => {
 
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [feedbackMsg, setFeedbackMsg] = useState<string>("");
+  const [submittedWhatsAppUrl, setSubmittedWhatsAppUrl] = useState<string>("");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -45,6 +47,7 @@ export const ContactPage: React.FC = () => {
     e.preventDefault();
     setStatus("loading");
     setFeedbackMsg("");
+    setSubmittedWhatsAppUrl("");
 
     const submittedName = formData.name.trim();
     const result = await submitLead(formData);
@@ -64,19 +67,27 @@ export const ContactPage: React.FC = () => {
         message: "",
       });
 
-      // Prepare personalized pre-filled WhatsApp message
+      // Prepare personalized pre-filled WhatsApp message as specified in requirement:
+      // "Hello RoboPulse Intelligence! I have submitted an enquiry through your website and would like to know more about your Robotics, AI, and STEM programs. Please contact me with further details."
       const whatsappMsg = submittedName
-        ? `Hello Robopulse Intelligence! I'm ${submittedName}. I just submitted an enquiry through your website. I would like to know more about your Robotics, AI and STEM programs.`
-        : `Hello Robopulse Intelligence! I just submitted an enquiry through your website. I would like to know more about your Robotics, AI and STEM programs.`;
+        ? `Hello RoboPulse Intelligence! I am ${submittedName}. I have submitted an enquiry through your website and would like to know more about your Robotics, AI, and STEM programs. Please contact me with further details.`
+        : `Hello RoboPulse Intelligence! I have submitted an enquiry through your website and would like to know more about your Robotics, AI, and STEM programs. Please contact me with further details.`;
 
-      // Open official WhatsApp (+91 80904 05992) smoothly after success confirmation
+      const whatsappUrl = `https://wa.me/919451226511?text=${encodeURIComponent(whatsappMsg)}`;
+      setSubmittedWhatsAppUrl(whatsappUrl);
+
+      // Attempt to open WhatsApp smoothly after confirmation; if popup is blocked, the user can click "Continue on WhatsApp" button
       setTimeout(() => {
-        const whatsappUrl = `https://wa.me/918090405992?text=${encodeURIComponent(whatsappMsg)}`;
-        window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+        try {
+          window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+        } catch (popupErr) {
+          console.warn("[WHATSAPP] Popup prevented by browser policy:", popupErr);
+        }
       }, 700);
     } else {
       setStatus("error");
       setFeedbackMsg(result.message);
+      setSubmittedWhatsAppUrl("");
     }
   };
 
@@ -120,17 +131,56 @@ export const ContactPage: React.FC = () => {
               </span>
 
               <div className="space-y-4 text-sm">
+                {/* Head Office */}
                 <div className="flex items-start gap-3 text-neutral-300">
                   <div className="w-9 h-9 rounded-xl bg-white/5 text-[#00C9FF] flex items-center justify-center shrink-0 mt-0.5">
                     <MapPin className="w-4 h-4" />
                   </div>
-                  <div>
-                    <span className="text-xs font-mono text-neutral-500 uppercase block">Headquarters</span>
-                    <span className="text-white text-xs sm:text-sm font-medium">{CONFIG.address}</span>
+                  <div className="space-y-1">
+                    <span className="text-xs font-mono text-[#00C9FF] uppercase tracking-wider block font-semibold">
+                      {CONFIG.offices.headOffice.title}
+                    </span>
+                    <span className="text-white text-xs sm:text-sm font-medium block leading-snug">
+                      {CONFIG.offices.headOffice.address}
+                    </span>
+                    <a
+                      href={CONFIG.offices.headOffice.mapsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-[11px] font-mono text-neutral-400 hover:text-[#00C9FF] transition-colors"
+                    >
+                      <span>View on Google Maps</span>
+                      <ExternalLink className="w-3 h-3" />
+                    </a>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3 text-neutral-300">
+                {/* Branch Office */}
+                <div className="flex items-start gap-3 text-neutral-300 pt-2 border-t border-white/5">
+                  <div className="w-9 h-9 rounded-xl bg-white/5 text-[#A9D4FF] flex items-center justify-center shrink-0 mt-0.5">
+                    <Building className="w-4 h-4" />
+                  </div>
+                  <div className="space-y-1">
+                    <span className="text-xs font-mono text-[#A9D4FF] uppercase tracking-wider block font-semibold">
+                      {CONFIG.offices.branchOffice.title}
+                    </span>
+                    <span className="text-white text-xs sm:text-sm font-medium block leading-snug">
+                      {CONFIG.offices.branchOffice.address}
+                    </span>
+                    <a
+                      href={CONFIG.offices.branchOffice.mapsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-[11px] font-mono text-neutral-400 hover:text-[#00C9FF] transition-colors"
+                    >
+                      <span>View on Google Maps</span>
+                      <ExternalLink className="w-3 h-3" />
+                    </a>
+                  </div>
+                </div>
+
+                {/* Email Channel */}
+                <div className="flex items-start gap-3 text-neutral-300 pt-2 border-t border-white/5">
                   <div className="w-9 h-9 rounded-xl bg-white/5 text-[#00C9FF] flex items-center justify-center shrink-0 mt-0.5">
                     <Mail className="w-4 h-4" />
                   </div>
@@ -142,6 +192,7 @@ export const ContactPage: React.FC = () => {
                   </div>
                 </div>
 
+                {/* Phone Channel */}
                 <div className="flex items-start gap-3 text-neutral-300">
                   <div className="w-9 h-9 rounded-xl bg-white/5 text-[#00C9FF] flex items-center justify-center shrink-0 mt-0.5">
                     <Phone className="w-4 h-4" />
@@ -241,9 +292,30 @@ export const ContactPage: React.FC = () => {
 
               {/* Success state banner */}
               {status === "success" && (
-                <div className="p-4 rounded-xl bg-[#00C9FF]/10 border border-[#00C9FF]/40 text-[#00C9FF] text-xs font-mono flex items-start gap-2.5">
-                  <CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5" />
-                  <span>{feedbackMsg}</span>
+                <div className="p-5 rounded-2xl bg-[#00C9FF]/10 border border-[#00C9FF]/40 text-[#00C9FF] text-xs font-mono space-y-3">
+                  <div className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-5 h-5 shrink-0 text-[#00C9FF] mt-0.5" />
+                    <div className="space-y-1">
+                      <span className="font-semibold block text-sm text-white">Enquiry Successfully Submitted!</span>
+                      <p className="text-neutral-300 font-sans text-xs leading-relaxed">{feedbackMsg}</p>
+                    </div>
+                  </div>
+                  {submittedWhatsAppUrl && (
+                    <div className="pt-2 border-t border-[#00C9FF]/20 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                      <span className="text-[11px] text-neutral-400 font-sans">
+                        Need immediate assistance? Connect directly with our robotics engineers:
+                      </span>
+                      <a
+                        href={submittedWhatsAppUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#00C9FF] text-black font-semibold text-xs hover:bg-white transition-colors shrink-0"
+                      >
+                        <MessageCircle className="w-4 h-4" />
+                        <span>Continue on WhatsApp</span>
+                      </a>
+                    </div>
+                  )}
                 </div>
               )}
 

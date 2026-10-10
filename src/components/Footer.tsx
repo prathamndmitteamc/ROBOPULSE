@@ -1,7 +1,7 @@
 import React from "react";
 import { RobopulseLogo } from "./RobopulseLogo";
 import { CONFIG, openWhatsApp } from "../config";
-import { Mail, Phone, MapPin, ArrowUpRight, MessageCircle, Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
+import { Mail, Phone, MapPin, Building, ArrowUpRight, MessageCircle, Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
 
 interface FooterProps {
   navigate: (path: string) => void;
@@ -179,22 +179,59 @@ export const Footer: React.FC<FooterProps> = ({ navigate }) => {
             <h4 className="text-xs font-mono uppercase tracking-[0.2em] text-white/80">
               Explore & Connect
             </h4>
-            <div className="space-y-2 text-xs">
-              <div className="flex items-start gap-2 text-neutral-400">
-                <MapPin className="w-3.5 h-3.5 text-[#00C9FF] shrink-0 mt-0.5" />
-                <span>{CONFIG.address}</span>
+            <div className="space-y-2.5 text-xs">
+              {/* Head Office */}
+              <div className="space-y-0.5">
+                <span className="text-[10px] font-mono text-[#00C9FF] uppercase tracking-wider block font-semibold">
+                  {CONFIG.offices.headOffice.title}
+                </span>
+                <div className="flex items-start gap-2 text-neutral-400">
+                  <MapPin className="w-3.5 h-3.5 text-[#00C9FF] shrink-0 mt-0.5" />
+                  <a
+                    href={CONFIG.offices.headOffice.mapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-white transition-colors leading-snug"
+                    title="View Head Office on Google Maps"
+                  >
+                    {CONFIG.offices.headOffice.address}
+                  </a>
+                </div>
               </div>
-              <div className="flex items-center gap-2 text-neutral-400">
-                <Mail className="w-3.5 h-3.5 text-[#00C9FF] shrink-0" />
-                <a href={`mailto:${CONFIG.email}`} className="hover:text-white transition-colors">
-                  {CONFIG.email}
-                </a>
+
+              {/* Branch Office */}
+              <div className="space-y-0.5 pt-1.5 border-t border-white/5">
+                <span className="text-[10px] font-mono text-[#A9D4FF] uppercase tracking-wider block font-semibold">
+                  {CONFIG.offices.branchOffice.title}
+                </span>
+                <div className="flex items-start gap-2 text-neutral-400">
+                  <Building className="w-3.5 h-3.5 text-[#A9D4FF] shrink-0 mt-0.5" />
+                  <a
+                    href={CONFIG.offices.branchOffice.mapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-white transition-colors leading-snug"
+                    title="View Branch Office on Google Maps"
+                  >
+                    {CONFIG.offices.branchOffice.address}
+                  </a>
+                </div>
               </div>
-              <div className="flex items-center gap-2 text-neutral-400">
-                <Phone className="w-3.5 h-3.5 text-[#00C9FF] shrink-0" />
-                <a href={`tel:${CONFIG.phone}`} className="hover:text-white transition-colors">
-                  {CONFIG.phoneDisplay}
-                </a>
+
+              {/* Email & Phone */}
+              <div className="pt-1.5 border-t border-white/5 space-y-1.5">
+                <div className="flex items-center gap-2 text-neutral-400">
+                  <Mail className="w-3.5 h-3.5 text-[#00C9FF] shrink-0" />
+                  <a href={`mailto:${CONFIG.email}`} className="hover:text-white transition-colors">
+                    {CONFIG.email}
+                  </a>
+                </div>
+                <div className="flex items-center gap-2 text-neutral-400">
+                  <Phone className="w-3.5 h-3.5 text-[#00C9FF] shrink-0" />
+                  <a href={`tel:${CONFIG.phone}`} className="hover:text-white transition-colors">
+                    {CONFIG.phoneDisplay}
+                  </a>
+                </div>
               </div>
             </div>
 

@@ -9,10 +9,29 @@ export interface RobopulseConfig {
   phone: string;
   phoneDisplay: string;
   whatsapp: string;
+  whatsappUrl: string;
   whatsappMessage: string;
   email: string;
   address: string;
   city: string;
+  offices: {
+    headOffice: {
+      title: string;
+      address: string;
+      city: string;
+      state: string;
+      country: string;
+      mapsUrl: string;
+    };
+    branchOffice: {
+      title: string;
+      address: string;
+      city: string;
+      state: string;
+      country: string;
+      mapsUrl: string;
+    };
+  };
   website: string;
   primaryCTA: string;
   logo: {
@@ -46,14 +65,33 @@ export interface RobopulseConfig {
 export const CONFIG: RobopulseConfig = {
   businessName: "Robopulse Intelligence",
   tagline: "Building the Intelligence Behind Tomorrow.",
-  phone: "+918090405992",
-  phoneDisplay: "+91 80904 05992",
-  whatsapp: "918090405992",
+  phone: "+919451226511",
+  phoneDisplay: "+91 94512 26511",
+  whatsapp: "919451226511",
+  whatsappUrl: "https://wa.me/919451226511",
   whatsappMessage:
-    "Hello Robopulse Intelligence, I would like to know more about your Robotics, AI and STEM programs for our school/students.",
-  email: "Aashishgyan2007@gmail.com",
-  address: "Sigra, Varanasi, Uttar Pradesh, India",
-  city: "Varanasi, India",
+    "Hello RoboPulse Intelligence! I have submitted an enquiry through your website and would like to know more about your Robotics, AI, and STEM programs. Please contact me with further details.",
+  email: "robopulse51@gmail.com",
+  address: "Panama Park, Dhanori Road, Lohegaon, Pune, Maharashtra, India",
+  city: "Pune, India",
+  offices: {
+    headOffice: {
+      title: "Head Office",
+      address: "Panama Park, Dhanori Road, Lohegaon, Pune, Maharashtra, India",
+      city: "Pune",
+      state: "Maharashtra",
+      country: "India",
+      mapsUrl: "https://www.google.com/maps/search/?api=1&query=Panama+Park+Dhanori+Road+Lohegaon+Pune+Maharashtra+India",
+    },
+    branchOffice: {
+      title: "Branch Office",
+      address: "Kabir Nagar, Varanasi, Uttar Pradesh, India",
+      city: "Varanasi",
+      state: "Uttar Pradesh",
+      country: "India",
+      mapsUrl: "https://www.google.com/maps/search/?api=1&query=Kabir+Nagar+Varanasi+Uttar+Pradesh+India",
+    },
+  },
   website: "https://robopulseintelligence.com",
   primaryCTA: "CONTACT US",
   logo: {
@@ -111,7 +149,7 @@ export interface LeadPayload {
 /**
  * Central Lead Submission Architecture
  * Production-ready for Hostinger (PHP mailer endpoint), Node.js Express server, Formspree/webhooks
- * Recipient: Aashishgyan2007@gmail.com
+ * Recipient: robopulse51@gmail.com
  */
 export async function submitLead(payload: LeadPayload): Promise<{ success: boolean; message: string }> {
   trackAnalyticsEvent("contact_form_submit", { requirement: payload.requirement });
@@ -165,10 +203,9 @@ export async function submitLead(payload: LeadPayload): Promise<{ success: boole
     timestamp: new Date().toISOString(),
   };
 
-  // 2. Try Primary Endpoint: Local Node/Express server route (/api/lead)
-  let primaryFetchSuccess = false;
   let primaryErrorMessage = "";
 
+  // 2. Try Primary Endpoint: Local Node/Express server route (/api/lead)
   try {
     const response = await fetch(CONFIG.integrations.apiEndpoint, {
       method: "POST",
@@ -231,8 +268,7 @@ export async function submitLead(payload: LeadPayload): Promise<{ success: boole
     }
   }
 
-  // 4. Try Direct Cloud Webhook / Formspree gateway to guarantee email delivery to Aashishgyan2007@gmail.com
-  // Formspree / FormSubmit provides a reliable, secure server-side forwarding gateway without exposing credentials
+  // 4. Try Direct Cloud Webhook / Formspree gateway to guarantee email delivery to robopulse51@gmail.com
   try {
     const cloudGatewayUrl = `https://formsubmit.co/ajax/${encodeURIComponent(CONFIG.email)}`;
     const cloudRes = await fetch(cloudGatewayUrl, {

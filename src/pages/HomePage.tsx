@@ -311,10 +311,10 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
                   onClick={() => navigate("/contact")}
                 />
                 <button
-                  onClick={() => navigate("/gallery")}
+                  onClick={() => navigate("/robotics")}
                   className="px-5 py-2.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#00C9FF]/50 typo-btn text-white hover:-translate-y-1 hover:scale-[1.04] active:scale-95 transition-all duration-200 cursor-pointer"
                 >
-                  View Installed Labs
+                  Explore Lab Models
                 </button>
               </div>
             </MotionHeadingGroup>

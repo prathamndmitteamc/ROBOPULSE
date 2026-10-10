@@ -41,9 +41,11 @@ KEY INSTITUTIONAL KNOWLEDGE:
    - Competition Track: World Robot Olympiad (WRO) & National Robotics Championship preparation.
 
 4. Contact & Consultation (/contact):
-   - Phone: +91 97241 12345 (available Mon - Sat 9:00 AM - 7:00 PM IST)
-   - Email: contact@robopulse.in
-   - Address: Innovation Tower, SG Highway, Ahmedabad, Gujarat, India 380054
+   - Phone / WhatsApp: +91 94512 26511
+   - Email: robopulse51@gmail.com
+   - Head Office: Panama Park, Dhanori Road, Lohegaon, Pune, Maharashtra, India
+   - Branch Office: Kabir Nagar, Varanasi, Uttar Pradesh, India
+   - WhatsApp Support: https://wa.me/919451226511
    - Direct WhatsApp support is also available for rapid school inquiries.
 
 GUIDELINES FOR YOUR RESPONSES:
@@ -117,7 +119,7 @@ function getIntelligentFallback(query: string): string {
   }
 
   if (query.includes("contact") || query.includes("phone") || query.includes("email") || query.includes("address") || query.includes("quote") || query.includes("demo")) {
-    return "We would love to connect with your school or institution:\n\n- **Phone**: +91 97241 12345\n- **Email**: contact@robopulse.in\n- **Campus Audits & Demos**: Request a campus visit directly via our [Contact Form](/contact).\n- **WhatsApp**: Click the WhatsApp button in the corner for an instant chat with our engineering team.";
+    return "We would love to connect with your school or institution:\n\n- **Head Office (Pune)**: Panama Park, Dhanori Road, Lohegaon, Pune, Maharashtra, India\n- **Branch Office (Varanasi)**: Kabir Nagar, Varanasi, Uttar Pradesh, India\n- **Phone / WhatsApp**: +91 94512 26511\n- **Email**: robopulse51@gmail.com\n- **Campus Audits & Demos**: Request a campus visit directly via our [Contact Form](/contact).\n- **WhatsApp Direct**: [Chat on WhatsApp](https://wa.me/919451226511) (+91 94512 26511).";
   }
 
   return "Welcome to Robopulse Intelligence! We empower schools and learners with hands-on Robotics, Artificial Intelligence, and practical STEM learning.\n\nHow can I help you today? You can ask about:\n- 🏫 **School Robotics Lab Setups**\n- 🎓 **Curriculum & Grade-Wise Courses**\n- 🤖 **Hardware Kits & Student Projects**\n- 📞 **Scheduling a Campus Demonstration**";

@@ -2,7 +2,7 @@
 /**
  * Robopulse Intelligence — Production Contact & Institutional Lead Handler
  * Compatible with Hostinger Shared, Cloud, and VPS Hosting (PHP 7.4 - 8.3+)
- * Target recipient: Aashishgyan2007@gmail.com
+ * Target recipient: robopulse51@gmail.com
  */
 
 // Enable CORS if requested from same or configured domain
@@ -69,7 +69,7 @@ if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
     exit;
 }
 
-$to = 'Aashishgyan2007@gmail.com';
+$to = 'robopulse51@gmail.com';
 $subject = "New Institutional Enquiry: {$name} - " . ($organization ?: $city ?: 'Robopulse Website');
 
 // HTML Body

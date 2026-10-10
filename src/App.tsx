@@ -15,7 +15,6 @@ import { CoursesPage } from "./pages/CoursesPage";
 import { SolutionsPage } from "./pages/SolutionsPage";
 import { RoboticsPage } from "./pages/RoboticsPage";
 import { StemPage } from "./pages/StemPage";
-import { GalleryPage } from "./pages/GalleryPage";
 import { ReviewsPage } from "./pages/ReviewsPage";
 import { ContactPage } from "./pages/ContactPage";
 import { ChatPage } from "./pages/ChatPage";
@@ -61,8 +60,6 @@ function AppContent() {
         return <RoboticsPage navigate={navigate} />;
       case "/stem":
         return <StemPage navigate={navigate} />;
-      case "/gallery":
-        return <GalleryPage navigate={navigate} />;
       case "/reviews":
         return <ReviewsPage navigate={navigate} />;
       case "/contact":
