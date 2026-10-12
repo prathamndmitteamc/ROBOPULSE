@@ -51,6 +51,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, navigate }) => {
     if (currentPath === "/about") return "About";
     if (currentPath === "/services" || currentPath === "/solutions") return "Services";
     if (currentPath === "/courses") return "Courses";
+    if (currentPath === "/gallery" || currentPath === "/showcase") return "Gallery";
     return undefined;
   };
 
@@ -151,6 +152,23 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, navigate }) => {
                 >
                   <span>Courses</span>
                   {currentPath === "/courses" && (
+                    <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-5 h-[2px] rounded-full bg-[#00C9FF] shadow-[0_0_8px_#00C9FF]" />
+                  )}
+                </button>
+
+                {/* Gallery (Direct Clickable Page) */}
+                <button
+                  data-id="Gallery"
+                  type="button"
+                  onClick={() => handleLinkClick("/gallery")}
+                  className={`relative px-3 py-1.5 font-sans text-[14px] sm:text-[14.5px] leading-[1.2] tracking-[0] cursor-pointer transition-colors duration-250 ease-out focus:outline-none whitespace-nowrap ${
+                    currentPath === "/gallery" || currentPath === "/showcase"
+                      ? "text-white font-semibold drop-shadow-[0_0_8px_rgba(0,201,255,0.45)]"
+                      : "text-neutral-200 font-medium hover:text-[#00C9FF]"
+                  }`}
+                >
+                  <span>Gallery</span>
+                  {(currentPath === "/gallery" || currentPath === "/showcase") && (
                     <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-5 h-[2px] rounded-full bg-[#00C9FF] shadow-[0_0_8px_#00C9FF]" />
                   )}
                 </button>
@@ -257,7 +275,19 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, navigate }) => {
                 Courses
               </button>
 
-              {/* 5. Contact Us */}
+              {/* 5. Gallery */}
+              <button
+                onClick={() => handleLinkClick("/gallery")}
+                className={`w-full text-left min-h-[44px] flex items-center px-3.5 py-2 rounded-xl font-sans text-[14px] leading-[1.2] tracking-normal transition-colors duration-250 cursor-pointer whitespace-nowrap ${
+                  currentPath === "/gallery" || currentPath === "/showcase"
+                    ? "text-white font-semibold bg-white/[0.05] border-l-2 border-[#00C9FF] shadow-[0_0_12px_rgba(0,201,255,0.15)]"
+                    : "text-neutral-300 font-medium hover:text-[#00C9FF]"
+                }`}
+              >
+                Gallery
+              </button>
+
+              {/* 6. Contact Us */}
               <button
                 onClick={() => handleLinkClick("/contact")}
                 className={`w-full text-left min-h-[44px] flex items-center px-3.5 py-2 rounded-xl font-sans text-[14px] leading-[1.2] tracking-normal transition-colors duration-250 cursor-pointer whitespace-nowrap ${
