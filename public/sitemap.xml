@@ -6,7 +6,7 @@
 
   <!-- 1. Home Page -->
   <url>
-    <loc>https://robopulseintelligence.com/</loc>
+    <loc>https://robopulse.smartgurukulam.com/</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -14,7 +14,7 @@
 
   <!-- 2. Services & Lab Setup (Canonical) -->
   <url>
-    <loc>https://robopulseintelligence.com/services</loc>
+    <loc>https://robopulse.smartgurukulam.com/services</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -22,7 +22,7 @@
 
   <!-- 3. Courses & Grade-Aligned Curricula -->
   <url>
-    <loc>https://robopulseintelligence.com/courses</loc>
+    <loc>https://robopulse.smartgurukulam.com/courses</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -30,7 +30,7 @@
 
   <!-- 4. Contact & School Demonstration Booking -->
   <url>
-    <loc>https://robopulseintelligence.com/contact</loc>
+    <loc>https://robopulse.smartgurukulam.com/contact</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -38,7 +38,7 @@
 
   <!-- 5. About Leadership, Mission & Pedagogy -->
   <url>
-    <loc>https://robopulseintelligence.com/about</loc>
+    <loc>https://robopulse.smartgurukulam.com/about</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -46,7 +46,7 @@
 
   <!-- 6. Robotics Discipline & Lab Infrastructure -->
   <url>
-    <loc>https://robopulseintelligence.com/robotics</loc>
+    <loc>https://robopulse.smartgurukulam.com/robotics</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -54,7 +54,7 @@
 
   <!-- 7. STEM Learning Methodology -->
   <url>
-    <loc>https://robopulseintelligence.com/stem</loc>
+    <loc>https://robopulse.smartgurukulam.com/stem</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -62,7 +62,7 @@
 
   <!-- 8. Interactive Gallery & Exhibition Showcase (Canonical) -->
   <url>
-    <loc>https://robopulseintelligence.com/gallery</loc>
+    <loc>https://robopulse.smartgurukulam.com/gallery</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -70,7 +70,7 @@
 
   <!-- 9. School & Parent Reviews -->
   <url>
-    <loc>https://robopulseintelligence.com/reviews</loc>
+    <loc>https://robopulse.smartgurukulam.com/reviews</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -78,7 +78,7 @@
 
   <!-- 10. AI Assistant & Advisory -->
   <url>
-    <loc>https://robopulseintelligence.com/chat</loc>
+    <loc>https://robopulse.smartgurukulam.com/chat</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

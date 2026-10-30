@@ -145,7 +145,7 @@ $plainBody = "ROBOPULSE INTELLIGENCE // New Lead\n\n"
 $headers = [];
 $headers[] = 'MIME-Version: 1.0';
 $headers[] = 'Content-type: text/html; charset=UTF-8';
-$headers[] = 'From: Robopulse Intelligence <noreply@' . ($_SERVER['SERVER_NAME'] ?? 'robopulseintelligence.com') . '>';
+$headers[] = 'From: Robopulse Intelligence <noreply@' . ($_SERVER['SERVER_NAME'] ?? 'robopulse.smartgurukulam.com') . '>';
 $headers[] = 'Reply-To: ' . $email;
 $headers[] = 'X-Mailer: PHP/' . phpversion();
 

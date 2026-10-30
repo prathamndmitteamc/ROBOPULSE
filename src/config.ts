@@ -92,7 +92,7 @@ export const CONFIG: RobopulseConfig = {
       mapsUrl: "https://www.google.com/maps/search/?api=1&query=Kabir+Nagar+Varanasi+Uttar+Pradesh+India",
     },
   },
-  website: "https://robopulseintelligence.com",
+  website: "https://robopulse.smartgurukulam.com",
   primaryCTA: "CONTACT US",
   logo: {
     text: "ROBOPULSE",

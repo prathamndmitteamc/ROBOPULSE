@@ -24,7 +24,7 @@ export const SMTP_PORT = Number(process.env.SMTP_PORT) || 465;
 export const SMTP_SECURE = process.env.SMTP_SECURE !== "false"; // Default true for port 465 SSL
 export const SMTP_USER = process.env.SMTP_USER || "";
 export const SMTP_PASS = process.env.SMTP_PASS || "";
-export const SMTP_FROM = process.env.SMTP_FROM || `Robopulse Intelligence <${SMTP_USER || "leads@robopulseintelligence.com"}>`;
+export const SMTP_FROM = process.env.SMTP_FROM || `Robopulse Intelligence <${SMTP_USER || "leads@robopulse.smartgurukulam.com"}>`;
 
 export async function processContactLead(data: ContactLeadData): Promise<{ success: boolean; message: string; emailDelivered?: boolean }> {
   // Validate required fields
@@ -169,7 +169,7 @@ export async function processContactLead(data: ContactLeadData): Promise<{ succe
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          from: "Robopulse Leads <leads@robopulseintelligence.com>",
+          from: "Robopulse Leads <leads@robopulse.smartgurukulam.com>",
           to: [RECIPIENT_EMAIL],
           reply_to: data.email,
           subject: `New Institutional Lead: ${data.name} (${data.organization || data.city || "Website Inquiry"})`,
@@ -199,7 +199,7 @@ export async function processContactLead(data: ContactLeadData): Promise<{ succe
         },
         body: JSON.stringify({
           personalizations: [{ to: [{ email: RECIPIENT_EMAIL }] }],
-          from: { email: "leads@robopulseintelligence.com", name: "Robopulse Intelligence" },
+          from: { email: "leads@robopulse.smartgurukulam.com", name: "Robopulse Intelligence" },
           reply_to: { email: data.email, name: data.name },
           subject: `New Institutional Lead: ${data.name} - ${data.requirement || "Enquiry"}`,
           content: [
