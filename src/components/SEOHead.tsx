@@ -52,13 +52,29 @@ export function SEOHead({
     // 4. Robots Directives
     setMetaTag("name", "robots", noindex ? "noindex, nofollow" : "index, follow");
 
-    // 5. Canonical URL
-    const baseUrl = CONFIG.website.replace(/\/$/, "");
-    const cleanPath = canonicalPath.startsWith("/") ? canonicalPath : `/${canonicalPath}`;
-    const fullCanonicalUrl = `${baseUrl}${cleanPath === "/" ? "" : cleanPath}`;
+    // 5. Canonical URL — Absolute, Self-Referencing on robopulse.smartgurukulam.com
+    const baseUrl = (CONFIG.website || "https://robopulse.smartgurukulam.com").replace(/\/$/, "");
+    let fullCanonicalUrl: string;
+    let cleanPath: string;
 
-    let canonicalLink = document.querySelector('link[rel="canonical"]');
-    if (!canonicalLink) {
+    if (!canonicalPath || canonicalPath === "/" || canonicalPath === "") {
+      cleanPath = "/";
+      fullCanonicalUrl = `${baseUrl}/`;
+    } else {
+      cleanPath = canonicalPath.startsWith("/") ? canonicalPath : `/${canonicalPath}`;
+      cleanPath = cleanPath.replace(/\/$/, ""); // standard non-trailing slash for subpages
+      fullCanonicalUrl = `${baseUrl}${cleanPath}`;
+    }
+
+    // Prune any duplicate canonical links to guarantee strictly ONE authoritative tag
+    const existingCanonicals = document.querySelectorAll('link[rel="canonical"]');
+    let canonicalLink: HTMLLinkElement;
+    if (existingCanonicals.length > 0) {
+      canonicalLink = existingCanonicals[0] as HTMLLinkElement;
+      for (let i = 1; i < existingCanonicals.length; i++) {
+        existingCanonicals[i].remove();
+      }
+    } else {
       canonicalLink = document.createElement("link");
       canonicalLink.setAttribute("rel", "canonical");
       document.head.appendChild(canonicalLink);
@@ -95,14 +111,17 @@ export function SEOHead({
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: baseUrl,
+            item: `${baseUrl}/`,
           },
-          ...breadcrumbs.map((crumb, index) => ({
-            "@type": "ListItem",
-            position: index + 2,
-            name: crumb.name,
-            item: `${baseUrl}${crumb.path.startsWith("/") ? crumb.path : `/${crumb.path}`}`,
-          })),
+          ...breadcrumbs.map((crumb, index) => {
+            const crumbPath = crumb.path.startsWith("/") ? crumb.path : `/${crumb.path}`;
+            return {
+              "@type": "ListItem",
+              position: index + 2,
+              name: crumb.name,
+              item: `${baseUrl}${crumbPath.replace(/\/$/, "")}`,
+            };
+          }),
         ],
       };
 
