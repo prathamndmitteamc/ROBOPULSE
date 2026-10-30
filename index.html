@@ -17,14 +17,14 @@
     />
     <meta name="theme-color" content="#030303" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" id="canonical-url" href="https://robopulse.smartgurukulam.com/" />
+    <link rel="canonical" href="https://robopulse.smartgurukulam.com/" />
     <script>
       (function() {
         try {
           var origin = "https://robopulse.smartgurukulam.com";
           var p = window.location.pathname || "/";
           var canonical = (p === "/" || p === "") ? (origin + "/") : (origin + p.replace(/\/$/, ""));
-          var el = document.getElementById("canonical-url") || document.querySelector('link[rel="canonical"]');
+          var el = document.querySelector('link[rel="canonical"]');
           if (el) { el.setAttribute("href", canonical); }
           var ogUrl = document.querySelector('meta[property="og:url"]');
           if (ogUrl) { ogUrl.setAttribute("content", canonical); }

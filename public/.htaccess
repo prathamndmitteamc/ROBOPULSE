@@ -3,6 +3,8 @@
 # Production Domain: https://robopulse.smartgurukulam.com/
 # ==============================================================================
 
+DirectoryIndex index.html
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
