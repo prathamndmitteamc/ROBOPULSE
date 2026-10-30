@@ -2,6 +2,7 @@ import React from "react";
 import { ShinyButton } from "../components/ShinyButton";
 import { MotionHeadingGroup } from "../components/MotionHeading";
 import { InteractiveSystemDiagram } from "../components/InteractiveSystemDiagram";
+import { SEOHead } from "../components/SEOHead";
 import { HANDS_ON_PROJECTS } from "../data/solutionsData";
 import {
   Cpu,
@@ -21,6 +22,13 @@ interface RoboticsPageProps {
 export const RoboticsPage: React.FC<RoboticsPageProps> = ({ navigate }) => {
   return (
     <div className="relative pt-24 md:pt-32 pb-24 space-y-24 md:space-y-32 overflow-hidden">
+      <SEOHead
+        title="Robotics Lab Setup & Mechatronics Education — RoboPulse Intelligence"
+        description="Complete school robotics lab infrastructure, modular workbenches, microcontrollers, sensor arrays, and hands-on hardware kits for K-12 campuses."
+        canonicalPath="/robotics"
+        breadcrumbs={[{ name: "Robotics", path: "/robotics" }]}
+      />
+
       {/* ============================================================== */}
       {/* 01 — HERO HEADER                                               */}
       {/* ============================================================== */}

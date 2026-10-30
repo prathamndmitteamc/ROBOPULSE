@@ -1,6 +1,7 @@
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
+import fs from 'fs';
 import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
@@ -11,6 +12,28 @@ export default defineConfig(() => {
       {
         name: 'api-chat-dev-server',
         configureServer(server) {
+          server.middlewares.use((req, res, next) => {
+            if (req.url === '/robots.txt') {
+              const robotsPath = path.resolve(__dirname, 'public/robots.txt');
+              if (fs.existsSync(robotsPath)) {
+                res.setHeader('Content-Type', 'text/plain');
+                res.statusCode = 200;
+                res.end(fs.readFileSync(robotsPath));
+                return;
+              }
+            }
+            if (req.url === '/sitemap.xml') {
+              const sitemapPath = path.resolve(__dirname, 'public/sitemap.xml');
+              if (fs.existsSync(sitemapPath)) {
+                res.setHeader('Content-Type', 'application/xml');
+                res.statusCode = 200;
+                res.end(fs.readFileSync(sitemapPath));
+                return;
+              }
+            }
+            next();
+          });
+
           server.middlewares.use('/api/lead', async (req, res) => {
             if (req.method !== 'POST') {
               res.statusCode = 405;

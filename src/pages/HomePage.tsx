@@ -5,6 +5,7 @@ import { RoboticsControlInterface } from "../components/RoboticsControlInterface
 import { SchoolValueRadial } from "../components/SchoolValueRadial";
 import { ProgramPillarsStrip } from "../components/ProgramPillarsStrip";
 import { MotionHeadingGroup, MotionItem } from "../components/MotionHeading";
+import { SEOHead } from "../components/SEOHead";
 import { openWhatsApp } from "../config";
 import { SOLUTIONS_LIST, PROGRAM_MODELS } from "../data/solutionsData";
 import { SCHOOLS, PARTNERS } from "../data/feedbackData";
@@ -34,6 +35,12 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
 
   return (
     <div className="relative pt-24 md:pt-32 space-y-24 md:space-y-36 pb-20 overflow-hidden">
+      <SEOHead
+        title="RoboPulse Intelligence — Robotics, AI & STEM Education for Schools"
+        description="Transforming K-12 schools with turnkey robotics labs, AI curriculum, STEM programs, and certified teacher training in Pune, Varanasi & across India."
+        canonicalPath="/"
+      />
+
       {/* ============================================================== */}
       {/* 01 — ROBOPULSE HERO BANNER (Cursor Spotlight Reveal + Telemetry)*/}
       {/* ============================================================== */}

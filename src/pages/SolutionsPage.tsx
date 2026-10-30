@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ShinyButton } from "../components/ShinyButton";
+import { SEOHead } from "../components/SEOHead";
 import { SOLUTIONS_LIST, PROGRAM_MODELS } from "../data/solutionsData";
 import { openWhatsApp } from "../config";
 import { CheckCircle2, ArrowRight, Layers, Cpu, Award, Users, MessageCircle } from "lucide-react";
@@ -16,6 +17,13 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({ navigate }) => {
 
   return (
     <div className="relative pt-24 md:pt-32 pb-24 space-y-24 md:space-y-32 overflow-hidden">
+      <SEOHead
+        title="School Robotics Labs & STEM Services — RoboPulse Intelligence"
+        description="Turnkey robotics laboratory setup, CBSE-aligned curriculum integration, experiential STEM workshops, and faculty training for schools in India."
+        canonicalPath="/services"
+        breadcrumbs={[{ name: "Services", path: "/services" }]}
+      />
+
       {/* ============================================================== */}
       {/* 01 — HERO HEADER                                               */}
       {/* ============================================================== */}

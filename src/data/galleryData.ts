@@ -98,7 +98,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     institution: "Vidyashram STEM Academy",
     dateOrLocation: "Varanasi, Uttar Pradesh · 2025 – 2026",
     techTags: ["Ultrasonic Sensors", "Motor Driver H-Bridge", "Logic Testing"],
-    image: "/images/autonomous-obstacle-rover.png",
+    image: "/images/autonomous-obstacle-rover.webp",
   },
   {
     id: "drive-robotics-expo",
@@ -110,7 +110,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     institution: "Cambridge International Partner Campus",
     dateOrLocation: "Maharashtra · 2026",
     techTags: ["Robotic Arenas", "Public Demo", "Line Tracking", "Kinematics"],
-    image: "/images/robotics-exhibition.png",
+    image: "/images/robotics-exhibition.webp",
   },
   {
     id: "drive-faculty-enablement",
@@ -122,7 +122,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     institution: "Technology Innovation School Network",
     dateOrLocation: "Western Region · 2025",
     techTags: ["Faculty Enablement", "Lab Safety", "Curriculum Binders"],
-    image: "/images/teacher-orientation.png",
+    image: "/images/teacher-orientation.webp",
   },
   {
     id: "drive-zero-to-one",
@@ -134,7 +134,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     institution: "STEM Partner Schools",
     dateOrLocation: "Pune & Varanasi · 2025",
     techTags: ["Chassis Assembly", "Basic Circuits", "Confidence Building"],
-    image: "/images/introductory-training.png",
+    image: "/images/introductory-training.webp",
   },
   {
     id: "drive-stem-awareness",
@@ -146,7 +146,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     institution: "Institutional Partner Campuses",
     dateOrLocation: "Academic Season 2025 – 2026",
     techTags: ["AI Horizons", "STEM Career Pathways", "Interactive Tech"],
-    image: "/images/stem-awareness-drive.png",
+    image: "/images/stem-awareness-drive.webp",
   },
 
   // ==============================================================
@@ -184,7 +184,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
       "Solderless breadboard matrices & jump-wire harnesses",
       "Component safety enclosures",
     ],
-    image: "/images/stem-lab-setup.png",
+    image: "/images/stem-lab-setup.webp",
   },
   {
     id: "lab-ai-vision-learning",

@@ -2,6 +2,7 @@ import React, { useState, useMemo } from "react";
 import { MotionHeadingGroup } from "../components/MotionHeading";
 import { ShinyButton } from "../components/ShinyButton";
 import { ImageLightbox } from "../components/ImageLightbox";
+import { SEOHead } from "../components/SEOHead";
 import { openWhatsApp } from "../config";
 import {
   GALLERY_ITEMS,
@@ -93,6 +94,13 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ navigate }) => {
 
   return (
     <div className="relative pt-24 md:pt-32 pb-24 space-y-24 md:space-y-32 overflow-hidden">
+      <SEOHead
+        title="Robotics Lab Exhibition & Campus Showcase — RoboPulse Intelligence"
+        description="Browse real school robotics labs, student projects, teacher training sessions, and campus exhibitions deployed by RoboPulse Intelligence."
+        canonicalPath="/gallery"
+        breadcrumbs={[{ name: "Showcase & Gallery", path: "/gallery" }]}
+      />
+
       {/* Background ambient orbs */}
       <div className="absolute top-20 right-10 w-96 h-96 bg-[#250060]/30 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute top-1/3 left-10 w-96 h-96 bg-[#00C9FF]/10 rounded-full blur-[130px] pointer-events-none" />

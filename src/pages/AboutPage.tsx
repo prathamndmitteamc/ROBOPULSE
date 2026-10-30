@@ -1,6 +1,7 @@
 import React from "react";
 import { ShinyButton } from "../components/ShinyButton";
 import { MotionHeadingGroup } from "../components/MotionHeading";
+import { SEOHead } from "../components/SEOHead";
 import { openWhatsApp } from "../config";
 import {
   Compass,
@@ -20,6 +21,13 @@ interface AboutPageProps {
 export const AboutPage: React.FC<AboutPageProps> = ({ navigate }) => {
   return (
     <div className="relative pt-24 md:pt-32 pb-24 space-y-24 md:space-y-32 overflow-hidden">
+      <SEOHead
+        title="About RoboPulse Intelligence — Mission, Leadership & Pedagogy"
+        description="Learn how RoboPulse Intelligence engineers future-ready creators through hands-on robotics, AI literacy, and practical STEM learning across schools in India."
+        canonicalPath="/about"
+        breadcrumbs={[{ name: "About Us", path: "/about" }]}
+      />
+
       {/* ============================================================== */}
       {/* 01 — HERO HEADER                                               */}
       {/* ============================================================== */}

@@ -1,6 +1,7 @@
 import React from "react";
 import { ShinyButton } from "../components/ShinyButton";
 import { MotionHeadingGroup } from "../components/MotionHeading";
+import { SEOHead } from "../components/SEOHead";
 import { PARENT_AND_SCHOOL_REVIEWS, SCHOOLS, PARTNERS } from "../data/feedbackData";
 import { Star, Quote, Building2, MapPin, CheckCircle, ShieldCheck } from "lucide-react";
 
@@ -11,6 +12,13 @@ interface ReviewsPageProps {
 export const ReviewsPage: React.FC<ReviewsPageProps> = ({ navigate }) => {
   return (
     <div className="relative pt-24 md:pt-32 pb-24 space-y-24 md:space-y-32 overflow-hidden">
+      <SEOHead
+        title="School & Parent Reviews — RoboPulse Intelligence"
+        description="Read verified feedback from school principals, STEM coordinators, and parents on RoboPulse robotics labs and student learning outcomes."
+        canonicalPath="/reviews"
+        breadcrumbs={[{ name: "Reviews", path: "/reviews" }]}
+      />
+
       {/* ============================================================== */}
       {/* 01 — HERO HEADER                                               */}
       {/* ============================================================== */}

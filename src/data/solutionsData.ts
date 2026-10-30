@@ -28,7 +28,7 @@ export const SOLUTIONS_LIST: SolutionTrack[] = [
       "Autonomous navigation and obstacle avoidance",
       "Embedded code logic and debugging",
     ],
-    image: "/images/robotics-education.png",
+    image: "/images/robotics-education.webp",
   },
   {
     id: "ai-emerging-tech",
@@ -44,7 +44,7 @@ export const SOLUTIONS_LIST: SolutionTrack[] = [
       "Smart sensor data collection & analysis",
       "Ethical understanding of modern AI systems",
     ],
-    image: "/images/ai-emerging-tech.png",
+    image: "/images/ai-emerging-tech.webp",
   },
   {
     id: "stem-lab-setup",
@@ -60,7 +60,7 @@ export const SOLUTIONS_LIST: SolutionTrack[] = [
       "Comprehensive storage & component management",
       "Structured grade-wise activity manuals",
     ],
-    image: "/images/stem-lab-setup.png",
+    image: "/images/stem-lab-setup.webp",
   },
   {
     id: "introductory-training",
@@ -76,7 +76,7 @@ export const SOLUTIONS_LIST: SolutionTrack[] = [
       "First successful automated run",
       "Elimination of technophobia",
     ],
-    image: "/images/introductory-training.png",
+    image: "/images/introductory-training.webp",
   },
   {
     id: "teacher-orientation",
@@ -92,7 +92,7 @@ export const SOLUTIONS_LIST: SolutionTrack[] = [
       "Aligning robotics projects with school syllabus",
       "Long-term classroom mentorship support",
     ],
-    image: "/images/teacher-orientation.png",
+    image: "/images/teacher-orientation.webp",
   },
   {
     id: "robotics-exhibitions",
@@ -108,7 +108,7 @@ export const SOLUTIONS_LIST: SolutionTrack[] = [
       "School-wide technology celebration",
       "Parent & community engagement",
     ],
-    image: "/images/robotics-exhibitions.png",
+    image: "/images/robotics-exhibitions.webp",
   },
 ];
 

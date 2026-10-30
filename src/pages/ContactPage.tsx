@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { CONFIG, submitLead, openWhatsApp, LeadPayload } from "../config";
 import { ShinyButton } from "../components/ShinyButton";
 import { MotionHeadingGroup } from "../components/MotionHeading";
+import { SEOHead } from "../components/SEOHead";
 import {
   Mail,
   Phone,
@@ -93,6 +94,13 @@ export const ContactPage: React.FC = () => {
 
   return (
     <div className="relative pt-24 md:pt-32 pb-24 space-y-20 overflow-hidden">
+      <SEOHead
+        title="Contact RoboPulse Intelligence — School Lab Enquiry & Demos"
+        description="Connect with RoboPulse Intelligence in Pune and Varanasi. Request a turnkey robotics lab proposal, curriculum consultation, or campus demonstration."
+        canonicalPath="/contact"
+        breadcrumbs={[{ name: "Contact Us", path: "/contact" }]}
+      />
+
       {/* Background ambient orbs */}
       <div className="absolute top-20 right-10 w-96 h-96 bg-[#250060]/30 rounded-full blur-[130px] pointer-events-none" />
       <div className="absolute bottom-10 left-10 w-80 h-80 bg-[#00C9FF]/10 rounded-full blur-[110px] pointer-events-none" />

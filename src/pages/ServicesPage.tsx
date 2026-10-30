@@ -6,6 +6,7 @@
 import React, { useState } from "react";
 import { ShinyButton } from "../components/ShinyButton";
 import { MotionHeadingGroup } from "../components/MotionHeading";
+import { SEOHead } from "../components/SEOHead";
 import { openWhatsApp } from "../config";
 import { SERVICES_LIST, FEATURED_SERVICE } from "../data/servicesData";
 import { PROGRAM_MODELS } from "../data/solutionsData";
@@ -58,6 +59,13 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ navigate }) => {
 
   return (
     <div className="relative pt-24 md:pt-32 pb-24 space-y-24 md:space-y-32 overflow-hidden">
+      <SEOHead
+        title="School Robotics Labs & STEM Services — RoboPulse Intelligence"
+        description="Turnkey robotics laboratory setup, CBSE-aligned curriculum integration, experiential STEM workshops, and faculty training for schools in India."
+        canonicalPath="/services"
+        breadcrumbs={[{ name: "Services", path: "/services" }]}
+      />
+
       {/* ============================================================== */}
       {/* 01 — HERO HEADER                                               */}
       {/* ============================================================== */}

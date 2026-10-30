@@ -1,6 +1,7 @@
 import React from "react";
 import { ShinyButton } from "../components/ShinyButton";
 import { MotionHeadingGroup } from "../components/MotionHeading";
+import { SEOHead } from "../components/SEOHead";
 import { STUDENT_SKILLS } from "../data/solutionsData";
 import {
   Atom,
@@ -67,6 +68,13 @@ export const StemPage: React.FC<StemPageProps> = ({ navigate }) => {
 
   return (
     <div className="relative pt-24 md:pt-32 pb-24 space-y-24 md:space-y-32 overflow-hidden">
+      <SEOHead
+        title="Experiential STEM Education & Learning Pedagogy — RoboPulse Intelligence"
+        description="Bridging textbook theory with tactile engineering through project-based learning, inquiry, and design thinking for forward-thinking Indian schools."
+        canonicalPath="/stem"
+        breadcrumbs={[{ name: "STEM Pedagogy", path: "/stem" }]}
+      />
+
       {/* ============================================================== */}
       {/* 01 — HERO HEADER                                               */}
       {/* ============================================================== */}

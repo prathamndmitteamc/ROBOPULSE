@@ -1,5 +1,6 @@
 import React from "react";
 import { ShinyButton } from "../components/ShinyButton";
+import { SEOHead } from "../components/SEOHead";
 import { Bot, Home, PhoneCall } from "lucide-react";
 
 interface NotFoundPageProps {
@@ -9,6 +10,11 @@ interface NotFoundPageProps {
 export const NotFoundPage: React.FC<NotFoundPageProps> = ({ navigate }) => {
   return (
     <div className="min-h-[75vh] flex items-center justify-center px-6 py-32 text-center">
+      <SEOHead
+        title="Page Not Found (404) — RoboPulse Intelligence"
+        description="The requested page could not be found. Return to RoboPulse Intelligence homepage to explore robotics and STEM programs."
+        noindex={true}
+      />
       <div className="max-w-md space-y-6">
         <div className="w-16 h-16 rounded-2xl bg-[#00C9FF]/10 text-[#00C9FF] flex items-center justify-center mx-auto border border-[#00C9FF]/30">
           <Bot className="w-8 h-8 animate-pulse" />

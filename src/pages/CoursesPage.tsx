@@ -6,6 +6,7 @@
 import React, { useState } from "react";
 import { ShinyButton } from "../components/ShinyButton";
 import { MotionHeadingGroup } from "../components/MotionHeading";
+import { SEOHead } from "../components/SEOHead";
 import { openWhatsApp } from "../config";
 import {
   COURSES_LIST,
@@ -86,6 +87,13 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({ navigate }) => {
 
   return (
     <div className="relative pt-24 md:pt-32 pb-24 space-y-24 md:space-y-32 overflow-hidden">
+      <SEOHead
+        title="Grade-Aligned Robotics & AI Courses (Grades 1-12) — RoboPulse Intelligence"
+        description="Explore progressive robotics, coding, embedded systems, and computer vision courses tailored for primary, middle, and high school students."
+        canonicalPath="/courses"
+        breadcrumbs={[{ name: "Courses", path: "/courses" }]}
+      />
+
       {/* ============================================================== */}
       {/* 01 — HERO HEADER                                               */}
       {/* ============================================================== */}

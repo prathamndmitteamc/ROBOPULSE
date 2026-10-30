@@ -509,9 +509,11 @@ export const RobopulseHero: React.FC<RobopulseHeroProps> = ({ navigate }) => {
                 >
                   {/* LAYER 1: Front Robot Head & Half Body (High-Tech Photorealistic) */}
                   <img
-                    src="/assets/images/interactive_robot_head_body_1790353827292.jpg"
-                    alt="Autonomous AI Robot Head and Half Body"
+                    src="/assets/images/interactive_robot_head_body_1790353827292.webp"
+                    alt="RoboPulse Intelligence interactive autonomous mechatronics robot head and chassis"
                     referrerPolicy="no-referrer"
+                    fetchPriority="high"
+                    decoding="async"
                     className="hero-front absolute inset-0 w-full h-full object-cover object-center scale-[1.03] transition-transform duration-300"
                   />
 
@@ -521,10 +523,11 @@ export const RobopulseHero: React.FC<RobopulseHeroProps> = ({ navigate }) => {
                   {/* LAYER 2: Back Mechatronic Neural Blueprint Scanner (Revealed at Cursor) */}
                   <img
                     ref={backImageRef}
-                    src="/assets/images/robot_internal_schematic_1790353848882.jpg"
-                    alt="Robot internal neural blueprint scan"
+                    src="/assets/images/robot_internal_schematic_1790353848882.webp"
+                    alt="RoboPulse mechatronic schematic and neural sensor blueprint scan"
                     aria-hidden="true"
                     referrerPolicy="no-referrer"
+                    decoding="async"
                     className="hero-back absolute inset-0 w-full h-full object-cover object-center scale-[1.03] pointer-events-none"
                     style={{
                       willChange: "mask-image, -webkit-mask-image",

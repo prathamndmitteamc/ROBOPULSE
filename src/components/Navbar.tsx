@@ -90,10 +90,13 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, navigate }) => {
                 enableHover
               >
                 {/* Home */}
-                <button
+                <a
                   data-id="Home"
-                  type="button"
-                  onClick={() => handleLinkClick("/")}
+                  href="/"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleLinkClick("/");
+                  }}
                   className={`relative px-3 py-1.5 font-sans text-[14px] sm:text-[14.5px] leading-[1.2] tracking-[0] cursor-pointer transition-colors duration-250 ease-out focus:outline-none whitespace-nowrap ${
                     currentPath === "/"
                       ? "text-white font-semibold drop-shadow-[0_0_8px_rgba(0,201,255,0.45)]"
@@ -104,13 +107,16 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, navigate }) => {
                   {currentPath === "/" && (
                     <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-5 h-[2px] rounded-full bg-[#00C9FF] shadow-[0_0_8px_#00C9FF]" />
                   )}
-                </button>
+                </a>
 
                 {/* About */}
-                <button
+                <a
                   data-id="About"
-                  type="button"
-                  onClick={() => handleLinkClick("/about")}
+                  href="/about"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleLinkClick("/about");
+                  }}
                   className={`relative px-3 py-1.5 font-sans text-[14px] sm:text-[14.5px] leading-[1.2] tracking-[0] cursor-pointer transition-colors duration-250 ease-out focus:outline-none whitespace-nowrap ${
                     currentPath === "/about"
                       ? "text-white font-semibold drop-shadow-[0_0_8px_rgba(0,201,255,0.45)]"
@@ -121,13 +127,16 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, navigate }) => {
                   {currentPath === "/about" && (
                     <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-5 h-[2px] rounded-full bg-[#00C9FF] shadow-[0_0_8px_#00C9FF]" />
                   )}
-                </button>
+                </a>
 
                 {/* Services (Direct Clickable Page) */}
-                <button
+                <a
                   data-id="Services"
-                  type="button"
-                  onClick={() => handleLinkClick("/services")}
+                  href="/services"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleLinkClick("/services");
+                  }}
                   className={`relative px-3 py-1.5 font-sans text-[14px] sm:text-[14.5px] leading-[1.2] tracking-[0] cursor-pointer transition-colors duration-250 ease-out focus:outline-none whitespace-nowrap ${
                     currentPath === "/services" || currentPath === "/solutions"
                       ? "text-white font-semibold drop-shadow-[0_0_8px_rgba(0,201,255,0.45)]"
@@ -138,13 +147,16 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, navigate }) => {
                   {(currentPath === "/services" || currentPath === "/solutions") && (
                     <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-5 h-[2px] rounded-full bg-[#00C9FF] shadow-[0_0_8px_#00C9FF]" />
                   )}
-                </button>
+                </a>
 
                 {/* Courses (Direct Clickable Page) */}
-                <button
+                <a
                   data-id="Courses"
-                  type="button"
-                  onClick={() => handleLinkClick("/courses")}
+                  href="/courses"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleLinkClick("/courses");
+                  }}
                   className={`relative px-3 py-1.5 font-sans text-[14px] sm:text-[14.5px] leading-[1.2] tracking-[0] cursor-pointer transition-colors duration-250 ease-out focus:outline-none whitespace-nowrap ${
                     currentPath === "/courses"
                       ? "text-white font-semibold drop-shadow-[0_0_8px_rgba(0,201,255,0.45)]"
@@ -155,13 +167,16 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, navigate }) => {
                   {currentPath === "/courses" && (
                     <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-5 h-[2px] rounded-full bg-[#00C9FF] shadow-[0_0_8px_#00C9FF]" />
                   )}
-                </button>
+                </a>
 
                 {/* Gallery (Direct Clickable Page) */}
-                <button
+                <a
                   data-id="Gallery"
-                  type="button"
-                  onClick={() => handleLinkClick("/gallery")}
+                  href="/gallery"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleLinkClick("/gallery");
+                  }}
                   className={`relative px-3 py-1.5 font-sans text-[14px] sm:text-[14.5px] leading-[1.2] tracking-[0] cursor-pointer transition-colors duration-250 ease-out focus:outline-none whitespace-nowrap ${
                     currentPath === "/gallery" || currentPath === "/showcase"
                       ? "text-white font-semibold drop-shadow-[0_0_8px_rgba(0,201,255,0.45)]"
@@ -172,7 +187,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, navigate }) => {
                   {(currentPath === "/gallery" || currentPath === "/showcase") && (
                     <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-5 h-[2px] rounded-full bg-[#00C9FF] shadow-[0_0_8px_#00C9FF]" />
                   )}
-                </button>
+                </a>
 
                 {/* Download Brochure (Direct PDF Download) */}
                 <a
@@ -241,8 +256,12 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, navigate }) => {
 
             <div className="space-y-1">
               {/* 1. Home */}
-              <button
-                onClick={() => handleLinkClick("/")}
+              <a
+                href="/"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/");
+                }}
                 className={`w-full text-left min-h-[44px] flex items-center px-3.5 py-2 rounded-xl font-sans text-[14px] leading-[1.2] tracking-normal transition-colors duration-250 cursor-pointer whitespace-nowrap ${
                   currentPath === "/"
                     ? "text-white font-semibold bg-white/[0.05] border-l-2 border-[#00C9FF] shadow-[0_0_12px_rgba(0,201,255,0.15)]"
@@ -250,11 +269,15 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, navigate }) => {
                 }`}
               >
                 Home
-              </button>
+              </a>
 
               {/* 2. About */}
-              <button
-                onClick={() => handleLinkClick("/about")}
+              <a
+                href="/about"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/about");
+                }}
                 className={`w-full text-left min-h-[44px] flex items-center px-3.5 py-2 rounded-xl font-sans text-[14px] leading-[1.2] tracking-normal transition-colors duration-250 cursor-pointer whitespace-nowrap ${
                   currentPath === "/about"
                     ? "text-white font-semibold bg-white/[0.05] border-l-2 border-[#00C9FF] shadow-[0_0_12px_rgba(0,201,255,0.15)]"
@@ -262,11 +285,15 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, navigate }) => {
                 }`}
               >
                 About
-              </button>
+              </a>
 
               {/* 3. Services */}
-              <button
-                onClick={() => handleLinkClick("/services")}
+              <a
+                href="/services"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/services");
+                }}
                 className={`w-full text-left min-h-[44px] flex items-center px-3.5 py-2 rounded-xl font-sans text-[14px] leading-[1.2] tracking-normal transition-colors duration-250 cursor-pointer whitespace-nowrap ${
                   currentPath === "/services" || currentPath === "/solutions"
                     ? "text-white font-semibold bg-white/[0.05] border-l-2 border-[#00C9FF] shadow-[0_0_12px_rgba(0,201,255,0.15)]"
@@ -274,11 +301,15 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, navigate }) => {
                 }`}
               >
                 Services
-              </button>
+              </a>
 
               {/* 4. Courses */}
-              <button
-                onClick={() => handleLinkClick("/courses")}
+              <a
+                href="/courses"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/courses");
+                }}
                 className={`w-full text-left min-h-[44px] flex items-center px-3.5 py-2 rounded-xl font-sans text-[14px] leading-[1.2] tracking-normal transition-colors duration-250 cursor-pointer whitespace-nowrap ${
                   currentPath === "/courses"
                     ? "text-white font-semibold bg-white/[0.05] border-l-2 border-[#00C9FF] shadow-[0_0_12px_rgba(0,201,255,0.15)]"
@@ -286,11 +317,15 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, navigate }) => {
                 }`}
               >
                 Courses
-              </button>
+              </a>
 
               {/* 5. Gallery */}
-              <button
-                onClick={() => handleLinkClick("/gallery")}
+              <a
+                href="/gallery"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/gallery");
+                }}
                 className={`w-full text-left min-h-[44px] flex items-center px-3.5 py-2 rounded-xl font-sans text-[14px] leading-[1.2] tracking-normal transition-colors duration-250 cursor-pointer whitespace-nowrap ${
                   currentPath === "/gallery" || currentPath === "/showcase"
                     ? "text-white font-semibold bg-white/[0.05] border-l-2 border-[#00C9FF] shadow-[0_0_12px_rgba(0,201,255,0.15)]"
@@ -298,7 +333,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, navigate }) => {
                 }`}
               >
                 Gallery
-              </button>
+              </a>
 
               {/* 6. Download Brochure */}
               <a
@@ -317,8 +352,12 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, navigate }) => {
               </a>
 
               {/* 7. Contact Us */}
-              <button
-                onClick={() => handleLinkClick("/contact")}
+              <a
+                href="/contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/contact");
+                }}
                 className={`w-full text-left min-h-[44px] flex items-center px-3.5 py-2 rounded-xl font-sans text-[14px] leading-[1.2] tracking-normal transition-colors duration-250 cursor-pointer whitespace-nowrap ${
                   currentPath === "/contact"
                     ? "text-white font-semibold bg-white/[0.05] border-l-2 border-[#00C9FF] shadow-[0_0_12px_rgba(0,201,255,0.15)]"
@@ -326,7 +365,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, navigate }) => {
                 }`}
               >
                 Contact Us
-              </button>
+              </a>
             </div>
           </div>
 

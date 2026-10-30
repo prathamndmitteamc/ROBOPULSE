@@ -1,0 +1,10 @@
+# robots.txt for RoboPulse Intelligence
+# Production Domain: https://robopulseintelligence.com
+
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Host & Sitemap
+Host: https://robopulseintelligence.com
+Sitemap: https://robopulseintelligence.com/sitemap.xml

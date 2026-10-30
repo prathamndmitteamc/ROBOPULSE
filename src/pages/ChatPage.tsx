@@ -7,6 +7,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { openWhatsApp, CONFIG } from "../config";
 import { Bot, Send, RotateCcw, MessageCircle, ArrowRight, Sparkles } from "lucide-react";
 import { MotionHeadingGroup } from "../components/MotionHeading";
+import { SEOHead } from "../components/SEOHead";
 
 interface ChatMessage {
   id: string;
@@ -223,6 +224,13 @@ export const ChatPage: React.FC<ChatPageProps> = ({ navigate }) => {
 
   return (
     <div className="relative pt-24 md:pt-32 pb-24 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      <SEOHead
+        title="RoboPulse AI Assistant — Academic & Lab Advisory"
+        description="Interact with the RoboPulse AI Assistant to explore school robotics curricula, turnkey lab planning, and hands-on STEM programs."
+        canonicalPath="/chat"
+        breadcrumbs={[{ name: "AI Assistant", path: "/chat" }]}
+      />
+
       {/* Header */}
       <MotionHeadingGroup className="text-center max-w-2xl mx-auto space-y-3">
         <div className="inline-flex items-center gap-2 typo-eyebrow text-[#00C9FF]">
