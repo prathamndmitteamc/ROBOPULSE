@@ -10,6 +10,7 @@ import {
   Briefcase,
   GraduationCap,
   PhoneCall,
+  Download,
 } from "lucide-react";
 
 interface NavbarProps {
@@ -59,12 +60,12 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, navigate }) => {
     <>
       {/* ============================================================== */}
       {/* DESKTOP FLOATING GLASS PILL NAVBAR                             */}
-      {/* Order: Robopulse Logo | Home | About | Services | Courses | Contact Us */}
+      {/* Order: Logo | Home | About | Services | Courses | Gallery | Download Brochure | Contact Us */}
       {/* ============================================================== */}
-      <div className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[94%] max-w-[1120px] hidden md:block">
+      <div className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[94%] max-w-[1180px] hidden md:block">
         <header>
           <nav
-            className={`flex items-center justify-between px-6 sm:px-8 py-3 rounded-full transition-all duration-300 relative z-50 ${
+            className={`flex items-center justify-between px-5 sm:px-7 lg:px-8 py-3 rounded-full transition-all duration-300 relative z-50 ${
               scrolled
                 ? "bg-[#07070b]/94 backdrop-blur-xl border border-white/12 shadow-[0_12px_36px_-10px_rgba(0,0,0,0.85),0_0_24px_rgba(0,201,255,0.1)]"
                 : "bg-[#090910]/85 backdrop-blur-lg border border-white/10 shadow-xl"
@@ -77,7 +78,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, navigate }) => {
             </div>
 
             {/* 2. Main Navigation Links with AnimatedBackground Hover Pill */}
-            <div className="flex items-center gap-[28px] lg:gap-[32px]">
+            <div className="flex items-center gap-3.5 md:gap-4 lg:gap-6 xl:gap-7">
               <AnimatedBackground
                 defaultValue={getActiveTab()}
                 className="rounded-full bg-white/[0.05]"
@@ -172,6 +173,18 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, navigate }) => {
                     <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-5 h-[2px] rounded-full bg-[#00C9FF] shadow-[0_0_8px_#00C9FF]" />
                   )}
                 </button>
+
+                {/* Download Brochure (Direct PDF Download) */}
+                <a
+                  data-id="Download Brochure"
+                  href="/brochure/robopulse-intelligence-brochure.pdf"
+                  download="RoboPulse-Intelligence-Brochure.pdf"
+                  className="relative px-3 py-1.5 font-sans text-[14px] sm:text-[14.5px] leading-[1.2] tracking-[0] cursor-pointer transition-colors duration-250 ease-out focus:outline-none whitespace-nowrap text-neutral-200 font-medium hover:text-[#00C9FF] inline-flex items-center gap-1.5 group"
+                  title="Download RoboPulse Intelligence Brochure (PDF)"
+                >
+                  <Download className="w-3.5 h-3.5 text-[#00C9FF] shrink-0 group-hover:translate-y-0.5 transition-transform duration-200" />
+                  <span>Download Brochure</span>
+                </a>
               </AnimatedBackground>
             </div>
 
@@ -217,7 +230,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, navigate }) => {
 
       {/* ============================================================== */}
       {/* MOBILE DRAWER MENU                                             */}
-      {/* Order: Home | About | Services | Courses | Contact Us          */}
+      {/* Order: Home | About | Services | Courses | Gallery | Download Brochure | Contact Us */}
       {/* ============================================================== */}
       {mobileMenuOpen && (
         <div className="fixed inset-0 top-[60px] z-30 bg-[#030303]/98 backdrop-blur-2xl md:hidden px-5 py-6 flex flex-col justify-between overflow-y-auto pb-24">
@@ -287,7 +300,23 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, navigate }) => {
                 Gallery
               </button>
 
-              {/* 6. Contact Us */}
+              {/* 6. Download Brochure */}
+              <a
+                href="/brochure/robopulse-intelligence-brochure.pdf"
+                download="RoboPulse-Intelligence-Brochure.pdf"
+                onClick={() => setMobileMenuOpen(false)}
+                className="w-full text-left min-h-[44px] flex items-center justify-between px-3.5 py-2.5 rounded-xl font-sans text-[14px] leading-[1.2] tracking-normal transition-colors duration-250 cursor-pointer whitespace-nowrap text-neutral-300 font-medium hover:text-[#00C9FF] hover:bg-white/[0.04] group"
+              >
+                <span className="flex items-center gap-2.5">
+                  <Download className="w-4 h-4 text-[#00C9FF] shrink-0 group-hover:translate-y-0.5 transition-transform" />
+                  <span>Download Brochure</span>
+                </span>
+                <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-[#00C9FF]/10 text-[#00C9FF] border border-[#00C9FF]/20">
+                  PDF
+                </span>
+              </a>
+
+              {/* 7. Contact Us */}
               <button
                 onClick={() => handleLinkClick("/contact")}
                 className={`w-full text-left min-h-[44px] flex items-center px-3.5 py-2 rounded-xl font-sans text-[14px] leading-[1.2] tracking-normal transition-colors duration-250 cursor-pointer whitespace-nowrap ${

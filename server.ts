@@ -7,7 +7,32 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-const PORT = Number(process.env.PORT) || 3000;
+// In AI Studio / Cloud Run, Nginx runs on port 8080 and proxies incoming requests to port 3000.
+// If process.env.PORT is 8080, attempting to listen on 8080 results in an immediate EADDRINUSE crash.
+// Therefore, the Node application server must listen on port 3000 (or APP_PORT).
+const configuredPort = process.env.APP_PORT
+  ? Number(process.env.APP_PORT)
+  : process.env.PORT && process.env.PORT !== '8080'
+    ? Number(process.env.PORT)
+    : 3000;
+const PORT = configuredPort || 3000;
+
+// Helper to load handlers across both TypeScript and compiled JavaScript runtimes
+async function getChatHandler() {
+  try {
+    return await import('./src/api/chatHandler.ts');
+  } catch {
+    return await import('./src/api/chatHandler.js');
+  }
+}
+
+async function getLeadHandler() {
+  try {
+    return await import('./src/api/leadHandler.ts');
+  } catch {
+    return await import('./src/api/leadHandler.js');
+  }
+}
 
 // Health check endpoints for Cloud Run, Kubernetes, and load balancers
 app.get(['/healthz', '/health', '/_ah/health', '/ping'], (_req, res) => {
@@ -21,7 +46,7 @@ app.use(express.json());
 app.post('/api/chat', async (req, res) => {
   try {
     const { messages } = req.body || {};
-    const { processChatRequest } = await import('./src/api/chatHandler.js');
+    const { processChatRequest } = await getChatHandler();
     const reply = await processChatRequest(messages || []);
     res.status(200).json({ reply });
   } catch (error) {
@@ -36,7 +61,7 @@ app.post('/api/chat', async (req, res) => {
 app.post('/api/lead', async (req, res) => {
   try {
     const payload = req.body || {};
-    const { processContactLead } = await import('./src/api/leadHandler.js');
+    const { processContactLead } = await getLeadHandler();
     const result = await processContactLead(payload);
     res.status(result.success ? 200 : 400).json(result);
   } catch (error) {
@@ -90,8 +115,19 @@ app.use((err: unknown, _req: express.Request, res: express.Response, _next: expr
 });
 
 // Listen on all network interfaces (dual-stack IPv4/IPv6 support)
-const server = app.listen(PORT, () => {
+const server = app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server listening on port ${PORT}`);
+});
+
+server.on('error', (err: any) => {
+  if (err.code === 'EADDRINUSE' && PORT !== 3000) {
+    console.warn(`Port ${PORT} is busy, falling back to port 3000...`);
+    app.listen(3000, '0.0.0.0', () => {
+      console.log('Server listening on fallback port 3000');
+    });
+  } else {
+    console.error('Server listen error:', err);
+  }
 });
 
 process.on('SIGTERM', () => {
